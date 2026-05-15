@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Berita & Pengumuman APTIKOM Sumatera Utara — Informasi terkini seputar kegiatan, kerjasama, dan perkembangan APTIKOM Sumut." />
+
+  <title>Berita — APTIKOM Sumatera Utara</title>
+
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_berita.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+
+      <a href="index.html" class="navbar-logo">
+        <img src="img/aptikom.png" alt="Logo APTIKOM Sumut"
+             onerror="this.style.display='none'" />
+        <div class="navbar-logo-text">
+          <span class="logo-main">APTIKOM</span>
+          <span class="logo-sub">Sumatera Utara</span>
+        </div>
+      </a>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a href="tentang.html" class="nav-link">Tentang ▾</a>
+          <div class="dropdown-menu">
+            <a href="tentang.html#sejarah">Sejarah</a>
+            <a href="tentang.html#visi-misi">Visi &amp; Misi</a>
+            <a href="tentang.html#struktur">Struktur Organisasi</a>
+            <a href="tentang.html#ad-art">AD &amp; ART</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="keanggotaan.html" class="nav-link">Keanggotaan ▾</a>
+          <div class="dropdown-menu">
+            <a href="keanggotaan.html#cara-daftar">Cara Pendaftaran</a>
+            <a href="keanggotaan.html#daftar">Daftar Sekarang</a>
+            <a href="keanggotaan.html#anggota">Data Anggota</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="berita.html" class="nav-link active">Berita</a>
+        </li>
+        <li class="nav-item">
+          <a href="event.html" class="nav-link">Event ▾</a>
+          <div class="dropdown-menu">
+            <a href="event.html#seminar">Seminar</a>
+            <a href="event.html#workshop">Workshop</a>
+            <a href="galeri.html">Arsip Kegiatan</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="lowongan.html" class="nav-link">Lowongan</a>
+        </li>
+      </ul>
+
+      <div class="navbar-cta">
+        <a href="elearning.html" class="btn btn-outline" style="padding: 8px 18px; font-size: 0.84rem;">
+          E-Learning
+        </a>
+        <a href="kontak.html" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.84rem;">
+          Kontak Kami
+        </a>
+      </div>
+
+      <div class="navbar-toggle" id="navToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container page-hero-inner">
+      <div class="page-hero-breadcrumb">
+        <a href="index.html">Beranda</a>
+        <span>›</span>
+        <span>Berita</span>
+      </div>
+      <h1 class="page-hero-title">
+        Berita &amp; <em>Pengumuman</em>
+      </h1>
+      <p class="page-hero-desc">
+        Ikuti perkembangan terkini seputar kegiatan, kerjasama, seminar, dan berbagai
+        pencapaian APTIKOM Sumatera Utara dari berbagai sumber terpercaya.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FILTER / KATEGORI
+  ═══════════════════════════════════════════════ -->
+  <section class="section-filter">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="semua">Semua Berita</button>
+        <button class="filter-btn" data-filter="kepengurusan">Kepengurusan</button>
+        <button class="filter-btn" data-filter="keanggotaan">Keanggotaan</button>
+        <button class="filter-btn" data-filter="kerjasama">Kerjasama</button>
+        <button class="filter-btn" data-filter="seminar">Seminar &amp; Rakor</button>
+        <button class="filter-btn" data-filter="prestasi">Prestasi</button>
+        <button class="filter-btn" data-filter="akademik">Akademik</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       DAFTAR BERITA
+       Diurutkan dari TERLAMA → TERBARU
+  ═══════════════════════════════════════════════ -->
+  <section class="section-berita">
+    <div class="container">
+
+      <div class="berita-grid" id="beritaGrid">
+
+        <!-- ─── BERITA 1 ─────────────────────────────
+             Sumber: IT Del
+             Tanggal: 22–23 Agustus 2014
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="seminar">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag seminar">Seminar &amp; Rakor</span>
+            <span class="berita-tanggal">22 Agustus 2014</span>
+          </div>
+          <h2 class="berita-judul">
+            IT Del Jadi Tuan Rumah SNIKOM 2014 dan Rakorwil APTIKOM Wilayah I Sumut–NAD
+          </h2>
+          <p class="berita-ringkasan">
+            Institut Teknologi Del (IT Del) menjadi penyelenggara Seminar Nasional Ilmu Komputer
+            (SNIKOM) 2014 sekaligus Rapat Koordinasi Wilayah APTIKOM Wilayah I Sumut–NAD, yang
+            berlangsung dua hari pada 22–23 Agustus 2014 di kampus IT Del, Laguboti. Acara dibuka
+            langsung oleh Rektor IT Del, Prof. Dr. Roberd Saragih, M.T., dan dihadiri Ketua serta
+            Sekretaris APTIKOM Wilayah I bersama perwakilan berbagai perguruan tinggi. Seminar
+            bertema <em>"Towards the Functioning of Societally Enhancing ICT System"</em> ini
+            menampilkan sesi keynote speaker, diskusi panel, dan presentasi makalah paralel.
+            Rangkaian acara ditutup dengan wisata bersama menyeberangi Danau Toba menuju kawasan
+            kuliner Tipang Mas.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Institut Teknologi Del</strong></span>
+            </div>
+            <a href="https://www.del.ac.id/?p=2254"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 2 ─────────────────────────────
+             Sumber: IT Del — ICoSNIKOM 2022 + Rakorwil
+             Tanggal: Oktober 2022
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="seminar">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag seminar">Seminar &amp; Rakor</span>
+            <span class="berita-tanggal">19 Oktober 2022</span>
+          </div>
+          <h2 class="berita-judul">
+            IT Del dan APTIKOM Sumut Gelar IEEE ICoSNIKOM 2022 Bertema Metaverse
+          </h2>
+          <p class="berita-ringkasan">
+            Pada 19–21 Oktober 2022, Institut Teknologi Del bekerja sama dengan STMIK Pelita
+            Nusantara, Universitas Mikroskil, dan APTIKOM Sumatera Utara menyelenggarakan konferensi
+            internasional IEEE ICoSNIKOM 2022 di Laguboti dengan tema <em>"Boundary Free: Preparing
+            Indonesia for Metaverse Society"</em>. Setelah konferensi, dilanjutkan pemaparan
+            penguatan LAM INFOKOM untuk mendukung akreditasi program studi di rumpun ilmu
+            informatika oleh Ketua APTIKOM Pusat. Rangkaian acara berlanjut dengan Rapat Kerja
+            Wilayah (Rakerwil) APTIKOM Sumatera Utara yang dihadiri oleh Bupati Toba, dan diakhiri
+            dengan penandatanganan nota kesepahaman kerjasama antara Kabupaten Toba dan APTIKOM
+            Provinsi Sumatera Utara.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Institut Teknologi Del</strong></span>
+            </div>
+            <a href="https://www.del.ac.id/?p=14246"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 3 ─────────────────────────────
+             Sumber: STMIK Methodist Binjai
+             Tanggal: 2023
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="keanggotaan">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag keanggotaan">Keanggotaan</span>
+            <span class="berita-tanggal">2023</span>
+          </div>
+          <h2 class="berita-judul">
+            STMIK Methodist Binjai Resmi Bergabung sebagai Pengurus dan Anggota APTIKOM Sumut
+          </h2>
+          <p class="berita-ringkasan">
+            Dalam upaya merevitalisasi pendidikan berbasis teknologi, STMIK Methodist Binjai secara
+            resmi mendaftarkan diri dan diterima sebagai pengurus sekaligus anggota APTIKOM Sumatera
+            Utara. Langkah ini merupakan bagian dari strategi institusi untuk memperkuat jaringan
+            akademik, meningkatkan kualitas kurikulum berbasis teknologi terkini, serta membuka
+            peluang kolaborasi riset dan pertukaran sumber daya dengan perguruan tinggi anggota
+            APTIKOM lainnya di wilayah Sumatera Utara.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>STMIK Methodist Binjai</strong></span>
+            </div>
+            <a href="https://stmikmethobi.ac.id/revitalisasi-pendidikan-teknologi-stmik-methodist-binjai-resmi-menjadi-pengurus-dan-anggota-aptikom/"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 4 ─────────────────────────────
+             Sumber: tis1.itbi.ac.id — Pelantikan Kepengurusan APTIKOM Sumut
+             Tanggal: 27 Januari 2024
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="kepengurusan">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag kepengurusan">Kepengurusan</span>
+            <span class="berita-tanggal">27 Januari 2024</span>
+          </div>
+          <h2 class="berita-judul">
+            ITB Indonesia Resmi Bergabung dalam Kepengurusan APTIKOM Sumut Periode 2023–2027
+          </h2>
+          <p class="berita-ringkasan">
+            Sejumlah dosen Institut Teknologi dan Bisnis Indonesia (ITB Indonesia) resmi dilantik
+            sebagai bagian dari pengurus APTIKOM Sumatera Utara periode 2023–2027 dalam acara
+            pelantikan yang digelar di Universitas Prima Indonesia pada 27 Januari 2024. Acara dihadiri
+            langsung oleh Ketua Umum APTIKOM Pusat Prof. Dr.rer.nat. Achmad Benny Mutiara Q.N.,
+            S.Kom., Sekretaris Jenderal Husni Teja Sukmana, Ph.D., serta Ketua APTIKOM Sumut
+            Prof. Dr. Syahril Efendi, S.Si., M.IT. Keterlibatan ITB Indonesia ini mencerminkan
+            komitmen institusi dalam mendorong kemajuan pendidikan tinggi bidang informatika dan
+            ilmu komputer di wilayah Sumatera Utara.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Teknik Informatika ITB Indonesia</strong></span>
+            </div>
+            <a href="https://tis1.itbi.ac.id/itb-indonesia-berperan-serta-dalam-kepengurusan-aptikom-sumut-periode-2023-2027/"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 5 ─────────────────────────────
+             Sumber: Portal Medan / Kampus Medan — Rakornas APTIKOM 2024
+             Tanggal: 24 Oktober 2024
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="seminar">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag seminar">Seminar &amp; Rakor</span>
+            <span class="berita-tanggal">24 Oktober 2024</span>
+          </div>
+          <h2 class="berita-judul">
+            Plt. Wali Kota Medan Buka Rakornas APTIKOM 2024 di Hotel Santika Dyandra
+          </h2>
+          <p class="berita-ringkasan">
+            Plt. Wali Kota Medan H. Aulia Rachman secara resmi membuka Rapat Koordinasi Nasional
+            (Rakornas) APTIKOM 2024 di Hotel Santika Premiere Dyandra, Medan, pada 24–26 Oktober 2024.
+            Rakornas yang dihadiri ratusan peserta dari perguruan tinggi seluruh Indonesia ini
+            mengusung tema <em>"Accelerating the Research and Education in AI for Improving the
+            National Competitiveness Toward Indonesian Golden Year 2045"</em>. Aulia Rachman
+            menyatakan optimisme bahwa forum ini akan melahirkan inisiasi dan inovasi nyata menuju
+            Indonesia Emas 2045, serta menyampaikan keterbukaan Pemko Medan untuk berkolaborasi
+            dengan perguruan tinggi dalam percepatan pembangunan berbasis digitalisasi. Rangkaian
+            acara meliputi ICIC 2024, SEMNASTIK 2024, klinik pengembangan institusi, dan pameran
+            inovasi teknologi.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Portal Resmi Pemkot Medan</strong></span>
+            </div>
+            <a href="https://portal.medan.go.id/berita/plt-wali-kota-medan-harapkan-rakornas-aptikom-lahirkan-ide-dan-inisiasi-untuk-kebaikan-bangsa__read4737.html"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 6 ─────────────────────────────
+             Sumber: Sumut Pos — MoU AMD Indonesia & APTIKOM
+             Tanggal: 25 Oktober 2024
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal berita-card--featured" data-kategori="kerjasama">
+          <div class="berita-featured-label">🔥 Berita Pilihan</div>
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag kerjasama">Kerjasama</span>
+            <span class="berita-tanggal">25 Oktober 2024</span>
+          </div>
+          <h2 class="berita-judul">
+            AMD Indonesia dan APTIKOM Teken MoU untuk Peningkatan Kualitas Pendidikan Berbasis Teknologi
+          </h2>
+          <p class="berita-ringkasan">
+            Dalam rangkaian Rakornas APTIKOM 2024 di Medan, AMD Indonesia resmi menandatangani Nota
+            Kesepahaman (MoU) dengan APTIKOM Pusat yang diwakili Ketua Umum Prof. Dr.rer.nat. Achmad
+            Benny Mutiara. Perjanjian ini membentuk wadah koordinasi dan pendampingan bersama 70
+            universitas anggota APTIKOM, dengan fokus pada peningkatan kualitas pendidikan tinggi
+            informatika dan komputer melalui pengajaran, penelitian, dan penyediaan SDM. AMD Indonesia
+            berkomitmen mendukung implementasi teknologi AI di kampus-kampus anggota, memperkuat
+            infrastruktur laboratorium komputer, serta membuka peluang pelatihan yang relevan dengan
+            kebutuhan industri bagi mahasiswa dan tenaga pengajar di seluruh Indonesia.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Sumut Pos / Jawa Pos</strong></span>
+            </div>
+            <a href="https://sumutpos.jawapos.com/pendidikan/2410250010/tingkatkan-kualitas-pendidikan-berbasis-teknologi-amd-indonesia-dan-aptikom-teken-mou"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 7 ─────────────────────────────
+             Sumber: fasilkom.upnjatim.ac.id
+             APTIKOM Competition 2025
+             Tanggal: awal 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="akademik">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag akademik">Akademik</span>
+            <span class="berita-tanggal">2025</span>
+          </div>
+          <h2 class="berita-judul">
+            APTIKOM Competition 2025: Ajang Bergengsi Talenta Digital Mahasiswa Indonesia
+          </h2>
+          <p class="berita-ringkasan">
+            APTIKOM kembali menyelenggarakan APTIKOM Competition 2025, sebuah ajang kompetisi
+            nasional bergengsi yang dirancang untuk menggali potensi mahasiswa Indonesia di bidang
+            teknologi, keamanan siber, dan kecerdasan buatan. Tahun ini hadir dengan tiga kategori
+            lomba utama yang mencakup tema Smart Village Tech, Green Technology &amp; Sustainability,
+            Socialpreneur &amp; Disability, serta e-Government Solutions. Kompetisi ini menjadi
+            wadah nyata bagi talenta muda untuk menunjukkan kemampuan inovatif dan berkontribusi
+            pada transformasi digital bangsa menuju Indonesia Emas 2045.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Fasilkom UPN Veteran Jawa Timur</strong></span>
+            </div>
+            <a href="https://fasilkom.upnjatim.ac.id/aptikom-competition-2025-wadah-talenta-muda-menuju-inovasi-digital-bangsa/"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 8 ─────────────────────────────
+             Sumber: fst.uinjkt.ac.id
+             Mahasiswa UIN Jakarta Juara 1 APTIKOM APHacton 2025
+             Tanggal: 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="prestasi">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag prestasi" style="color:#065f46;background:#d1fae5;">Prestasi</span>
+            <span class="berita-tanggal">2025</span>
+          </div>
+          <h2 class="berita-judul">
+            Mahasiswa Teknik Informatika UIN Jakarta Raih Juara 1 di Kompetisi Nasional APTIKOM APHacton 2025
+          </h2>
+          <p class="berita-ringkasan">
+            Mahasiswa Program Studi Teknik Informatika Fakultas Sains dan Teknologi UIN Syarif
+            Hidayatullah Jakarta berhasil meraih prestasi membanggakan dengan menyabet gelar Juara 1
+            dalam Kompetisi Nasional APTIKOM APHacton 2025. Pencapaian ini menjadi bukti nyata
+            kualitas mahasiswa di lingkungan perguruan tinggi anggota APTIKOM dalam menghadapi
+            persaingan inovasi digital di tingkat nasional, sekaligus mempertegas peran APTIKOM
+            sebagai wadah pengembangan kompetensi mahasiswa bidang informatika dan teknologi
+            informasi di seluruh Indonesia.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>FST UIN Jakarta</strong></span>
+            </div>
+            <a href="https://fst.uinjkt.ac.id/id/mahasiswa-teknik-informatika-fst-uin-jakarta-raih-prestasi-juara-1-nasional-di-kompetisi-nasional-aptikom-aphacton-2025"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 9 ─────────────────────────────
+             Sumber: aptikom-journal.id
+             Jurnal APTIKOM
+             Tanggal: 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="akademik">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag akademik">Akademik</span>
+            <span class="berita-tanggal">2025</span>
+          </div>
+          <h2 class="berita-judul">
+            Jurnal APTIKOM Terus Berkembang sebagai Wadah Publikasi Riset Informatika dan Komputer
+          </h2>
+          <p class="berita-ringkasan">
+            Portal jurnal resmi APTIKOM di aptikom-journal.id terus memperkuat peranannya sebagai
+            platform publikasi ilmiah bagi para peneliti, dosen, dan mahasiswa di bidang informatika
+            dan ilmu komputer dari seluruh perguruan tinggi anggota APTIKOM. Jurnal ini menjadi
+            sarana penting dalam mendukung Tri Dharma Perguruan Tinggi, khususnya di bidang
+            penelitian, serta mendorong produktivitas akademik dan diseminasi pengetahuan di
+            lingkungan komunitas teknologi informasi Indonesia.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>APTIKOM Journal</strong></span>
+            </div>
+            <a href="https://aptikom-journal.id/home/index.php/news/"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 10 ────────────────────────────
+             Sumber: saintek.uinsu.ac.id
+             LAM Infokom percayakan FST UINSU sebagai host di Sumut
+             Tanggal: 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="kerjasama">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag kerjasama">Kerjasama</span>
+            <span class="berita-tanggal">2025</span>
+          </div>
+          <h2 class="berita-judul">
+            LAM Infokom Percayakan FST UINSU Jadi Tuan Rumah Kegiatan di Sumatera Utara
+          </h2>
+          <p class="berita-ringkasan">
+            Lembaga Akreditasi Mandiri Informatika dan Komputer (LAM Infokom) mempercayakan Fakultas
+            Sains dan Teknologi (FST) UIN Sumatera Utara (UINSU) sebagai tuan rumah penyelenggaraan
+            kegiatan resmi di wilayah Sumatera Utara. Kepercayaan ini merupakan pengakuan atas
+            kapasitas dan komitmen FST UINSU dalam mendukung penguatan akreditasi program studi di
+            rumpun ilmu informatika dan komputer. Kegiatan ini turut memperkuat sinergi antara
+            APTIKOM Sumut, LAM Infokom, dan perguruan tinggi anggota dalam upaya peningkatan mutu
+            pendidikan teknologi informasi di wilayah Sumatera Utara.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>FST UINSU</strong></span>
+            </div>
+            <a href="https://saintek.uinsu.ac.id/lam-infokom-percayakan-fst-uinsu-menjadi-host-kegiatan-di-sumatera-utara/"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 11 ────────────────────────────
+             Sumber: tif.uad.ac.id — APTIKOM DIY
+             Tanggal: 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="kerjasama">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag kerjasama">Kerjasama</span>
+            <span class="berita-tanggal">2025</span>
+          </div>
+          <h2 class="berita-judul">
+            APTIKOM DIY Perkuat Sinergi Antar Perguruan Tinggi Bidang Informatika di Yogyakarta
+          </h2>
+          <p class="berita-ringkasan">
+            APTIKOM Wilayah Daerah Istimewa Yogyakarta (DIY) terus menunjukkan keaktifannya dalam
+            membangun kolaborasi di antara perguruan tinggi anggota yang berfokus pada bidang
+            informatika, teknologi informasi, dan ilmu komputer. Berbagai program dan agenda
+            bersama yang dijalankan mencerminkan semangat yang sama seperti APTIKOM Sumut dalam
+            mendorong mutu pendidikan dan riset di tingkat regional. Sinergi seperti ini menjadi
+            model kolaborasi yang patut diperluas di seluruh wilayah kerja APTIKOM di Indonesia.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Teknik Informatika UAD</strong></span>
+            </div>
+            <a href="https://tif.uad.ac.id/tag/aptikom-diy/"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 12 ────────────────────────────
+             Sumber: fst.ulb.ac.id — Tag Aptikom
+             Tanggal: 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="akademik">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag akademik">Akademik</span>
+            <span class="berita-tanggal">2025</span>
+          </div>
+          <h2 class="berita-judul">
+            FST Universitas Labuhanbatu Aktif Berkontribusi dalam Kegiatan APTIKOM Sumut
+          </h2>
+          <p class="berita-ringkasan">
+            Fakultas Sains dan Teknologi (FST) Universitas Labuhanbatu (ULB) secara konsisten
+            menunjukkan keterlibatan aktif dalam berbagai program dan kegiatan yang diinisiasi oleh
+            APTIKOM Sumatera Utara. Partisipasi FST ULB mencakup kegiatan seminar, rapat koordinasi
+            wilayah, hingga pengembangan riset bersama, sebagai wujud nyata komitmen perguruan
+            tinggi anggota dalam memperkuat ekosistem pendidikan informatika di provinsi
+            Sumatera Utara.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>FST Universitas Labuhanbatu</strong></span>
+            </div>
+            <a href="https://fst.ulb.ac.id/tag/aptikom/"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 13 ────────────────────────────
+             Sumber: Prodi Ilmu Komputer UINSU — Rakorwil APTIKOM Sumut 2025
+             Tanggal: 29 September 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="seminar">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag seminar">Seminar &amp; Rakor</span>
+            <span class="berita-tanggal">29 September 2025</span>
+          </div>
+          <h2 class="berita-judul">
+            Prodi Ilmu Komputer UINSU Ikut Sukseskan SNIKOM dan Rakorwil APTIKOM Sumut 2025
+          </h2>
+          <p class="berita-ringkasan">
+            Program Studi Ilmu Komputer FST UIN Sumatera Utara (UINSU) turut berperan aktif dalam
+            pelaksanaan Seminar Nasional Ilmu Komputer (SNIKOM) sekaligus Rapat Koordinasi Wilayah
+            (Rakorwil) APTIKOM Sumatera Utara Tahun 2025 yang digelar di Aula Al Huda Universitas
+            Pembangunan Panca Budi Medan, 29 September 2025. Acara ditutup pukul 21.00 WIB dengan
+            optimisme tinggi bahwa APTIKOM Wilayah Sumut akan terus menjadi jantung asosiasi bidang
+            Infokom di Sumatera Utara, serta terus berkontribusi dalam pengembangan dan penguatan
+            Tri Dharma Perguruan Tinggi bidang Informatika dan Komputer.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Prodi Ilmu Komputer FST UINSU</strong></span>
+            </div>
+            <a href="https://ilkomp.uinsu.ac.id/prodi-ilmu-komputer-fst-uinsu-medan-turut-sukseskan-rakorwil-aptikom-wilayah-sumut-tahun-2025/"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 14 ────────────────────────────
+             Sumber: FST ULB — SNIKOM 2025 + Rakor APTIKOM Sumut
+             Tanggal: 1 Oktober 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="seminar">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag seminar">Seminar &amp; Rakor</span>
+            <span class="berita-tanggal">1 Oktober 2025</span>
+          </div>
+          <h2 class="berita-judul">
+            FST Universitas Labuhanbatu Ikuti SNIKOM 2025 dan Rakor APTIKOM Provinsi Sumut
+          </h2>
+          <p class="berita-ringkasan">
+            Fakultas Sains dan Teknologi (FST) Universitas Labuhanbatu (ULB) turut serta dalam dua
+            agenda besar APTIKOM Sumatera Utara, yakni Seminar Nasional Ilmu Komputer (SNIKOM) 2025
+            dan Rapat Koordinasi APTIKOM Provinsi Sumatera Utara Tahun 2025. Keikutsertaan FST ULB
+            mencerminkan komitmen institusi untuk terus aktif berkontribusi dalam pengembangan ilmu
+            komputer dan teknologi informasi di tingkat regional. Selain sebagai ajang berbagi hasil
+            penelitian, kegiatan ini juga menjadi forum koordinasi strategis bagi seluruh perguruan
+            tinggi anggota APTIKOM di wilayah Sumatera Utara.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>FST Universitas Labuhanbatu</strong></span>
+            </div>
+            <a href="https://fst.ulb.ac.id/2025/10/01/fakultas-sains-dan-teknologi-mengikuti-seminar-nasional-ilmu-komputer-snikom-2025-dan-rapat-koordinasi-aptikom-provinsi-sumatera-utara-tahun-2025/"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 15 ────────────────────────────
+             Sumber: UNPRI — Juara II Rakornas APTIKOM 2025
+             Tanggal: 9–11 Oktober 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal berita-card--featured" data-kategori="prestasi">
+          <div class="berita-featured-label">🏆 Berita Pilihan</div>
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag prestasi" style="color:#065f46;background:#d1fae5;">Prestasi</span>
+            <span class="berita-tanggal">9–11 Oktober 2025</span>
+          </div>
+          <h2 class="berita-judul">
+            Universitas Prima Indonesia Raih Juara II Lomba Video Rakornas APTIKOM 2025 Tingkat Nasional
+          </h2>
+          <p class="berita-ringkasan">
+            Universitas Prima Indonesia (UNPRI) Medan kembali menorehkan prestasi membanggakan di
+            tingkat nasional. Dalam ajang Lomba Video Ucapan Rakornas APTIKOM 2025 yang berlangsung
+            di Hotel Novotel Bandar Lampung (9–11 Oktober 2025), UNPRI meraih Juara II dari ratusan
+            perguruan tinggi informatika dan komputer se-Indonesia, dan berhak atas piagam serta
+            hadiah uang tunai Rp 3.000.000. Video UNPRI mendapat pujian dari dewan juri karena
+            dinilai komunikatif, estetis, dan mampu memvisualkan semangat kolaborasi digital
+            nasional di era kecerdasan buatan. Rakornas APTIKOM 2025 sendiri mengangkat tema
+            <em>"Building a Resilient IT Workforce: AI-Driven Cybersecurity for National and Global
+            Challenges"</em>.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Universitas Prima Indonesia</strong></span>
+            </div>
+            <a href="https://unprimdn.ac.id/en/posts/980-kampus-terbaik-dan-unggul-universitas--prima-indonesia-raih-juara-ii-lomba-video-ucapan-rakornas-aptikom-tahun-2025--se-indonesia-cerminkan-inovasi--kreativitas--dan--kolaborasi-di-bidang-teknologi-informasi"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ─── BERITA 16 ────────────────────────────
+             Sumber: sekretariatdprd.sumutprov.go.id
+             Inovasi Digital Keuangan Sumut Raih Penghargaan Nasional
+             Tanggal: 2025
+        ──────────────────────────────────────────── -->
+        <article class="berita-card reveal" data-kategori="prestasi">
+          <div class="berita-card-header">
+            <span class="berita-kategori-tag prestasi" style="color:#065f46;background:#d1fae5;">Prestasi</span>
+            <span class="berita-tanggal">2025</span>
+          </div>
+          <h2 class="berita-judul">
+            Inovasi Digital Keuangan Sumut Berbuah Prestasi: Raih Penghargaan Nasional
+          </h2>
+          <p class="berita-ringkasan">
+            Upaya Pemerintah Provinsi Sumatera Utara dalam mengembangkan inovasi digital di sektor
+            keuangan daerah berhasil mendapatkan pengakuan di tingkat nasional. Penghargaan ini
+            menjadi bukti nyata bahwa transformasi digital yang didukung oleh sinergi antara
+            pemerintah daerah dan institusi pendidikan seperti APTIKOM Sumut telah memberikan
+            dampak positif yang terukur. Pencapaian ini diharapkan mendorong lebih banyak inisiasi
+            digitalisasi di berbagai sektor pemerintahan dan pendidikan di Sumatera Utara.
+          </p>
+          <div class="berita-card-footer">
+            <div class="berita-sumber">
+              <span class="sumber-icon">📰</span>
+              <span>Sumber: <strong>Sekretariat DPRD Sumut</strong></span>
+            </div>
+            <a href="https://sekretariatdprd.sumutprov.go.id/berita-terkini-pemprovsu/11624/inovasi-digital-keuangan-sumut-berbuah-prestasi-raih-penghargaan-nasional"
+               target="_blank" rel="noopener noreferrer"
+               class="berita-readmore">
+              Baca selengkapnya →
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /berita-grid -->
+
+      <!-- Kosong (filter hasil nihil) -->
+      <div class="berita-empty" id="beritaEmpty" style="display:none;">
+        <div class="empty-icon">🔍</div>
+        <p>Tidak ada berita pada kategori ini saat ini.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CTA BANNER — Kirim Berita
+  ═══════════════════════════════════════════════ -->
+  <section class="section-cta-berita">
+    <div class="container">
+      <div class="cta-berita-box">
+        <div class="cta-berita-left">
+          <span class="section-tag">Punya Informasi?</span>
+          <h3 class="cta-berita-title">Kirimkan Berita atau Pengumuman</h3>
+          <p class="cta-berita-desc">
+            Apakah institusi atau program studi Anda memiliki kegiatan atau prestasi yang ingin
+            dibagikan ke seluruh anggota APTIKOM Sumut? Hubungi kami dan kami akan memuat
+            informasinya di halaman ini.
+          </p>
+        </div>
+        <div class="cta-berita-right">
+          <a href="kontak.html" class="btn btn-white">
+            📬 Kirim Informasi
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="img/aptikom.png" alt="Logo APTIKOM Sumut"
+                 onerror="this.style.display='none'" />
+            <div class="footer-logo-text">
+              <span class="footer-logo-main">APTIKOM</span>
+              <span class="footer-logo-sub">Sumatera Utara</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Asosiasi Pendidikan Tinggi Informatika dan Ilmu Komputer Provinsi Sumatera Utara.
+            Berdedikasi memajukan kualitas pendidikan teknologi informasi di Sumut.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link facebook" title="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link twitter" title="Twitter/X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/aptikom.sumut/"
+               class="social-link instagram"
+               title="Instagram"
+               target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@aptikomtv5281"
+               class="social-link youtube"
+               title="YouTube"
+               target="_blank">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" class="social-link linkedin" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Menu Utama</div>
+          <div class="footer-links">
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang APTIKOM</a>
+            <a href="berita.html">Berita &amp; Pengumuman</a>
+            <a href="event.html">Event &amp; Seminar</a>
+            <a href="galeri.html">Galeri Kegiatan</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Layanan</div>
+          <div class="footer-links">
+            <a href="keanggotaan.html">Keanggotaan</a>
+            <a href="elearning.html">E-Learning</a>
+            <a href="lowongan.html">Lowongan Kerja</a>
+            <a href="#">Cek Sertifikat</a>
+            <a href="#">E-Jurnal</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Kontak</div>
+          <div class="footer-contact-item">
+            <span class="icon">📍</span>
+            <span>Jl. Kapten Mukhtar Basri No. 3, Glugur Darat II, Kec. Medan Timur, Kota Medan, Sumatera Utara 20238</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📧</span>
+            <span>admin@aptikom-journal.id</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📞</span>
+            <span>0821-1847-6100</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 APTIKOM Sumatera Utara. Hak Cipta Dilindungi.</span>
+        <span>Dibuat dengan ❤️ untuk kemajuan Informatika Sumut</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SCRIPT
+  ═══════════════════════════════════════════════ -->
+  <script>
+    // ── Navbar scroll shadow ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ── Dropdown hover ──
+    const HIDE_DELAY = 300;
+    document.querySelectorAll('.nav-item').forEach(item => {
+      const menu = item.querySelector('.dropdown-menu');
+      if (!menu) return;
+      let hideTimer = null;
+      const showMenu = () => { clearTimeout(hideTimer); menu.classList.add('is-open'); };
+      const scheduleHide = () => {
+        hideTimer = setTimeout(() => menu.classList.remove('is-open'), HIDE_DELAY);
+      };
+      item.addEventListener('mouseenter', showMenu);
+      item.addEventListener('mouseleave', scheduleHide);
+      menu.addEventListener('mouseenter', showMenu);
+      menu.addEventListener('mouseleave', scheduleHide);
+    });
+
+    // ── Mobile toggle ──
+    const navToggle = document.getElementById('navToggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navbarNav.classList.contains('mobile-open');
+      if (isOpen) {
+        navbarNav.classList.remove('mobile-open');
+        navbarNav.removeAttribute('style');
+      } else {
+        navbarNav.classList.add('mobile-open');
+        Object.assign(navbarNav.style, {
+          display: 'flex', flexDirection: 'column',
+          position: 'absolute', top: '70px', left: '0', right: '0',
+          background: '#fff', padding: '16px 24px',
+          borderBottom: '1px solid #e2e8f0',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.08)', gap: '4px'
+        });
+      }
+    });
+
+    // ── Filter Kategori ──
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards      = document.querySelectorAll('.berita-card');
+    const emptyMsg   = document.getElementById('beritaEmpty');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        let visible = 0;
+
+        cards.forEach(card => {
+          const match = filter === 'semua' || card.dataset.kategori === filter;
+          card.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+
+        emptyMsg.style.display = visible === 0 ? 'flex' : 'none';
+      });
+    });
+
+    // ── Scroll Reveal ──
+    const reveals  = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.10 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

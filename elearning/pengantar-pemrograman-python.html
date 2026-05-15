@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pengantar Pemrograman Python — E-Learning APTIKOM Sumatera Utara. Pelajari dasar Python: sintaks, tipe data, kontrol alur, dan fungsi." />
+  <title>Pengantar Pemrograman Python — E-Learning APTIKOM Sumut</title>
+
+  <link rel="stylesheet" href="../css/style_global.css" />
+  <link rel="stylesheet" href="css/style_pengantar-pemrograman-python.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+
+      <a href="../index.html" class="navbar-logo">
+        <img src="../img/aptikom.png" alt="Logo APTIKOM Sumut"
+             onerror="this.style.display='none'" />
+        <div class="navbar-logo-text">
+          <span class="logo-main">APTIKOM</span>
+          <span class="logo-sub">Sumatera Utara</span>
+        </div>
+      </a>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="../index.html" class="nav-link">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a href="../tentang.html" class="nav-link">Tentang ▾</a>
+          <div class="dropdown-menu">
+            <a href="../tentang.html#sejarah">Sejarah</a>
+            <a href="../tentang.html#visi-misi">Visi &amp; Misi</a>
+            <a href="../tentang.html#struktur">Struktur Organisasi</a>
+            <a href="../tentang.html#ad-art">AD &amp; ART</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="../keanggotaan.html" class="nav-link">Keanggotaan ▾</a>
+          <div class="dropdown-menu">
+            <a href="../keanggotaan.html#cara-daftar">Cara Pendaftaran</a>
+            <a href="../keanggotaan.html#daftar">Daftar Sekarang</a>
+            <a href="../keanggotaan.html#anggota">Data Anggota</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="../berita.html" class="nav-link">Berita</a>
+        </li>
+        <li class="nav-item">
+          <a href="../event.html" class="nav-link">Event ▾</a>
+          <div class="dropdown-menu">
+            <a href="../event.html#seminar">Seminar</a>
+            <a href="../event.html#workshop">Workshop</a>
+            <a href="../galeri.html">Arsip Kegiatan</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="../lowongan.html" class="nav-link">Lowongan</a>
+        </li>
+      </ul>
+
+      <div class="navbar-cta">
+        <a href="../elearning.html" class="btn btn-outline active-cta"
+           style="padding:8px 18px; font-size:0.84rem;">E-Learning</a>
+        <a href="../kontak.html" class="btn btn-primary"
+           style="padding:8px 18px; font-size:0.84rem;">Kontak Kami</a>
+      </div>
+
+      <div class="navbar-toggle" id="navToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════
+       HERO / COURSE HEADER
+  ══════════════════════════════════════ -->
+  <div class="py-hero">
+    <div class="py-hero-bg"></div>
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="py-breadcrumb">
+        <a href="../elearning.html"><i class="fa-solid fa-house-blank"></i> E-Learning</a>
+        <span class="py-bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <a href="../elearning.html?filter=pemrograman">Pemrograman</a>
+        <span class="py-bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <span>Pengantar Python</span>
+      </nav>
+
+      <div class="py-hero-grid">
+        <!-- Kiri: Info kursus -->
+        <div class="py-hero-info">
+          <span class="section-tag">Pemrograman</span>
+          <h1 class="py-hero-title">Pengantar Pemrograman <span>Python</span></h1>
+          <p class="py-hero-desc">
+            Kuasai fondasi pemrograman dengan Python — bahasa yang simpel, powerful, dan paling banyak digunakan di dunia. Dari sintaks dasar hingga fungsi, semua dikemas secara ringkas dan aplikatif.
+          </p>
+
+          <!-- Meta badges -->
+          <div class="py-meta-row">
+            <span class="py-meta-badge">
+              <i class="fa-regular fa-clock"></i> 45 Menit
+            </span>
+            <span class="py-meta-badge">
+              <i class="fa-solid fa-signal"></i> Pemula
+            </span>
+            <span class="py-meta-badge">
+              <i class="fa-regular fa-user"></i> Tim APTIKOM
+            </span>
+            <span class="py-meta-badge">
+              <i class="fa-solid fa-globe"></i> Bahasa Indonesia
+            </span>
+          </div>
+
+          <!-- Progress -->
+          <div class="py-progress-wrap">
+            <div class="py-progress-label">
+              <span>Progress belajar</span>
+              <span id="progressPct">0%</span>
+            </div>
+            <div class="py-progress-bar">
+              <div class="py-progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+
+          <div class="py-hero-actions">
+            <a href="#materi" class="btn btn-primary py-start-btn" id="startBtn">
+              <i class="fa-solid fa-play"></i> Mulai Belajar
+            </a>
+            <button class="btn btn-outline py-bookmark-btn" id="bookmarkBtn">
+              <i class="fa-regular fa-bookmark"></i> Simpan
+            </button>
+          </div>
+        </div>
+
+        <!-- Kanan: Ilustrasi -->
+        <div class="py-hero-visual">
+          <div class="py-code-card">
+            <div class="py-code-card-header">
+              <span class="py-dot red"></span>
+              <span class="py-dot yellow"></span>
+              <span class="py-dot green"></span>
+              <span class="py-code-filename">hello.py</span>
+            </div>
+            <pre class="py-code-block"><code><span class="c-kw">def</span> <span class="c-fn">sapa</span>(nama):
+    pesan = <span class="c-str">f"Halo, {nama}! 👋"</span>
+    <span class="c-kw">return</span> pesan
+
+<span class="c-cmt"># Memanggil fungsi</span>
+mahasiswa = [<span class="c-str">"Andi"</span>, <span class="c-str">"Budi"</span>, <span class="c-str">"Citra"</span>]
+<span class="c-kw">for</span> nama <span class="c-kw">in</span> mahasiswa:
+    <span class="c-fn">print</span>(sapa(nama))</code></pre>
+            <div class="py-code-output">
+              <span class="py-output-label">Output</span>
+              <span>Halo, Andi! 👋</span>
+              <span>Halo, Budi! 👋</span>
+              <span>Halo, Citra! 👋</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       SIDEBAR + KONTEN UTAMA
+  ══════════════════════════════════════ -->
+  <div class="py-layout" id="materi">
+    <div class="container py-layout-inner">
+
+      <!-- ── SIDEBAR Daftar Topik ── -->
+      <aside class="py-sidebar" id="sidebar">
+        <div class="py-sidebar-header">
+          <i class="fa-solid fa-list-ul"></i> Daftar Topik
+        </div>
+        <nav class="py-topic-nav">
+          <a href="#topik-1" class="py-topic-link active" data-section="topik-1">
+            <span class="py-topic-num">01</span>
+            <span class="py-topic-title">Apa itu Python?</span>
+            <i class="fa-solid fa-circle-check py-topic-check" style="display:none"></i>
+          </a>
+          <a href="#topik-2" class="py-topic-link" data-section="topik-2">
+            <span class="py-topic-num">02</span>
+            <span class="py-topic-title">Sintaks Dasar</span>
+            <i class="fa-solid fa-circle-check py-topic-check" style="display:none"></i>
+          </a>
+          <a href="#topik-3" class="py-topic-link" data-section="topik-3">
+            <span class="py-topic-num">03</span>
+            <span class="py-topic-title">Tipe Data &amp; Variabel</span>
+            <i class="fa-solid fa-circle-check py-topic-check" style="display:none"></i>
+          </a>
+          <a href="#topik-4" class="py-topic-link" data-section="topik-4">
+            <span class="py-topic-num">04</span>
+            <span class="py-topic-title">Kontrol Alur</span>
+            <i class="fa-solid fa-circle-check py-topic-check" style="display:none"></i>
+          </a>
+          <a href="#topik-5" class="py-topic-link" data-section="topik-5">
+            <span class="py-topic-num">05</span>
+            <span class="py-topic-title">Fungsi (Function)</span>
+            <i class="fa-solid fa-circle-check py-topic-check" style="display:none"></i>
+          </a>
+          <a href="#topik-6" class="py-topic-link" data-section="topik-6">
+            <span class="py-topic-num">06</span>
+            <span class="py-topic-title">Latihan Soal</span>
+            <i class="fa-solid fa-circle-check py-topic-check" style="display:none"></i>
+          </a>
+        </nav>
+
+        <div class="py-sidebar-info">
+          <div class="py-sinfo-item">
+            <i class="fa-regular fa-clock"></i>
+            <span>Estimasi: <strong>45 menit</strong></span>
+          </div>
+          <div class="py-sinfo-item">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>6 Topik</span>
+          </div>
+          <div class="py-sinfo-item">
+            <i class="fa-solid fa-certificate"></i>
+            <span>Sertifikat tersedia</span>
+          </div>
+        </div>
+
+        <a href="../elearning.html" class="py-back-link">
+          <i class="fa-solid fa-arrow-left"></i> Kembali ke E-Learning
+        </a>
+      </aside>
+
+
+      <!-- ── KONTEN MATERI ── -->
+      <main class="py-content">
+
+        <!-- ─────── TOPIK 1 ─────── -->
+        <section class="py-section" id="topik-1">
+          <div class="py-section-header">
+            <span class="py-section-num">01</span>
+            <div>
+              <h2 class="py-section-title">Apa itu Python?</h2>
+              <p class="py-section-sub">Kenali bahasa pemrograman yang mengubah industri teknologi dunia</p>
+            </div>
+          </div>
+
+          <div class="py-section-body">
+            <p>
+              <strong>Python</strong> adalah bahasa pemrograman tingkat tinggi yang diciptakan oleh <em>Guido van Rossum</em> dan pertama kali dirilis pada tahun 1991. Python dirancang dengan filosofi utama: kode harus mudah dibaca dan ditulis, hampir seperti membaca bahasa Inggris biasa.
+            </p>
+
+            <div class="py-infobox">
+              <div class="py-infobox-icon">💡</div>
+              <div>
+                <strong>Mengapa Python?</strong>
+                <p>Pada 2024, Python menempati posisi #1 dalam indeks popularitas bahasa pemrograman TIOBE — mengalahkan Java dan C. Python digunakan di hampir semua bidang: web, data science, AI, otomasi, hingga riset ilmiah.</p>
+              </div>
+            </div>
+
+            <h3>Keunggulan Python</h3>
+            <div class="py-feature-grid">
+              <div class="py-feature-card">
+                <span class="py-feature-icon">📖</span>
+                <h4>Mudah Dibaca</h4>
+                <p>Sintaks Python bersih dan minimalis. Tidak ada tanda kurung kurawal atau titik koma yang membebani seperti di bahasa lain.</p>
+              </div>
+              <div class="py-feature-card">
+                <span class="py-feature-icon">🚀</span>
+                <h4>Cepat Dikembangkan</h4>
+                <p>Kode Python biasanya 3–5× lebih pendek dibanding Java atau C++, sehingga produktivitas pengembang meningkat drastis.</p>
+              </div>
+              <div class="py-feature-card">
+                <span class="py-feature-icon">📦</span>
+                <h4>Ekosistem Luas</h4>
+                <p>Lebih dari 450.000 paket tersedia di PyPI — dari web framework hingga library machine learning seperti TensorFlow dan scikit-learn.</p>
+              </div>
+              <div class="py-feature-card">
+                <span class="py-feature-icon">🌐</span>
+                <h4>Multi-Platform</h4>
+                <p>Jalankan kode Python yang sama di Windows, macOS, maupun Linux tanpa perubahan apapun.</p>
+              </div>
+            </div>
+
+            <h3>Python Digunakan di Mana?</h3>
+            <ul class="py-list">
+              <li><i class="fa-solid fa-check"></i> <strong>Web Development</strong> — Django, Flask, FastAPI</li>
+              <li><i class="fa-solid fa-check"></i> <strong>Data Science &amp; Analitik</strong> — Pandas, NumPy, Matplotlib</li>
+              <li><i class="fa-solid fa-check"></i> <strong>Kecerdasan Buatan &amp; ML</strong> — TensorFlow, PyTorch, scikit-learn</li>
+              <li><i class="fa-solid fa-check"></i> <strong>Otomasi &amp; Scripting</strong> — automasi tugas berulang, bot</li>
+              <li><i class="fa-solid fa-check"></i> <strong>Keamanan Siber</strong> — penetration testing, forensik digital</li>
+              <li><i class="fa-solid fa-check"></i> <strong>Riset Ilmiah</strong> — komputasi numerik, simulasi</li>
+            </ul>
+          </div>
+
+          <div class="py-section-done">
+            <button class="py-done-btn" data-section="topik-1">
+              <i class="fa-solid fa-check"></i> Tandai Selesai
+            </button>
+          </div>
+        </section>
+
+
+        <!-- ─────── TOPIK 2 ─────── -->
+        <section class="py-section" id="topik-2">
+          <div class="py-section-header">
+            <span class="py-section-num">02</span>
+            <div>
+              <h2 class="py-section-title">Sintaks Dasar Python</h2>
+              <p class="py-section-sub">Blok bangunan pertama yang harus kamu kuasai</p>
+            </div>
+          </div>
+
+          <div class="py-section-body">
+            <p>
+              Berbeda dengan bahasa seperti Java atau C++, Python tidak menggunakan tanda kurung kurawal <code>{}</code> untuk menentukan blok kode. Sebagai gantinya, Python menggunakan <strong>indentasi</strong> (spasi/tab) yang konsisten.
+            </p>
+
+            <h3>Hello, World!</h3>
+            <p>Program pertama yang selalu ditulis saat belajar bahasa baru:</p>
+
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-helloworld">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-helloworld"><code><span class="c-cmt"># Ini adalah komentar — diabaikan oleh Python</span>
+<span class="c-fn">print</span>(<span class="c-str">"Hello, World!"</span>)
+<span class="c-fn">print</span>(<span class="c-str">"Selamat datang di Python!"</span>)</code></pre>
+            </div>
+
+            <h3>Komentar</h3>
+            <p>Komentar diawali dengan tanda <code>#</code> dan tidak akan dieksekusi:</p>
+
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-komentar">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-komentar"><code><span class="c-cmt"># Komentar satu baris</span>
+
+<span class="c-str">"""
+Ini adalah komentar
+multi-baris menggunakan
+triple quotes
+"""</span>
+
+nama = <span class="c-str">"APTIKOM"</span>  <span class="c-cmt"># komentar di akhir baris juga bisa</span></code></pre>
+            </div>
+
+            <h3>Input dari Pengguna</h3>
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-input">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-input"><code>nama = <span class="c-fn">input</span>(<span class="c-str">"Masukkan namamu: "</span>)
+<span class="c-fn">print</span>(<span class="c-str">f"Halo, {nama}! Selamat belajar Python."</span>)</code></pre>
+            </div>
+
+            <div class="py-tipbox">
+              <div class="py-tipbox-label"><i class="fa-solid fa-lightbulb"></i> Tips</div>
+              <p>Gunakan <strong>f-string</strong> (format string) seperti <code>f"Halo, {nama}"</code> untuk menyisipkan nilai variabel ke dalam teks. Ini cara modern dan paling direkomendasikan di Python 3.6+.</p>
+            </div>
+          </div>
+
+          <div class="py-section-done">
+            <button class="py-done-btn" data-section="topik-2">
+              <i class="fa-solid fa-check"></i> Tandai Selesai
+            </button>
+          </div>
+        </section>
+
+
+        <!-- ─────── TOPIK 3 ─────── -->
+        <section class="py-section" id="topik-3">
+          <div class="py-section-header">
+            <span class="py-section-num">03</span>
+            <div>
+              <h2 class="py-section-title">Tipe Data &amp; Variabel</h2>
+              <p class="py-section-sub">Cara Python menyimpan dan mengolah informasi</p>
+            </div>
+          </div>
+
+          <div class="py-section-body">
+            <p>
+              Variabel di Python bersifat <strong>dinamis</strong> — kamu tidak perlu mendeklarasikan tipe data secara eksplisit. Python akan secara otomatis mendeteksi tipe berdasarkan nilai yang diberikan.
+            </p>
+
+            <h3>Tipe Data Utama</h3>
+            <div class="py-table-wrap">
+              <table class="py-table">
+                <thead>
+                  <tr>
+                    <th>Tipe</th>
+                    <th>Nama</th>
+                    <th>Contoh</th>
+                    <th>Deskripsi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>int</code></td>
+                    <td>Integer</td>
+                    <td><code>42, -7, 0</code></td>
+                    <td>Bilangan bulat</td>
+                  </tr>
+                  <tr>
+                    <td><code>float</code></td>
+                    <td>Float</td>
+                    <td><code>3.14, -0.5</code></td>
+                    <td>Bilangan desimal</td>
+                  </tr>
+                  <tr>
+                    <td><code>str</code></td>
+                    <td>String</td>
+                    <td><code>"Python"</code></td>
+                    <td>Teks/karakter</td>
+                  </tr>
+                  <tr>
+                    <td><code>bool</code></td>
+                    <td>Boolean</td>
+                    <td><code>True, False</code></td>
+                    <td>Nilai logika</td>
+                  </tr>
+                  <tr>
+                    <td><code>list</code></td>
+                    <td>List</td>
+                    <td><code>[1, 2, 3]</code></td>
+                    <td>Kumpulan data terurut</td>
+                  </tr>
+                  <tr>
+                    <td><code>dict</code></td>
+                    <td>Dictionary</td>
+                    <td><code>{"key": "val"}</code></td>
+                    <td>Pasangan kunci-nilai</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Contoh Deklarasi Variabel</h3>
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-variabel">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-variabel"><code><span class="c-cmt"># Bilangan</span>
+umur = <span class="c-num">20</span>
+ipk  = <span class="c-num">3.75</span>
+
+<span class="c-cmt"># Teks</span>
+nama      = <span class="c-str">"Andi Pratama"</span>
+universitas = <span class="c-str">'USU Medan'</span>
+
+<span class="c-cmt"># Boolean</span>
+aktif  = <span class="c-kw">True</span>
+lulus  = <span class="c-kw">False</span>
+
+<span class="c-cmt"># List (seperti array)</span>
+mata_kuliah = [<span class="c-str">"Algoritma"</span>, <span class="c-str">"Basis Data"</span>, <span class="c-str">"Jaringan"</span>]
+
+<span class="c-cmt"># Dictionary (key-value)</span>
+mahasiswa = {
+    <span class="c-str">"nama"</span>: <span class="c-str">"Andi"</span>,
+    <span class="c-str">"nim"</span>:  <span class="c-str">"21010001"</span>,
+    <span class="c-str">"ipk"</span>:  <span class="c-num">3.75</span>
+}
+
+<span class="c-cmt"># Cek tipe data</span>
+<span class="c-fn">print</span>(<span class="c-fn">type</span>(umur))       <span class="c-cmt"># &lt;class 'int'&gt;</span>
+<span class="c-fn">print</span>(<span class="c-fn">type</span>(nama))        <span class="c-cmt"># &lt;class 'str'&gt;</span></code></pre>
+            </div>
+
+            <h3>Operasi pada String</h3>
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-string-ops">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-string-ops"><code>teks = <span class="c-str">"Belajar Python di APTIKOM"</span>
+
+<span class="c-fn">print</span>(teks.<span class="c-fn">upper</span>())      <span class="c-cmt"># BELAJAR PYTHON DI APTIKOM</span>
+<span class="c-fn">print</span>(teks.<span class="c-fn">lower</span>())      <span class="c-cmt"># belajar python di aptikom</span>
+<span class="c-fn">print</span>(teks.<span class="c-fn">split</span>())      <span class="c-cmt"># ['Belajar', 'Python', 'di', 'APTIKOM']</span>
+<span class="c-fn">print</span>(<span class="c-fn">len</span>(teks))          <span class="c-cmt"># 25 (jumlah karakter)</span>
+<span class="c-fn">print</span>(teks[<span class="c-num">8</span>:<span class="c-num">14</span>])         <span class="c-cmt"># Python (slicing)</span></code></pre>
+            </div>
+          </div>
+
+          <div class="py-section-done">
+            <button class="py-done-btn" data-section="topik-3">
+              <i class="fa-solid fa-check"></i> Tandai Selesai
+            </button>
+          </div>
+        </section>
+
+
+        <!-- ─────── TOPIK 4 ─────── -->
+        <section class="py-section" id="topik-4">
+          <div class="py-section-header">
+            <span class="py-section-num">04</span>
+            <div>
+              <h2 class="py-section-title">Kontrol Alur</h2>
+              <p class="py-section-sub">Buat program yang bisa mengambil keputusan dan mengulang tugas</p>
+            </div>
+          </div>
+
+          <div class="py-section-body">
+            <h3>Percabangan — if / elif / else</h3>
+            <p>Digunakan untuk mengeksekusi blok kode tertentu berdasarkan kondisi:</p>
+
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-if">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-if"><code>nilai = <span class="c-num">78</span>
+
+<span class="c-kw">if</span> nilai >= <span class="c-num">90</span>:
+    <span class="c-fn">print</span>(<span class="c-str">"Grade A — Sangat Baik"</span>)
+<span class="c-kw">elif</span> nilai >= <span class="c-num">80</span>:
+    <span class="c-fn">print</span>(<span class="c-str">"Grade B — Baik"</span>)
+<span class="c-kw">elif</span> nilai >= <span class="c-num">70</span>:
+    <span class="c-fn">print</span>(<span class="c-str">"Grade C — Cukup"</span>)
+<span class="c-kw">else</span>:
+    <span class="c-fn">print</span>(<span class="c-str">"Grade D — Perlu Perbaikan"</span>)
+
+<span class="c-cmt"># Output: Grade C — Cukup</span></code></pre>
+            </div>
+
+            <h3>Perulangan — for Loop</h3>
+            <p>Iterasi atas urutan data seperti list, string, atau range:</p>
+
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-for">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-for"><code><span class="c-cmt"># Iterasi atas list</span>
+buah = [<span class="c-str">"apel"</span>, <span class="c-str">"mangga"</span>, <span class="c-str">"jeruk"</span>]
+<span class="c-kw">for</span> item <span class="c-kw">in</span> buah:
+    <span class="c-fn">print</span>(<span class="c-str">f"Saya suka {item}"</span>)
+
+<span class="c-cmt"># Iterasi angka 1–5</span>
+<span class="c-kw">for</span> i <span class="c-kw">in</span> <span class="c-fn">range</span>(<span class="c-num">1</span>, <span class="c-num">6</span>):
+    <span class="c-fn">print</span>(<span class="c-str">f"Angka ke-{i}: {i * i}"</span>)  <span class="c-cmt"># cetak kuadrat</span></code></pre>
+            </div>
+
+            <h3>Perulangan — while Loop</h3>
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-while">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-while"><code>hitung = <span class="c-num">1</span>
+
+<span class="c-kw">while</span> hitung <= <span class="c-num">5</span>:
+    <span class="c-fn">print</span>(<span class="c-str">f"Hitungan: {hitung}"</span>)
+    hitung += <span class="c-num">1</span>  <span class="c-cmt"># jangan lupa update, atau infinite loop!</span>
+
+<span class="c-fn">print</span>(<span class="c-str">"Selesai!"</span>)</code></pre>
+            </div>
+
+            <div class="py-warnbox">
+              <div class="py-warnbox-label"><i class="fa-solid fa-triangle-exclamation"></i> Perhatian</div>
+              <p>Pastikan kondisi <code>while</code> akan menjadi <code>False</code> pada suatu titik. Jika tidak, program akan berjalan terus tanpa henti (<em>infinite loop</em>) dan perlu dihentikan secara paksa dengan <kbd>Ctrl+C</kbd>.</p>
+            </div>
+
+            <h3>break dan continue</h3>
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-break">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-break"><code><span class="c-kw">for</span> i <span class="c-kw">in</span> <span class="c-fn">range</span>(<span class="c-num">10</span>):
+    <span class="c-kw">if</span> i == <span class="c-num">5</span>:
+        <span class="c-kw">break</span>       <span class="c-cmt"># keluar dari loop saat i=5</span>
+    <span class="c-kw">if</span> i % <span class="c-num">2</span> == <span class="c-num">0</span>:
+        <span class="c-kw">continue</span>    <span class="c-cmt"># lewati iterasi ini (angka genap)</span>
+    <span class="c-fn">print</span>(i)        <span class="c-cmt"># hanya cetak 1, 3</span></code></pre>
+            </div>
+          </div>
+
+          <div class="py-section-done">
+            <button class="py-done-btn" data-section="topik-4">
+              <i class="fa-solid fa-check"></i> Tandai Selesai
+            </button>
+          </div>
+        </section>
+
+
+        <!-- ─────── TOPIK 5 ─────── -->
+        <section class="py-section" id="topik-5">
+          <div class="py-section-header">
+            <span class="py-section-num">05</span>
+            <div>
+              <h2 class="py-section-title">Fungsi (Function)</h2>
+              <p class="py-section-sub">Kemas logika menjadi blok kode yang bisa dipakai ulang</p>
+            </div>
+          </div>
+
+          <div class="py-section-body">
+            <p>
+              Fungsi adalah blok kode yang diberi nama dan dapat dipanggil berkali-kali. Ini adalah prinsip <strong>DRY</strong> — <em>Don't Repeat Yourself</em>. Daripada menulis kode yang sama di banyak tempat, cukup buat fungsi dan panggil saat dibutuhkan.
+            </p>
+
+            <h3>Mendefinisikan &amp; Memanggil Fungsi</h3>
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-fungsi">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-fungsi"><code><span class="c-cmt"># Mendefinisikan fungsi</span>
+<span class="c-kw">def</span> <span class="c-fn">luas_persegi_panjang</span>(panjang, lebar):
+    luas = panjang * lebar
+    <span class="c-kw">return</span> luas
+
+<span class="c-cmt"># Memanggil fungsi</span>
+hasil = <span class="c-fn">luas_persegi_panjang</span>(<span class="c-num">10</span>, <span class="c-num">5</span>)
+<span class="c-fn">print</span>(<span class="c-str">f"Luas: {hasil} cm²"</span>)   <span class="c-cmt"># Luas: 50 cm²</span>
+
+<span class="c-cmt"># Fungsi tanpa return (prosedur)</span>
+<span class="c-kw">def</span> <span class="c-fn">sapa_mahasiswa</span>(nama, prodi):
+    <span class="c-fn">print</span>(<span class="c-str">f"Halo {nama} dari prodi {prodi}!"</span>)
+
+<span class="c-fn">sapa_mahasiswa</span>(<span class="c-str">"Budi"</span>, <span class="c-str">"Informatika"</span>)</code></pre>
+            </div>
+
+            <h3>Parameter Default</h3>
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-default">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-default"><code><span class="c-kw">def</span> <span class="c-fn">buat_profil</span>(nama, kota=<span class="c-str">"Medan"</span>, role=<span class="c-str">"Mahasiswa"</span>):
+    <span class="c-fn">print</span>(<span class="c-str">f"{nama} | {kota} | {role}"</span>)
+
+<span class="c-fn">buat_profil</span>(<span class="c-str">"Citra"</span>)
+<span class="c-cmt"># Output: Citra | Medan | Mahasiswa</span>
+
+<span class="c-fn">buat_profil</span>(<span class="c-str">"Dimas"</span>, <span class="c-str">"Jakarta"</span>, <span class="c-str">"Dosen"</span>)
+<span class="c-cmt"># Output: Dimas | Jakarta | Dosen</span></code></pre>
+            </div>
+
+            <h3>Lambda — Fungsi Anonim</h3>
+            <div class="py-code-wrap">
+              <div class="py-code-topbar">
+                <span class="py-code-lang">Python</span>
+                <button class="py-copy-btn" data-target="code-lambda">
+                  <i class="fa-regular fa-copy"></i> Salin
+                </button>
+              </div>
+              <pre class="py-code" id="code-lambda"><code><span class="c-cmt"># Lambda: fungsi singkat satu baris</span>
+kuadrat = <span class="c-kw">lambda</span> x: x ** <span class="c-num">2</span>
+<span class="c-fn">print</span>(kuadrat(<span class="c-num">7</span>))   <span class="c-cmt"># 49</span>
+
+<span class="c-cmt"># Lambda di dalam sorted()</span>
+mahasiswa = [
+    {<span class="c-str">"nama"</span>: <span class="c-str">"Andi"</span>, <span class="c-str">"ipk"</span>: <span class="c-num">3.5</span>},
+    {<span class="c-str">"nama"</span>: <span class="c-str">"Budi"</span>, <span class="c-str">"ipk"</span>: <span class="c-num">3.8</span>},
+    {<span class="c-str">"nama"</span>: <span class="c-str">"Citra"</span>, <span class="c-str">"ipk"</span>: <span class="c-num">3.2</span>},
+]
+urut = <span class="c-fn">sorted</span>(mahasiswa, key=<span class="c-kw">lambda</span> m: m[<span class="c-str">"ipk"</span>], reverse=<span class="c-kw">True</span>)
+<span class="c-fn">print</span>(urut[<span class="c-num">0</span>][<span class="c-str">"nama"</span>])  <span class="c-cmt"># Budi (IPK tertinggi)</span></code></pre>
+            </div>
+          </div>
+
+          <div class="py-section-done">
+            <button class="py-done-btn" data-section="topik-5">
+              <i class="fa-solid fa-check"></i> Tandai Selesai
+            </button>
+          </div>
+        </section>
+
+
+        <!-- ─────── TOPIK 6 ─────── -->
+        <section class="py-section" id="topik-6">
+          <div class="py-section-header">
+            <span class="py-section-num">06</span>
+            <div>
+              <h2 class="py-section-title">Latihan Soal</h2>
+              <p class="py-section-sub">Uji pemahamanmu sebelum melanjutkan ke materi berikutnya</p>
+            </div>
+          </div>
+
+          <div class="py-section-body">
+            <p>Kerjakan latihan berikut untuk menguatkan pemahaman. Semua soal bisa diselesaikan dengan materi yang sudah dipelajari.</p>
+
+            <div class="py-quiz" id="quiz">
+
+              <!-- Soal 1 -->
+              <div class="py-quiz-item" id="q1">
+                <div class="py-quiz-num">Soal 1 dari 4</div>
+                <p class="py-quiz-question">Apa output dari kode berikut?</p>
+                <div class="py-code-wrap" style="margin:12px 0;">
+                  <pre class="py-code"><code>x = <span class="c-num">5</span>
+y = <span class="c-num">3</span>
+<span class="c-fn">print</span>(x ** y)</code></pre>
+                </div>
+                <div class="py-quiz-options">
+                  <button class="py-quiz-opt" data-q="1" data-val="a">A. 15</button>
+                  <button class="py-quiz-opt" data-q="1" data-val="b">B. 125</button>
+                  <button class="py-quiz-opt" data-q="1" data-val="c">C. 8</button>
+                  <button class="py-quiz-opt" data-q="1" data-val="d">D. 53</button>
+                </div>
+                <div class="py-quiz-feedback" id="fb-1" style="display:none;"></div>
+              </div>
+
+              <!-- Soal 2 -->
+              <div class="py-quiz-item" id="q2" style="display:none;">
+                <div class="py-quiz-num">Soal 2 dari 4</div>
+                <p class="py-quiz-question">Kata kunci apa yang digunakan untuk mendefinisikan fungsi di Python?</p>
+                <div class="py-quiz-options">
+                  <button class="py-quiz-opt" data-q="2" data-val="a">A. function</button>
+                  <button class="py-quiz-opt" data-q="2" data-val="b">B. func</button>
+                  <button class="py-quiz-opt" data-q="2" data-val="c">C. def</button>
+                  <button class="py-quiz-opt" data-q="2" data-val="d">D. define</button>
+                </div>
+                <div class="py-quiz-feedback" id="fb-2" style="display:none;"></div>
+              </div>
+
+              <!-- Soal 3 -->
+              <div class="py-quiz-item" id="q3" style="display:none;">
+                <div class="py-quiz-num">Soal 3 dari 4</div>
+                <p class="py-quiz-question">Berapa panjang list berikut? <code>data = [10, 20, 30, 40, 50]</code></p>
+                <div class="py-quiz-options">
+                  <button class="py-quiz-opt" data-q="3" data-val="a">A. 4</button>
+                  <button class="py-quiz-opt" data-q="3" data-val="b">B. 5</button>
+                  <button class="py-quiz-opt" data-q="3" data-val="c">C. 50</button>
+                  <button class="py-quiz-opt" data-q="3" data-val="d">D. 6</button>
+                </div>
+                <div class="py-quiz-feedback" id="fb-3" style="display:none;"></div>
+              </div>
+
+              <!-- Soal 4 -->
+              <div class="py-quiz-item" id="q4" style="display:none;">
+                <div class="py-quiz-num">Soal 4 dari 4</div>
+                <p class="py-quiz-question">Apa fungsi dari <code>break</code> di dalam perulangan?</p>
+                <div class="py-quiz-options">
+                  <button class="py-quiz-opt" data-q="4" data-val="a">A. Melewati iterasi saat ini dan lanjut ke iterasi berikutnya</button>
+                  <button class="py-quiz-opt" data-q="4" data-val="b">B. Menghentikan perulangan sepenuhnya</button>
+                  <button class="py-quiz-opt" data-q="4" data-val="c">C. Mengulang dari awal loop</button>
+                  <button class="py-quiz-opt" data-q="4" data-val="d">D. Menghapus elemen dari list</button>
+                </div>
+                <div class="py-quiz-feedback" id="fb-4" style="display:none;"></div>
+              </div>
+
+              <!-- Hasil -->
+              <div class="py-quiz-result" id="quizResult" style="display:none;"></div>
+
+            </div><!-- /quiz -->
+
+            <!-- Tantangan koding -->
+            <div class="py-challenge">
+              <h3><i class="fa-solid fa-code"></i> Tantangan Koding</h3>
+              <p>Tuliskan sebuah fungsi Python bernama <code>hitung_rata</code> yang menerima sebuah list angka dan mengembalikan nilai rata-ratanya. Uji dengan list <code>[80, 90, 75, 85, 95]</code>.</p>
+              <details class="py-challenge-hint">
+                <summary>Lihat Petunjuk</summary>
+                <div class="py-code-wrap" style="margin-top:12px;">
+                  <pre class="py-code"><code><span class="c-kw">def</span> <span class="c-fn">hitung_rata</span>(angka):
+    total = <span class="c-fn">sum</span>(angka)
+    rata  = total / <span class="c-fn">len</span>(angka)
+    <span class="c-kw">return</span> rata
+
+nilai = [<span class="c-num">80</span>, <span class="c-num">90</span>, <span class="c-num">75</span>, <span class="c-num">85</span>, <span class="c-num">95</span>]
+<span class="c-fn">print</span>(<span class="c-str">f"Rata-rata: {<span class="c-fn">hitung_rata</span>(nilai)}"</span>)  <span class="c-cmt"># 85.0</span></code></pre>
+                </div>
+              </details>
+            </div>
+
+          </div>
+
+          <div class="py-section-done">
+            <button class="py-done-btn" data-section="topik-6">
+              <i class="fa-solid fa-check"></i> Tandai Selesai
+            </button>
+          </div>
+        </section>
+
+
+        <!-- ─────── SELESAI / NEXT STEPS ─────── -->
+        <div class="py-finish-card" id="finishCard" style="display:none;">
+          <div class="py-finish-icon">🎉</div>
+          <h2>Selamat! Kamu telah menyelesaikan modul ini.</h2>
+          <p>Kamu sekarang menguasai dasar-dasar Python. Lanjutkan perjalananmu dengan materi berikutnya!</p>
+          <div class="py-finish-actions">
+            <a href="../elearning.html" class="btn btn-outline">
+              <i class="fa-solid fa-arrow-left"></i> Kembali ke E-Learning
+            </a>
+            <a href="basis-data-sql.html" class="btn btn-primary">
+              Materi Berikutnya <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Nav bawah: prev/next -->
+        <div class="py-nav-bottom">
+          <button class="btn btn-outline" id="prevTopicBtn" disabled>
+            <i class="fa-solid fa-arrow-left"></i> Sebelumnya
+          </button>
+          <span class="py-nav-indicator" id="navIndicator">Topik 1 / 6</span>
+          <button class="btn btn-primary" id="nextTopicBtn">
+            Berikutnya <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../img/aptikom.png" alt="Logo APTIKOM Sumut"
+                 onerror="this.style.display='none'" />
+            <div class="footer-logo-text">
+              <span class="footer-logo-main">APTIKOM</span>
+              <span class="footer-logo-sub">Sumatera Utara</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Asosiasi Pendidikan Tinggi Informatika dan Ilmu Komputer Provinsi Sumatera Utara.
+            Berdedikasi memajukan kualitas pendidikan teknologi informasi di Sumut.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link facebook" title="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link twitter" title="Twitter/X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/aptikom.sumut/"
+               class="social-link instagram" title="Instagram" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@aptikomtv5281"
+               class="social-link youtube" title="YouTube" target="_blank">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" class="social-link linkedin" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Menu Utama</div>
+          <div class="footer-links">
+            <a href="../index.html">Beranda</a>
+            <a href="../tentang.html">Tentang APTIKOM</a>
+            <a href="../berita.html">Berita &amp; Pengumuman</a>
+            <a href="../event.html">Event &amp; Seminar</a>
+            <a href="../galeri.html">Galeri Kegiatan</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Layanan</div>
+          <div class="footer-links">
+            <a href="../keanggotaan.html">Keanggotaan</a>
+            <a href="../elearning.html">E-Learning</a>
+            <a href="../lowongan.html">Lowongan Kerja</a>
+            <a href="#">Cek Sertifikat</a>
+            <a href="https://aptikom-journal.id/home/" target="_blank">E-Jurnal</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Kontak</div>
+          <div class="footer-contact-item">
+            <span class="icon">📍</span>
+            <span>Jl. Kapten Mukhtar Basri No. 3, Glugur Darat II,
+                  Kec. Medan Timur, Kota Medan, Sumatera Utara 20238</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📧</span>
+            <span>admin@aptikom-journal.id</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📞</span>
+            <span>0821-1847-6100</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 APTIKOM Sumatera Utara. Hak Cipta Dilindungi.</span>
+        <span>Dibuat dengan ❤️ untuk kemajuan Informatika Sumut</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════ -->
+  <script>
+    /* ── Navbar scroll shadow ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    /* ── Dropdown hover ── */
+    const HIDE_DELAY = 300;
+    document.querySelectorAll('.nav-item').forEach(item => {
+      const menu = item.querySelector('.dropdown-menu');
+      if (!menu) return;
+      let hideTimer = null;
+      const showMenu     = () => { clearTimeout(hideTimer); menu.classList.add('is-open'); };
+      const scheduleHide = () => {
+        hideTimer = setTimeout(() => menu.classList.remove('is-open'), HIDE_DELAY);
+      };
+      item.addEventListener('mouseenter', showMenu);
+      item.addEventListener('mouseleave', scheduleHide);
+      menu.addEventListener('mouseenter', showMenu);
+      menu.addEventListener('mouseleave', scheduleHide);
+    });
+
+    /* ── Mobile hamburger ── */
+    const navToggle = document.getElementById('navToggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navbarNav.classList.contains('mobile-open');
+      if (isOpen) {
+        navbarNav.classList.remove('mobile-open');
+        navbarNav.removeAttribute('style');
+      } else {
+        navbarNav.classList.add('mobile-open');
+        Object.assign(navbarNav.style, {
+          display: 'flex', flexDirection: 'column', position: 'absolute',
+          top: '70px', left: '0', right: '0', background: '#fff',
+          padding: '16px 24px', borderBottom: '1px solid #e2e8f0',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.08)', gap: '4px'
+        });
+      }
+    });
+
+    /* ── Topik / Progress System ── */
+    const TOTAL_TOPICS = 6;
+    const sections     = document.querySelectorAll('.py-section');
+    const topicLinks   = document.querySelectorAll('.py-topic-link');
+    const progressFill = document.getElementById('progressFill');
+    const progressPct  = document.getElementById('progressPct');
+    const prevBtn      = document.getElementById('prevTopicBtn');
+    const nextBtn      = document.getElementById('nextTopicBtn');
+    const navIndicator = document.getElementById('navIndicator');
+    const finishCard   = document.getElementById('finishCard');
+
+    let currentTopic = 0; // 0-indexed
+    let completed    = new Set(JSON.parse(localStorage.getItem('py-completed') || '[]'));
+
+    function saveCompleted() {
+      localStorage.setItem('py-completed', JSON.stringify([...completed]));
+    }
+
+    function updateProgress() {
+      const pct = Math.round((completed.size / TOTAL_TOPICS) * 100);
+      progressFill.style.width = pct + '%';
+      progressPct.textContent  = pct + '%';
+      // Tampilkan kartu selesai
+      if (completed.size === TOTAL_TOPICS) {
+        finishCard.style.display = 'block';
+        finishCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function showTopic(index) {
+      sections.forEach((s, i) => s.style.display = i === index ? '' : 'none');
+      topicLinks.forEach((l, i) => l.classList.toggle('active', i === index));
+      prevBtn.disabled = index === 0;
+      nextBtn.textContent = index === TOTAL_TOPICS - 1 ? 'Selesai' : 'Berikutnya →';
+      navIndicator.textContent = `Topik ${index + 1} / ${TOTAL_TOPICS}`;
+      currentTopic = index;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderCheckmarks() {
+      topicLinks.forEach((link, i) => {
+        const sectionId = link.dataset.section;
+        const check = link.querySelector('.py-topic-check');
+        if (completed.has(sectionId)) {
+          check.style.display = 'inline';
+          link.classList.add('done');
+        }
+      });
+    }
+
+    // Inisialisasi: sembunyikan semua kecuali topik pertama
+    showTopic(0);
+    renderCheckmarks();
+    updateProgress();
+
+    // Sidebar klik
+    topicLinks.forEach((link, i) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        showTopic(i);
+      });
+    });
+
+    // Tombol prev/next
+    prevBtn.addEventListener('click', () => {
+      if (currentTopic > 0) showTopic(currentTopic - 1);
+    });
+    nextBtn.addEventListener('click', () => {
+      if (currentTopic < TOTAL_TOPICS - 1) showTopic(currentTopic + 1);
+    });
+
+    // Tombol "Tandai Selesai"
+    document.querySelectorAll('.py-done-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const sectionId = this.dataset.section;
+        completed.add(sectionId);
+        saveCompleted();
+        renderCheckmarks();
+        updateProgress();
+        this.innerHTML = '<i class="fa-solid fa-circle-check"></i> Selesai!';
+        this.disabled = true;
+        this.classList.add('done');
+        // Gerak ke topik berikutnya otomatis setelah delay kecil
+        if (currentTopic < TOTAL_TOPICS - 1) {
+          setTimeout(() => showTopic(currentTopic + 1), 600);
+        }
+      });
+      // Restore state
+      const sId = btn.dataset.section;
+      if (completed.has(sId)) {
+        btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Selesai!';
+        btn.disabled = true;
+        btn.classList.add('done');
+      }
+    });
+
+    // Tombol Start di hero
+    document.getElementById('startBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('materi').scrollIntoView({ behavior: 'smooth' });
+      showTopic(0);
+    });
+
+    // Bookmark button
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    let bookmarked = localStorage.getItem('py-bookmarked') === 'true';
+    function updateBookmark() {
+      bookmarkBtn.innerHTML = bookmarked
+        ? '<i class="fa-solid fa-bookmark"></i> Tersimpan'
+        : '<i class="fa-regular fa-bookmark"></i> Simpan';
+    }
+    updateBookmark();
+    bookmarkBtn.addEventListener('click', () => {
+      bookmarked = !bookmarked;
+      localStorage.setItem('py-bookmarked', bookmarked);
+      updateBookmark();
+    });
+
+    /* ── Copy code buttons ── */
+    document.querySelectorAll('.py-copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.dataset.target;
+        const codeEl   = document.getElementById(targetId);
+        if (!codeEl) return;
+        navigator.clipboard.writeText(codeEl.innerText).then(() => {
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Tersalin!';
+          setTimeout(() => {
+            btn.innerHTML = '<i class="fa-regular fa-copy"></i> Salin';
+          }, 2000);
+        });
+      });
+    });
+
+    /* ── Quiz ── */
+    const correctAnswers = { 1: 'b', 2: 'c', 3: 'b', 4: 'b' };
+    const userAnswers    = {};
+    let currentQ = 1;
+
+    const feedbackTexts = {
+      1: { b: '✅ Benar! <code>**</code> adalah operator perpangkatan. 5³ = 125.', wrong: '❌ Kurang tepat. <code>**</code> adalah operator perpangkatan, bukan perkalian biasa.' },
+      2: { c: '✅ Benar! <code>def</code> adalah kata kunci untuk mendefinisikan fungsi di Python.', wrong: '❌ Kurang tepat. Python menggunakan <code>def</code>, bukan function/func/define.' },
+      3: { b: '✅ Benar! List memiliki 5 elemen (10, 20, 30, 40, 50), jadi <code>len(data)</code> = 5.', wrong: '❌ Kurang tepat. Hitung elemen: 10, 20, 30, 40, 50 → ada 5 elemen.' },
+      4: { b: '✅ Benar! <code>break</code> menghentikan perulangan sepenuhnya. Gunakan <code>continue</code> untuk melewati iterasi.', wrong: '❌ Kurang tepat. <code>break</code> menghentikan loop sepenuhnya, bukan melewati satu iterasi.' },
+    };
+
+    document.querySelectorAll('.py-quiz-opt').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const q   = parseInt(this.dataset.q);
+        const val = this.dataset.val;
+        if (userAnswers[q]) return; // sudah dijawab
+
+        userAnswers[q] = val;
+        const isCorrect = val === correctAnswers[q];
+        const fb = document.getElementById(`fb-${q}`);
+        const feedbackKey = isCorrect ? val : 'wrong';
+
+        // Tandai semua opsi
+        document.querySelectorAll(`.py-quiz-opt[data-q="${q}"]`).forEach(o => {
+          if (o.dataset.val === correctAnswers[q]) o.classList.add('correct');
+          if (o === this && !isCorrect) o.classList.add('wrong');
+          o.disabled = true;
+        });
+
+        fb.innerHTML  = feedbackTexts[q][feedbackKey];
+        fb.className  = `py-quiz-feedback ${isCorrect ? 'correct' : 'wrong'}`;
+        fb.style.display = 'block';
+
+        // Maju ke soal berikutnya
+        setTimeout(() => {
+          if (q < 4) {
+            document.getElementById(`q${q}`).style.display = 'none';
+            currentQ = q + 1;
+            document.getElementById(`q${currentQ}`).style.display = 'block';
+          } else {
+            // Tampilkan hasil akhir
+            const score = Object.keys(userAnswers).filter(k => userAnswers[k] === correctAnswers[k]).length;
+            const result = document.getElementById('quizResult');
+            result.style.display = 'block';
+            result.innerHTML = `
+              <div class="py-result-score">${score} / 4</div>
+              <p>${score === 4 ? '🏆 Sempurna! Kamu benar-benar menguasai materi ini.' : score >= 3 ? '👍 Bagus! Tinggal sedikit lagi sempurna.' : '📖 Tidak apa-apa! Coba baca ulang materinya dan coba lagi.'}</p>
+            `;
+          }
+        }, 1200);
+      });
+    });
+  </script>
+
+</body>
+</html>

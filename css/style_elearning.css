@@ -1,0 +1,565 @@
+/* ============================================================
+   APTIKOM SUMUT — style_elearning.css
+   Khusus untuk elearning.html
+   Memerlukan css/style_global.css di-load lebih dulu.
+   ============================================================ */
+
+
+/* ── Active CTA di Navbar ────────────────────────────────── */
+.active-cta {
+  background: var(--blue-pale) !important;
+  color: var(--blue-mid) !important;
+}
+
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.el-hero {
+  padding: 130px 0 56px;
+  background: var(--blue-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.el-hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 35px;
+}
+
+.el-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 40%, rgba(37,99,176,0.5) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(14,165,233,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.el-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.el-hero-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 10px 0 16px;
+  letter-spacing: -0.03em;
+}
+
+.el-hero-title span {
+  color: var(--blue-accent);
+}
+
+.el-hero-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+/* Search bar */
+.el-search-wrap {
+  margin-bottom: 32px;
+}
+
+.el-search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius-md);
+  padding: 6px 6px 6px 16px;
+  gap: 10px;
+  max-width: 520px;
+  transition: border-color var(--transition);
+}
+
+.el-search-box:focus-within {
+  border-color: var(--blue-accent);
+  background: rgba(255,255,255,0.12);
+}
+
+.el-search-icon {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.el-search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.el-search-box input::placeholder {
+  color: rgba(255,255,255,0.38);
+}
+
+.el-search-btn {
+  padding: 8px 20px;
+  background: var(--blue-mid);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition);
+  flex-shrink: 0;
+}
+
+.el-search-btn:hover {
+  background: var(--blue-light);
+}
+
+/* Stats */
+.el-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.el-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.el-stat-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+
+.el-stat-label {
+  font-size: 0.74rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.el-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.15);
+}
+
+
+/* ── Journal Banner ──────────────────────────────────────── */
+.el-journal-banner {
+  background: var(--blue-pale);
+  border-bottom: 1px solid #c3d9f5;
+  padding: 14px 0;
+}
+
+.el-journal-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.el-journal-banner-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: var(--gray-800);
+  line-height: 1.5;
+}
+
+.el-journal-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.el-journal-banner-left strong {
+  display: block;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 2px;
+}
+
+.el-journal-banner-left span {
+  color: var(--gray-600);
+}
+
+
+/* ── Filter Bar ──────────────────────────────────────────── */
+.el-section {
+  padding: 48px 0 72px;
+  background: var(--gray-50);
+}
+
+.el-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.el-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 99px;
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.el-filter-btn:hover {
+  border-color: var(--blue-mid);
+  color: var(--blue-mid);
+  background: var(--blue-pale);
+}
+
+.el-filter-btn.active {
+  background: var(--blue-mid);
+  border-color: var(--blue-mid);
+  color: var(--white);
+}
+
+
+/* ── Grid Kartu ──────────────────────────────────────────── */
+.el-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.el-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+  animation: fadeUp 0.4s ease both;
+}
+
+.el-card:hover {
+  border-color: var(--blue-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+/* Thumbnail */
+.el-card-thumb {
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.el-card-thumb-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.el-card-thumb-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 2.8rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+}
+
+.el-card-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  z-index: 2;
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--white);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 2px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.04em;
+}
+
+/* Body */
+.el-card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+}
+
+.el-card-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.72rem;
+  color: var(--gray-400);
+  font-weight: 600;
+}
+
+.el-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.el-card-title {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.el-card-desc {
+  font-size: 0.83rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.el-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray-100);
+  margin-top: auto;
+}
+
+.el-card-author {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.73rem;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+.el-card-cta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--blue-mid);
+  transition: color var(--transition);
+}
+
+.el-card:hover .el-card-cta {
+  color: var(--blue-dark);
+}
+
+/* Animasi kartu */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ── Empty State ─────────────────────────────────────────── */
+.el-empty {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.el-empty-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.el-empty p {
+  color: var(--gray-400);
+  font-size: 0.95rem;
+}
+
+
+/* ── CTA Kontribusi ──────────────────────────────────────── */
+.el-contribute {
+  background: var(--blue-dark);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.el-contribute-text h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.el-contribute-text p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition-delay: var(--delay, 0s);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+
+/* ── Seksi E-Jurnal ──────────────────────────────────────── */
+.el-journal-section {
+  padding: 56px 0 72px;
+  background: var(--white);
+}
+
+.el-journal-header {
+  margin-bottom: 32px;
+}
+
+.el-journal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.el-journal-card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all var(--transition);
+}
+
+.el-journal-card:hover {
+  border-color: var(--blue-mid);
+  background: var(--blue-pale);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+}
+
+.el-journal-card-icon {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.el-journal-card h4 {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  line-height: 1.3;
+}
+
+.el-journal-card p {
+  font-size: 0.83rem;
+  color: var(--gray-600);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.el-journal-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blue-mid);
+  margin-top: 4px;
+  transition: color var(--transition);
+}
+
+.el-journal-card:hover .el-journal-link {
+  color: var(--blue-dark);
+}
+
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .el-grid          { grid-template-columns: repeat(2, 1fr); }
+  .el-journal-grid  { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .el-hero          { padding: 110px 0 44px; }
+  .el-hero-title    { font-size: 1.9rem; }
+  .el-hero-stats    { gap: 14px; }
+  .el-stat-num      { font-size: 1.2rem; }
+  .el-search-box    { max-width: 100%; }
+  .el-grid          { grid-template-columns: 1fr; }
+  .el-journal-grid  { grid-template-columns: 1fr 1fr; }
+  .el-contribute    { flex-direction: column; align-items: flex-start; }
+  .el-journal-banner-inner { flex-direction: column; align-items: flex-start; }
+  .el-filter-bar    { gap: 6px; }
+}
+
+@media (max-width: 480px) {
+  .el-journal-grid  { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   [NOTHING-YET OVERLAY] — Hapus blok ini untuk menampilkan konten kembali
+   ============================================================ */
+.el-nothing-yet-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--gray-50);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 320px;
+}
+
+.el-nothing-yet-overlay .el-nyo-icon {
+  font-size: 3rem;
+}
+
+.el-nothing-yet-overlay .el-nyo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gray-400);
+  letter-spacing: -0.02em;
+}
+
+.el-nothing-yet-overlay .el-nyo-sub {
+  font-size: 0.88rem;
+  color: var(--gray-400);
+}
+/* ============================================================
+   [END NOTHING-YET OVERLAY CSS]
+   ============================================================ */
+
+
+   .el-journal-section {
+    display: none;
+   }

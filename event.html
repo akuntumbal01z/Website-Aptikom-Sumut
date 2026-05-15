@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Event & Seminar APTIKOM Sumatera Utara — Arsip kegiatan, seminar nasional, konferensi internasional, dan webinar." />
+  <title>Event — APTIKOM Sumatera Utara</title>
+
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_event.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+
+      <a href="index.html" class="navbar-logo">
+        <img src="img/aptikom.png" alt="Logo APTIKOM Sumut"
+             onerror="this.style.display='none'" />
+        <div class="navbar-logo-text">
+          <span class="logo-main">APTIKOM</span>
+          <span class="logo-sub">Sumatera Utara</span>
+        </div>
+      </a>
+
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="index.html" class="nav-link">Beranda</a></li>
+        <li class="nav-item">
+          <a href="tentang.html" class="nav-link">Tentang ▾</a>
+          <div class="dropdown-menu">
+            <a href="tentang.html#sejarah">Sejarah</a>
+            <a href="tentang.html#visi-misi">Visi &amp; Misi</a>
+            <a href="tentang.html#struktur">Struktur Organisasi</a>
+            <a href="tentang.html#ad-art">AD &amp; ART</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="keanggotaan.html" class="nav-link">Keanggotaan ▾</a>
+          <div class="dropdown-menu">
+            <a href="keanggotaan.html#cara-daftar">Cara Pendaftaran</a>
+            <a href="keanggotaan.html#daftar">Daftar Sekarang</a>
+            <a href="keanggotaan.html#anggota">Data Anggota</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="berita.html" class="nav-link">Berita</a></li>
+        <li class="nav-item">
+          <a href="event.html" class="nav-link active">Event ▾</a>
+          <div class="dropdown-menu">
+            <a href="event.html#seminar">Seminar</a>
+            <a href="event.html#konferensi">Konferensi</a>
+            <a href="event.html#arsip">Arsip Kegiatan</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="lowongan.html" class="nav-link">Lowongan</a></li>
+      </ul>
+
+      <div class="navbar-cta">
+        <a href="elearning.html" class="btn btn-outline"
+           style="padding:8px 18px; font-size:0.84rem;">E-Learning</a>
+        <a href="kontak.html" class="btn btn-primary"
+           style="padding:8px 18px; font-size:0.84rem;">Kontak Kami</a>
+      </div>
+
+      <div class="navbar-toggle" id="navToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════ -->
+  <div class="ev-hero">
+    <div class="ev-hero-bg"></div>
+    <div class="container ev-hero-content">
+      <span class="section-tag">Kegiatan &amp; Arsip</span>
+      <h1 class="ev-hero-title">Event &amp; Seminar<br><span>APTIKOM Sumut</span></h1>
+      <p class="ev-hero-desc">
+        Dokumentasi kegiatan resmi APTIKOM Sumatera Utara — seminar nasional,
+        konferensi internasional, webinar, dan rapat koordinasi sejak berdiri hingga kini.
+      </p>
+      <div class="ev-hero-stats">
+        <div class="ev-stat">
+          <span class="ev-stat-num">9+</span>
+          <span class="ev-stat-label">Event Tercatat</span>
+        </div>
+        <div class="ev-stat-divider"></div>
+        <div class="ev-stat">
+          <span class="ev-stat-num">4</span>
+          <span class="ev-stat-label">Jenis Kegiatan</span>
+        </div>
+        <div class="ev-stat-divider"></div>
+        <div class="ev-stat">
+          <span class="ev-stat-num">2017–2025</span>
+          <span class="ev-stat-label">Rentang Tahun</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       FILTER BAR
+  ═══════════════════════════════════════ -->
+  <div class="ev-filter-wrap">
+    <div class="container">
+      <div class="ev-filter-bar">
+        <button class="ev-filter-btn active" data-filter="semua">Semua</button>
+        <button class="ev-filter-btn" data-filter="seminar">Seminar Nasional</button>
+        <button class="ev-filter-btn" data-filter="konferensi">Konferensi</button>
+        <button class="ev-filter-btn" data-filter="webinar">Webinar</button>
+        <button class="ev-filter-btn" data-filter="raker">Rapat &amp; Koordinasi</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       TIMELINE EVENT — terbaru di atas
+  ═══════════════════════════════════════ -->
+  <main class="ev-main" id="arsip">
+    <div class="container">
+
+      <div class="ev-section-header reveal">
+        <h2 class="section-title">Arsip Kegiatan</h2>
+        <p class="section-subtitle">Diurutkan dari kegiatan terbaru hingga terlama.</p>
+      </div>
+
+      <div class="ev-timeline" id="evTimeline">
+
+        <!-- ── 2025 ── -->
+        <div class="ev-year-anchor" data-year="2025">
+          <span class="ev-year-label">2025</span>
+        </div>
+
+        <article class="ev-card reveal" data-kategori="seminar">
+          <div class="ev-card-left-bar seminar"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge seminar">Seminar Nasional</span>
+              <span class="ev-card-date">29 September 2025</span>
+            </div>
+            <h3 class="ev-card-title">SNIKOM &amp; Rakorwil APTIKOM Sumut 2025</h3>
+            <p class="ev-card-desc">
+              Seminar Nasional Ilmu Komputer (SNIKOM) sekaligus Rapat Koordinasi Wilayah APTIKOM Sumatera Utara 2025, bertema "Artificial Intelligence &amp; Society 5.0: Transformasi Digital untuk Indonesia Emas 2045". Diselenggarakan di Universitas Pembangunan Panca Budi Medan.
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;29 September 2025</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;Univ. Panca Budi, Medan</span>
+              <span><i class="fa-solid fa-users"></i>&nbsp;APTIKOM Sumut</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://snikom.aptikomsumut.org/" target="_blank" class="ev-link-btn primary">
+                Situs Resmi SNIKOM
+              </a>
+              <a href="https://ilkomp.uinsu.ac.id/prodi-ilmu-komputer-fst-uinsu-medan-turut-sukseskan-rakorwil-aptikom-wilayah-sumut-tahun-2025/" target="_blank" class="ev-link-btn secondary">
+                Liputan Kegiatan
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── 2024 ── -->
+        <div class="ev-year-anchor" data-year="2024">
+          <span class="ev-year-label">2024</span>
+        </div>
+
+        <article class="ev-card reveal" data-kategori="raker">
+          <div class="ev-card-left-bar raker"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge raker">Rapat &amp; Koordinasi</span>
+              <span class="ev-card-date">24 Oktober 2024</span>
+            </div>
+            <h3 class="ev-card-title">RAKORNAS APTIKOM 2024 — Medan, Sumatera Utara</h3>
+            <p class="ev-card-desc">
+              Rapat Koordinasi Nasional APTIKOM 2024 diselenggarakan di Kota Medan, menjadikan APTIKOM Sumut sebagai tuan rumah acara nasional. Berlangsung di Hotel Santika Premiere Dyandra Medan, membahas transformasi digital dan kebijakan pendidikan TI menuju Indonesia Emas 2045.
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;24 Oktober 2024</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;Hotel Santika Premiere Dyandra, Medan</span>
+              <span><i class="fa-solid fa-users"></i>&nbsp;Nasional</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://rakornasaptikom2024.methodist.ac.id/" target="_blank" class="ev-link-btn primary">
+                Situs Resmi RAKORNAS 2024
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── 2023 ── -->
+        <div class="ev-year-anchor" data-year="2023">
+          <span class="ev-year-label">2023</span>
+        </div>
+
+        <article class="ev-card reveal" data-kategori="konferensi">
+          <div class="ev-card-left-bar konferensi"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge konferensi">Konferensi</span>
+              <span class="ev-card-date">10–11 November 2023</span>
+            </div>
+            <h3 class="ev-card-title">IEEE ICoSNIKOM 2023 — "Peran AI di Era Industri 5.0"</h3>
+            <p class="ev-card-desc">
+              Konferensi internasional ke-7 yang diselenggarakan secara hybrid (online &amp; onsite) di STMIK Kaputama. Mengangkat tema "The Role of Artificial Intelligence Technology in Human and Computer Interactions in the Industrial Era 5.0". Paper yang diterima diindeks di IEEE Xplore (Conference Record No. 60230).
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;10–11 November 2023</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;STMIK Kaputama (Hybrid)</span>
+              <span><i class="fa-solid fa-certificate"></i>&nbsp;IEEE Xplore Indexed</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://icosnikom2023.kaputama.ac.id/" target="_blank" class="ev-link-btn primary">
+                Situs Resmi ICoSNIKOM 2023
+              </a>
+              <a href="https://ilmubersama.com/2023/05/24/the-2023-ieee-icosnikom-hybrid-muswil-aptikom-sumatera-utara-stmik-kaputama/" target="_blank" class="ev-link-btn secondary">
+                Artikel Terkait
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── 2022 ── -->
+        <div class="ev-year-anchor" data-year="2022">
+          <span class="ev-year-label">2022</span>
+        </div>
+
+        <article class="ev-card reveal" data-kategori="konferensi">
+          <div class="ev-card-left-bar konferensi"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge konferensi">Konferensi</span>
+              <span class="ev-card-date">2022</span>
+            </div>
+            <h3 class="ev-card-title">IEEE ICoSNIKOM 2022 — Kolaborasi dengan Institut Teknologi Del</h3>
+            <p class="ev-card-desc">
+              Konferensi internasional IEEE ICoSNIKOM yang diselenggarakan atas kolaborasi APTIKOM Sumatera Utara dan Institut Teknologi Del. Terdaftar dalam IEEE Conference Publication Program (record number 56551). Paper yang diterima disubmit ke IEEE Xplore.
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;2022</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;Sumatera Utara</span>
+              <span><i class="fa-solid fa-certificate"></i>&nbsp;IEEE Xplore Indexed</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://easychair.org/cfp/icosnikom2022" target="_blank" class="ev-link-btn primary">
+                Info Konferensi
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── 2021 ── -->
+        <div class="ev-year-anchor" data-year="2021">
+          <span class="ev-year-label">2021</span>
+        </div>
+
+        <article class="ev-card reveal" data-kategori="webinar">
+          <div class="ev-card-left-bar webinar"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge webinar">Webinar</span>
+              <span class="ev-card-date">2021</span>
+            </div>
+            <h3 class="ev-card-title">Webinar Perdana — "Strategi Menulis Buku Ber-ISBN"</h3>
+            <p class="ev-card-desc">
+              Webinar perdana yang digelar APTIKOM Sumatera Utara secara daring, mengangkat tema strategi penulisan buku ber-ISBN untuk dosen dan akademisi. Menjadi langkah awal kegiatan online APTIKOM Sumut dalam mendukung produktivitas ilmiah anggota.
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;2021</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;Online (Daring)</span>
+              <span><i class="fa-solid fa-users"></i>&nbsp;APTIKOM Sumut</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://www.aptikomsumut.org/" target="_blank" class="ev-link-btn primary">
+                Website APTIKOM Sumut
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── 2020 ── -->
+        <div class="ev-year-anchor" data-year="2020">
+          <span class="ev-year-label">2020</span>
+        </div>
+
+        <article class="ev-card reveal" data-kategori="raker">
+          <div class="ev-card-left-bar raker"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge raker">Rapat &amp; Koordinasi</span>
+              <span class="ev-card-date">Oktober 2020</span>
+            </div>
+            <h3 class="ev-card-title">Rapat Kerja (RAKER) APTIKOM Sumut</h3>
+            <p class="ev-card-desc">
+              Rapat Kerja internal APTIKOM Sumatera Utara yang membahas program kerja, evaluasi kegiatan, dan arah pengembangan organisasi. Dihadiri oleh pengurus dan perwakilan kampus anggota APTIKOM di seluruh Provinsi Sumatera Utara.
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;Oktober 2020</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;Sumatera Utara</span>
+              <span><i class="fa-solid fa-users"></i>&nbsp;Pengurus APTIKOM Sumut</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://www.aptikomsumut.org/albums/detail/raker-aptikom" target="_blank" class="ev-link-btn primary">
+                Galeri Foto RAKER
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── 2019 ── -->
+        <div class="ev-year-anchor" data-year="2019">
+          <span class="ev-year-label">2019</span>
+        </div>
+
+        <article class="ev-card reveal" data-kategori="seminar">
+          <div class="ev-card-left-bar seminar"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge seminar">Seminar Nasional</span>
+              <span class="ev-card-date">2019</span>
+            </div>
+            <h3 class="ev-card-title">Seminar Nasional APTIKOM Sumut</h3>
+            <p class="ev-card-desc">
+              Seminar Nasional yang mengangkat tema terkini di bidang Teknologi Informasi dan Ilmu Komputer, menjadi forum berbagi pengetahuan bagi akademisi, praktisi, dan mahasiswa di lingkungan APTIKOM Sumatera Utara.
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;2019</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;Medan, Sumatera Utara</span>
+              <span><i class="fa-solid fa-users"></i>&nbsp;APTIKOM Sumut</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://www.aptikomsumut.org/albums/detail/seminar-nasional" target="_blank" class="ev-link-btn primary">
+                Galeri Foto Seminar
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ev-card reveal" data-kategori="konferensi">
+          <div class="ev-card-left-bar konferensi"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge konferensi">Konferensi</span>
+              <span class="ev-card-date">2019</span>
+            </div>
+            <h3 class="ev-card-title">ICoSNIKOM 2019 — Konferensi Ilmu Komputer &amp; TI</h3>
+            <p class="ev-card-desc">
+              Edisi ketiga ICoSNIKOM yang diselenggarakan APTIKOM Sumut. Memperkuat jaringan penelitian antar kampus anggota dan menghadirkan keynote speaker nasional maupun internasional di bidang informatika dan ilmu komputer.
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;2019</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;Sumatera Utara</span>
+              <span><i class="fa-solid fa-users"></i>&nbsp;APTIKOM Sumut</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://easychair.org/cfp/icosnikom2022" target="_blank" class="ev-link-btn primary">
+                Profil Seri ICoSNIKOM
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── 2018 ── -->
+        <div class="ev-year-anchor" data-year="2018">
+          <span class="ev-year-label">2018</span>
+        </div>
+
+        <article class="ev-card reveal" data-kategori="konferensi">
+          <div class="ev-card-left-bar konferensi"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge konferensi">Konferensi</span>
+              <span class="ev-card-date">2018</span>
+            </div>
+            <h3 class="ev-card-title">ICoSNIKOM 2018 — Konferensi Ilmu Komputer &amp; TI</h3>
+            <p class="ev-card-desc">
+              Penyelenggaraan ICoSNIKOM kedua oleh APTIKOM Sumatera Utara, memperluas cakupan tema riset ke bidang keamanan siber, kecerdasan buatan, dan sistem informasi. Mendorong publikasi ilmiah dosen dan peneliti dari perguruan tinggi anggota.
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;2018</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;Sumatera Utara</span>
+              <span><i class="fa-solid fa-users"></i>&nbsp;APTIKOM Sumut</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://easychair.org/cfp/icosnikom2022" target="_blank" class="ev-link-btn primary">
+                Profil Seri ICoSNIKOM
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── 2017 ── -->
+        <div class="ev-year-anchor" data-year="2017">
+          <span class="ev-year-label">2017</span>
+        </div>
+
+        <article class="ev-card reveal" data-kategori="konferensi">
+          <div class="ev-card-left-bar konferensi"></div>
+          <div class="ev-card-body">
+            <div class="ev-card-head">
+              <span class="ev-badge konferensi">Konferensi</span>
+              <span class="ev-card-date">2017</span>
+            </div>
+            <h3 class="ev-card-title">ICoSNIKOM 2017 — Konferensi Internasional Perdana</h3>
+            <p class="ev-card-desc">
+              International Conference on Computer Science and Information Technology (ICoSNIKOM) perdana yang diselenggarakan oleh APTIKOM Wilayah Sumatera Utara. Menjadi tonggak awal kolaborasi riset ilmu komputer antar perguruan tinggi anggota di Sumut.
+            </p>
+            <div class="ev-card-meta">
+              <span><i class="fa-solid fa-calendar-days"></i>&nbsp;2017</span>
+              <span><i class="fa-solid fa-location-dot"></i>&nbsp;Sumatera Utara</span>
+              <span><i class="fa-solid fa-users"></i>&nbsp;APTIKOM Sumut</span>
+            </div>
+            <div class="ev-card-links">
+              <a href="https://easychair.org/cfp/icosnikom2022" target="_blank" class="ev-link-btn primary">
+                Profil Seri ICoSNIKOM
+              </a>
+              <a href="https://www.aptikomsumut.org/albums/detail/icosnikom" target="_blank" class="ev-link-btn secondary">
+                Galeri Foto
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Empty state -->
+        <div class="ev-empty" id="evEmpty" style="display:none;">
+          <i class="fa-solid fa-magnifying-glass ev-empty-icon"></i>
+          <p>Tidak ada event yang cocok dengan filter ini.</p>
+        </div>
+
+      </div><!-- /.ev-timeline -->
+
+      <!-- CTA Sertifikat -->
+      <div class="ev-cta-box reveal">
+        <div class="ev-cta-text">
+          <h3>Punya Sertifikat dari Event APTIKOM?</h3>
+          <p>Verifikasi keaslian sertifikat kegiatan APTIKOM Sumatera Utara secara online melalui portal resmi kami.</p>
+        </div>
+        <a href="http://ceksertifikat.aptikomsumut.org" target="_blank" class="btn btn-white">
+          Cek Sertifikat
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- ═══════════════════════════════════════
+       GALERI RINGKAS
+  ═══════════════════════════════════════ -->
+  <section class="ev-gallery-section">
+    <div class="container">
+      <div class="ev-section-header reveal">
+        <h2 class="section-title">Arsip Foto Kegiatan</h2>
+        <p class="section-subtitle">Dokumentasi visual dari kegiatan-kegiatan APTIKOM Sumut.</p>
+      </div>
+      <div class="ev-gallery-grid reveal">
+        <a href="https://www.aptikomsumut.org/albums/detail/seminar-nasional" target="_blank" class="ev-gallery-card">
+          <div class="ev-gallery-info">
+            <div>
+              <strong>Seminar Nasional</strong>
+              <span class="ev-gallery-count">7 Foto</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square ev-gallery-icon"></i>
+          </div>
+        </a>
+        <a href="https://www.aptikomsumut.org/albums/detail/raker-aptikom" target="_blank" class="ev-gallery-card">
+          <div class="ev-gallery-info">
+            <div>
+              <strong>RAKER APTIKOM</strong>
+              <span class="ev-gallery-count">16 Foto</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square ev-gallery-icon"></i>
+          </div>
+        </a>
+        <a href="https://www.aptikomsumut.org/albums/detail/munas" target="_blank" class="ev-gallery-card">
+          <div class="ev-gallery-info">
+            <div>
+              <strong>MUNAS APTIKOM</strong>
+              <span class="ev-gallery-count">3 Foto</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square ev-gallery-icon"></i>
+          </div>
+        </a>
+        <a href="https://www.aptikomsumut.org/albums/detail/icosnikom" target="_blank" class="ev-gallery-card">
+          <div class="ev-gallery-info">
+            <div>
+              <strong>ICoSNIKOM</strong>
+              <span class="ev-gallery-count">3 Foto</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square ev-gallery-icon"></i>
+          </div>
+        </a>
+      </div>
+      <div style="text-align:center; margin-top: 28px;">
+        <a href="https://www.aptikomsumut.org/albums" target="_blank" class="btn btn-outline">
+          Lihat Semua Album
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="img/aptikom.png" alt="Logo APTIKOM Sumut"
+                 onerror="this.style.display='none'" />
+            <div class="footer-logo-text">
+              <span class="footer-logo-main">APTIKOM</span>
+              <span class="footer-logo-sub">Sumatera Utara</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Asosiasi Perguruan Tinggi Informatika dan Ilmu Komputer Provinsi Sumatera Utara.
+            Memajukan pendidikan TI untuk Indonesia yang lebih baik.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link twitter" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/aptikom.sumut/" class="social-link instagram" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@aptikomtv5281" class="social-link youtube" title="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-link linkedin" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Menu Utama</div>
+          <div class="footer-links">
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang APTIKOM</a>
+            <a href="berita.html">Berita &amp; Pengumuman</a>
+            <a href="event.html">Event &amp; Seminar</a>
+            <a href="galeri.html">Galeri Kegiatan</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Layanan</div>
+          <div class="footer-links">
+            <a href="keanggotaan.html">Keanggotaan</a>
+            <a href="elearning.html">E-Learning</a>
+            <a href="lowongan.html">Lowongan Kerja</a>
+            <a href="http://ceksertifikat.aptikomsumut.org" target="_blank">Cek Sertifikat</a>
+            <a href="https://aptikom-journal.id/home/" target="_blank">E-Jurnal</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Kontak</div>
+          <div class="footer-contact-item">
+            <span class="icon">📍</span>
+            <span>Jl. Kapten Mukhtar Basri No. 3, Glugur Darat II,
+                  Kec. Medan Timur, Kota Medan, Sumatera Utara 20238</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📧</span>
+            <span>admin@aptikom-journal.id</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📞</span>
+            <span>0821-1847-6100</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 APTIKOM Sumatera Utara. Hak Cipta Dilindungi.</span>
+        <span>Dibuat dengan ❤️ untuk kemajuan Informatika Sumut</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script>
+    /* ── Navbar shadow ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    /* ── Dropdown hover ── */
+    const HIDE_DELAY = 300;
+    document.querySelectorAll('.nav-item').forEach(item => {
+      const menu = item.querySelector('.dropdown-menu');
+      if (!menu) return;
+      let hideTimer = null;
+      const showMenu     = () => { clearTimeout(hideTimer); menu.classList.add('is-open'); };
+      const scheduleHide = () => { hideTimer = setTimeout(() => menu.classList.remove('is-open'), HIDE_DELAY); };
+      item.addEventListener('mouseenter', showMenu);
+      item.addEventListener('mouseleave', scheduleHide);
+      menu.addEventListener('mouseenter', showMenu);
+      menu.addEventListener('mouseleave', scheduleHide);
+    });
+
+    /* ── Mobile hamburger ── */
+    const navToggle = document.getElementById('navToggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navbarNav.classList.contains('mobile-open');
+      if (isOpen) {
+        navbarNav.classList.remove('mobile-open');
+        navbarNav.removeAttribute('style');
+      } else {
+        navbarNav.classList.add('mobile-open');
+        Object.assign(navbarNav.style, {
+          display:'flex', flexDirection:'column', position:'absolute',
+          top:'70px', left:'0', right:'0', background:'#fff',
+          padding:'16px 24px', borderBottom:'1px solid #e2e8f0',
+          boxShadow:'0 8px 24px rgba(0,0,0,0.08)', gap:'4px'
+        });
+      }
+    });
+
+    /* ── Filter Kategori ── */
+    const filterBtns  = document.querySelectorAll('.ev-filter-btn');
+    const cards       = document.querySelectorAll('.ev-card');
+    const yearAnchors = document.querySelectorAll('.ev-year-anchor');
+    const evEmpty     = document.getElementById('evEmpty');
+
+    function applyFilter(filter) {
+      let visible = 0;
+      cards.forEach(card => {
+        const match = filter === 'semua' || card.dataset.kategori === filter;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      yearAnchors.forEach(anchor => {
+        let hasVisible = false;
+        let el = anchor.nextElementSibling;
+        while (el && !el.classList.contains('ev-year-anchor')) {
+          if (el.classList.contains('ev-card') && el.style.display !== 'none') hasVisible = true;
+          el = el.nextElementSibling;
+        }
+        anchor.style.display = hasVisible ? '' : 'none';
+      });
+      evEmpty.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter(btn.dataset.filter);
+      });
+    });
+
+    /* ── Scroll Reveal ── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+    }, { threshold: 0.06 });
+    revealEls.forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>

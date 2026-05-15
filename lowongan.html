@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lowongan Kerja — APTIKOM Sumatera Utara" />
+  <title>Lowongan Kerja — APTIKOM Sumatera Utara</title>
+
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/style_lowongan.css" />
+
+  <!-- Font Awesome (sama seperti index.html) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+
+      <!-- Logo: path lowercase, konsisten dengan index.html -->
+      <a href="index.html" class="navbar-logo">
+        <img src="img/aptikom.png" alt="Logo APTIKOM Sumut"
+             onerror="this.style.display='none'" />
+        <div class="navbar-logo-text">
+          <span class="logo-main">APTIKOM</span>
+          <span class="logo-sub">Sumatera Utara</span>
+        </div>
+      </a>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a href="tentang.html" class="nav-link">Tentang ▾</a>
+          <div class="dropdown-menu">
+            <a href="tentang.html#sejarah">Sejarah</a>
+            <a href="tentang.html#visi-misi">Visi &amp; Misi</a>
+            <a href="tentang.html#struktur">Struktur Organisasi</a>
+            <a href="tentang.html#ad-art">AD &amp; ART</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="keanggotaan.html" class="nav-link">Keanggotaan ▾</a>
+          <div class="dropdown-menu">
+            <a href="keanggotaan.html#cara-daftar">Cara Pendaftaran</a>
+            <a href="keanggotaan.html#daftar">Daftar Sekarang</a>
+            <a href="keanggotaan.html#anggota">Data Anggota</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="berita.html" class="nav-link">Berita</a>
+        </li>
+        <li class="nav-item">
+          <a href="event.html" class="nav-link">Event ▾</a>
+          <div class="dropdown-menu">
+            <a href="event.html#seminar">Seminar</a>
+            <a href="event.html#workshop">Workshop</a>
+            <a href="galeri.html">Arsip Kegiatan</a>
+          </div>
+        </li>
+        <!-- Lowongan aktif -->
+        <li class="nav-item">
+          <a href="lowongan.html" class="nav-link active">Lowongan</a>
+        </li>
+      </ul>
+
+      <div class="navbar-cta">
+        <a href="elearning.html" class="btn btn-outline"
+           style="padding:8px 18px; font-size:0.84rem;">E-Learning</a>
+        <a href="kontak.html" class="btn btn-primary"
+           style="padding:8px 18px; font-size:0.84rem;">Kontak Kami</a>
+      </div>
+
+      <div class="navbar-toggle" id="navToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════ -->
+  <div class="page-hero">
+    <div class="container page-hero-content">
+
+      <!-- Breadcrumb -->
+      <div class="page-breadcrumb">
+        <a href="index.html">Beranda</a>
+        <span>›</span>
+        <span>Lowongan Kerja</span>
+      </div>
+
+      <h1 class="page-hero-title">
+        Lowongan <em>Kerja</em>
+      </h1>
+      <p class="page-hero-desc">
+        Peluang karir dari perusahaan mitra APTIKOM Sumatera Utara.
+        Temukan posisi yang sesuai dengan latar belakang pendidikanmu di bidang
+        informatika dan teknologi informasi.
+      </p>
+
+      <!-- Statistik singkat -->
+      <div class="hero-stats-row">
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">8</span>
+          <span class="hero-stat-label">Total Lowongan</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">8</span>
+          <span class="hero-stat-label">Perusahaan</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">Arsip</span>
+          <span class="hero-stat-label">Status Lowongan</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       BANNER ARSIP
+       Pengingat bahwa semua lowongan sudah kadaluarsa
+  ═══════════════════════════════════════ -->
+  <div class="arsip-banner">
+    <div class="container arsip-banner-inner">
+      <span class="arsip-icon">📦</span>
+      <div>
+        <strong>Ini adalah arsip lowongan lama.</strong>
+        Semua lowongan di bawah berasal dari website APTIKOM Sumut sebelumnya
+        dan sudah melewati batas pendaftaran. Ditampilkan sebagai referensi historis.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       FILTER & SEARCH BAR
+  ═══════════════════════════════════════ -->
+  <div class="filter-bar">
+    <div class="container filter-bar-inner">
+
+      <!-- Kotak pencarian -->
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Cari perusahaan atau posisi..."
+          oninput="filterLowongan()"
+        />
+      </div>
+
+      <!-- Filter kategori -->
+      <div class="filter-chips">
+        <button class="chip active" onclick="setFilter('semua', this)">Semua (8)</button>
+        <button class="chip" onclick="setFilter('teknologi', this)">Teknologi</button>
+        <button class="chip" onclick="setFilter('manufaktur', this)">Manufaktur</button>
+        <button class="chip" onclick="setFilter('keuangan', this)">Keuangan</button>
+        <button class="chip" onclick="setFilter('bumn', this)">BUMN</button>
+      </div>
+
+      <!-- Jumlah hasil -->
+      <div class="filter-count" id="filterCount">Menampilkan 8 lowongan</div>
+
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       DAFTAR LOWONGAN
+  ═══════════════════════════════════════ -->
+  <main class="section-lowongan-list">
+    <div class="container">
+      <div class="lowongan-list" id="lowonganList">
+
+
+        <!-- ══════════════════════════════
+             KARTU 1 — PT Musa Nusa Mandiri
+        ══════════════════════════════ -->
+        <article class="lowongan-card-full reveal"
+                 data-kategori="manufaktur"
+                 data-search="pt musa nusa mandiri ilmu komputer manufaktur">
+          <div class="card-left">
+            <div class="company-logo-box">💊</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <div>
+                <span class="company-name">PT Musa Nusa Mandiri</span>
+                <span class="card-badge arsip">📦 Arsip</span>
+              </div>
+              <div class="card-deadline expired">
+                <span class="deadline-icon">⏰</span>
+                Deadline: 12 Okt 2016
+              </div>
+            </div>
+
+            <h2 class="card-position">Staf Ilmu Komputer / IT</h2>
+
+            <p class="card-desc">
+              Perusahaan yang bergerak di bidang manufaktur farmasi membuka kesempatan
+              bagi fresh graduate maupun berpengalaman di bidang Ilmu Komputer dan Teknologi Informasi.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">💼 Full-time</span>
+              <span class="tag">🎓 S1 Ilmu Komputer</span>
+              <span class="tag">📊 IPK min. 2.75</span>
+              <span class="tag">👥 Pria / Wanita</span>
+            </div>
+
+            <div class="card-info-row">
+              <span class="card-info-item">📅 Diposting: 06 Jun 2020</span>
+              <span class="card-info-item">🏭 Manufaktur &amp; Farmasi</span>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="card-requirements">
+                <span class="req-label">Persyaratan:</span>
+                Mahasiswa dalam proses wisuda, fresh graduate, atau berpengalaman.
+                Kirim lamaran ke <strong>hrd@ifars.co.id</strong> disertai CV, foto 4×6,
+                fotokopi KTP, ijazah/SKL, transkrip, dan SKCK.
+              </div>
+              <a href="lowongan/pt-musa-nusa-mandiri.html" class="btn-detail">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ══════════════════════════════
+             KARTU 2 — PT Jasa Marga Persero
+        ══════════════════════════════ -->
+        <article class="lowongan-card-full reveal"
+                 data-kategori="bumn"
+                 data-search="pt jasa marga persero satpam bumn jalan tol">
+          <div class="card-left">
+            <div class="company-logo-box">🛣️</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <div>
+                <span class="company-name">PT Jasa Marga (Persero) Tbk</span>
+                <span class="card-badge bumn">🏛️ BUMN</span>
+                <span class="card-badge arsip">📦 Arsip</span>
+              </div>
+              <div class="card-deadline expired">
+                <span class="deadline-icon">⏰</span>
+                Deadline: 07 Mar 2016
+              </div>
+            </div>
+
+            <h2 class="card-position">Management Trainee / Satpam Full Time</h2>
+
+            <p class="card-desc">
+              PT Jasa Marga (Persero) Tbk, BUMN terbuka pemimpin bisnis jalan tol di Indonesia,
+              membuka kesempatan bagi generasi muda berpotensi, berdedikasi, dan berintegritas tinggi
+              untuk bergabung dalam Program Management Trainee.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">💼 Full-time</span>
+              <span class="tag">🎓 S1 / D4</span>
+              <span class="tag">📊 IPK min. 2.75 (PTN) / 3.00 (PTS)</span>
+              <span class="tag">🌍 Penempatan Nasional</span>
+            </div>
+
+            <div class="card-info-row">
+              <span class="card-info-item">📅 Diposting: 11 Okt 2016</span>
+              <span class="card-info-item">🛣️ Infrastruktur &amp; BUMN</span>
+              <span class="card-info-item">👤 Usia maks. 27 tahun</span>
+            </div>
+
+            <!-- Jurusan yang diterima -->
+            <div class="jurusan-box">
+              <div class="jurusan-label">Jurusan yang Diterima (S1):</div>
+              <div class="jurusan-list">
+                <span>Akuntansi</span><span>Hukum</span><span>Manajemen</span>
+                <span>Teknik Elektro</span><span>Teknik Industri</span>
+                <span>Teknik Sipil</span><span>Psikologi</span><span>Perpajakan</span>
+              </div>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="card-requirements">
+                <span class="req-label">Cara Daftar:</span>
+                Daftar online di <strong>jasamarga.experd.com</strong>.
+                Pendaftaran: 27 Feb – 7 Mar 2016. Seleksi dilaksanakan di Jakarta.
+              </div>
+              <a href="lowongan/pt-jasa-marga-persero-tbk.html" class="btn-detail">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ══════════════════════════════
+             KARTU 3 — PT Indonesia Power
+        ══════════════════════════════ -->
+        <article class="lowongan-card-full reveal"
+                 data-kategori="bumn"
+                 data-search="pt indonesia power pln energi bumn listrik">
+          <div class="card-left">
+            <div class="company-logo-box">⚡</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <div>
+                <span class="company-name">PT Indonesia Power</span>
+                <span class="card-badge bumn">🏛️ BUMN</span>
+                <span class="card-badge arsip">📦 Arsip</span>
+              </div>
+              <div class="card-deadline expired">
+                <span class="deadline-icon">⏰</span>
+                Deadline: 05 Feb 2016
+              </div>
+            </div>
+
+            <h2 class="card-position">Rekrutmen Umum PT Indonesia Power</h2>
+
+            <p class="card-desc">
+              PT Indonesia Power, anak perusahaan PLN yang bergerak di bidang pembangkitan
+              tenaga listrik, membuka lowongan untuk berbagai posisi teknis dan non-teknis.
+              Detail posisi tersedia pada file pendukung.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">💼 Full-time</span>
+              <span class="tag">⚡ Energi &amp; Kelistrikan</span>
+              <span class="tag">🏛️ Anak Perusahaan PLN</span>
+            </div>
+
+            <div class="card-info-row">
+              <span class="card-info-item">📅 Diposting: 05 Feb 2016</span>
+              <span class="card-info-item">⚡ Energi &amp; BUMN</span>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="card-requirements">
+                <span class="req-label">Keterangan:</span>
+                Informasi lengkap posisi dan persyaratan tersedia pada file pendukung.
+                Silakan unduh untuk detail lebih lanjut.
+              </div>
+              <a href="#" class="btn-detail">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ══════════════════════════════
+             KARTU 4 — PT Melawai Group
+        ══════════════════════════════ -->
+        <article class="lowongan-card-full reveal"
+                 data-kategori="teknologi"
+                 data-search="pt melawai group retail elektronik it teknologi">
+          <div class="card-left">
+            <div class="company-logo-box">🖥️</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <div>
+                <span class="company-name">PT Melawai Group</span>
+                <span class="card-badge arsip">📦 Arsip</span>
+              </div>
+              <div class="card-deadline expired">
+                <span class="deadline-icon">⏰</span>
+                Deadline: 19 Feb 2015
+              </div>
+            </div>
+
+            <h2 class="card-position">Staf IT / Teknisi &amp; Posisi Lainnya</h2>
+
+            <p class="card-desc">
+              PT Melawai Group, perusahaan retail elektronik dan teknologi terkemuka di Indonesia,
+              membuka kesempatan berkarir bagi lulusan di bidang informatika dan ilmu komputer.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">💼 Full-time</span>
+              <span class="tag">🖥️ Retail &amp; Teknologi</span>
+              <span class="tag">🎓 D3 / S1</span>
+            </div>
+
+            <div class="card-info-row">
+              <span class="card-info-item">📅 Diposting: 2015</span>
+              <span class="card-info-item">🛒 Retail Elektronik</span>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="card-requirements">
+                <span class="req-label">Keterangan:</span>
+                Detail posisi dan persyaratan tersedia pada file pendukung lowongan ini.
+              </div>
+              <a href="#" class="btn-detail">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ══════════════════════════════
+             KARTU 5 — PT Asuransi Umum BCA
+        ══════════════════════════════ -->
+        <article class="lowongan-card-full reveal"
+                 data-kategori="keuangan"
+                 data-search="pt asuransi umum bca keuangan it finance">
+          <div class="card-left">
+            <div class="company-logo-box">🏦</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <div>
+                <span class="company-name">PT Asuransi Umum BCA</span>
+                <span class="card-badge arsip">📦 Arsip</span>
+              </div>
+              <div class="card-deadline expired">
+                <span class="deadline-icon">⏰</span>
+                Deadline: 12 Mar 2015
+              </div>
+            </div>
+
+            <h2 class="card-position">Staf IT &amp; Keuangan</h2>
+
+            <p class="card-desc">
+              PT Asuransi Umum BCA, bagian dari grup BCA yang bergerak di bidang asuransi umum,
+              membuka kesempatan bagi lulusan informatika dan ilmu komputer untuk bergabung
+              di divisi teknologi informasi dan keuangan.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">💼 Full-time</span>
+              <span class="tag">🏦 Keuangan &amp; Asuransi</span>
+              <span class="tag">🎓 S1</span>
+            </div>
+
+            <div class="card-info-row">
+              <span class="card-info-item">📅 Diposting: 2015</span>
+              <span class="card-info-item">🏦 Perbankan &amp; Asuransi</span>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="card-requirements">
+                <span class="req-label">Keterangan:</span>
+                Detail posisi dan persyaratan tersedia pada file pendukung lowongan ini.
+              </div>
+              <a href="#" class="btn-detail">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ══════════════════════════════
+             KARTU 6 — PT Mataram Tunggal Garment
+        ══════════════════════════════ -->
+        <article class="lowongan-card-full reveal"
+                 data-kategori="manufaktur"
+                 data-search="pt mataram tunggal garment manufaktur tekstil it">
+          <div class="card-left">
+            <div class="company-logo-box">👕</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <div>
+                <span class="company-name">PT Mataram Tunggal Garment</span>
+                <span class="card-badge arsip">📦 Arsip</span>
+              </div>
+              <div class="card-deadline expired">
+                <span class="deadline-icon">⏰</span>
+                Deadline: 09 Apr 2015
+              </div>
+            </div>
+
+            <h2 class="card-position">Staf IT / Sistem Informasi</h2>
+
+            <p class="card-desc">
+              PT Mataram Tunggal Garment, perusahaan manufaktur tekstil dan garmen, membuka
+              lowongan untuk tenaga IT dan sistem informasi guna mendukung operasional
+              dan digitalisasi proses produksi.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">💼 Full-time</span>
+              <span class="tag">👕 Manufaktur &amp; Tekstil</span>
+              <span class="tag">🎓 D3 / S1 Sistem Informasi</span>
+            </div>
+
+            <div class="card-info-row">
+              <span class="card-info-item">📅 Diposting: 2015</span>
+              <span class="card-info-item">🏭 Manufaktur</span>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="card-requirements">
+                <span class="req-label">Keterangan:</span>
+                Detail posisi dan persyaratan tersedia pada file pendukung lowongan ini.
+              </div>
+              <a href="#" class="btn-detail">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ══════════════════════════════
+             KARTU 7 — PT Yamaha Indonesia Motor
+        ══════════════════════════════ -->
+        <article class="lowongan-card-full reveal"
+                 data-kategori="manufaktur"
+                 data-search="pt yamaha indonesia motor otomotif manufaktur it">
+          <div class="card-left">
+            <div class="company-logo-box">🏍️</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <div>
+                <span class="company-name">PT Yamaha Indonesia Motor</span>
+                <span class="card-badge arsip">📦 Arsip</span>
+              </div>
+              <div class="card-deadline expired">
+                <span class="deadline-icon">⏰</span>
+                Deadline: 09 Mar 2015
+              </div>
+            </div>
+
+            <h2 class="card-position">Staf IT &amp; Engineering</h2>
+
+            <p class="card-desc">
+              PT Yamaha Indonesia Motor Manufacturing, produsen sepeda motor terkemuka di Indonesia,
+              membuka kesempatan berkarir bagi lulusan teknik informatika dan ilmu komputer
+              untuk posisi di divisi IT dan Engineering.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">💼 Full-time</span>
+              <span class="tag">🏍️ Otomotif &amp; Manufaktur</span>
+              <span class="tag">🎓 S1 Teknik / Informatika</span>
+            </div>
+
+            <div class="card-info-row">
+              <span class="card-info-item">📅 Diposting: 2015</span>
+              <span class="card-info-item">🏭 Otomotif</span>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="card-requirements">
+                <span class="req-label">Keterangan:</span>
+                Detail posisi dan persyaratan tersedia pada file pendukung lowongan ini.
+              </div>
+              <a href="#" class="btn-detail">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ══════════════════════════════
+             KARTU 8 — PT IFARS Pharmaceutical Laboratories
+        ══════════════════════════════ -->
+        <article class="lowongan-card-full reveal"
+                 data-kategori="manufaktur"
+                 data-search="pt ifars pharmaceutical laboratories farmasi it ilmu komputer">
+          <div class="card-left">
+            <div class="company-logo-box">🧪</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top-row">
+              <div>
+                <span class="company-name">PT IFARS Pharmaceutical Laboratories</span>
+                <span class="card-badge arsip">📦 Arsip</span>
+              </div>
+              <div class="card-deadline expired">
+                <span class="deadline-icon">⏰</span>
+                Deadline: 27 Feb 2015
+              </div>
+            </div>
+
+            <h2 class="card-position">Staf IT / Ilmu Komputer</h2>
+
+            <p class="card-desc">
+              PT IFARS Pharmaceutical Laboratories, perusahaan manufaktur farmasi, membuka
+              kesempatan bagi fresh graduate maupun berpengalaman di bidang Ilmu Komputer
+              untuk mendukung digitalisasi sistem laboratorium dan produksi.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">💼 Full-time</span>
+              <span class="tag">🧪 Farmasi &amp; Laboratorium</span>
+              <span class="tag">🎓 S1 Ilmu Komputer</span>
+              <span class="tag">📊 IPK min. 2.75</span>
+              <span class="tag">👥 Pria / Wanita</span>
+            </div>
+
+            <div class="card-info-row">
+              <span class="card-info-item">📅 Diposting: 2015</span>
+              <span class="card-info-item">🧪 Farmasi &amp; Manufaktur</span>
+            </div>
+
+            <div class="card-footer-row">
+              <div class="card-requirements">
+                <span class="req-label">Cara Daftar:</span>
+                Kirim lamaran ke <strong>hrd@ifars.co.id</strong> atau pos ke
+                Jl. Raya Solo–Sragen Km 14,9 Kebakkramat, Karanganyar.
+                Sertakan CV, foto 4×6, KTP, ijazah/SKL, transkrip, surat sehat, dan SKCK.
+              </div>
+              <a href="#" class="btn-detail">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- Pesan bila hasil pencarian kosong -->
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <div class="empty-icon">🔍</div>
+          <div class="empty-title">Lowongan tidak ditemukan</div>
+          <div class="empty-desc">Coba ubah kata kunci atau filter kategori.</div>
+        </div>
+
+      </div><!-- end #lowonganList -->
+    </div>
+  </main>
+
+
+  <!-- ═══════════════════════════════════════
+       CTA — Pasang Lowongan
+  ═══════════════════════════════════════ -->
+  <section class="section-pasang-lowongan">
+    <div class="container">
+      <div class="pasang-box">
+        <div class="pasang-content">
+          <span class="pasang-tag">📢 Untuk Perusahaan Mitra</span>
+          <h2 class="pasang-title">Ingin Memasang Lowongan di APTIKOM?</h2>
+          <p class="pasang-desc">
+            Jangkau ribuan mahasiswa dan fresh graduate Informatika &amp; Ilmu Komputer
+            dari 50+ perguruan tinggi anggota APTIKOM Sumatera Utara.
+            Hubungi kami untuk informasi pemasangan lowongan.
+          </p>
+        </div>
+        <div class="pasang-actions">
+          <a href="kontak.html" class="btn btn-white">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER — konsisten dengan index.html
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <!-- path lowercase, konsisten dengan index.html -->
+            <img src="img/aptikom.png" alt="Logo APTIKOM Sumut"
+                 onerror="this.style.display='none'" />
+            <div class="footer-logo-text">
+              <span class="footer-logo-main">APTIKOM</span>
+              <span class="footer-logo-sub">Sumatera Utara</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Asosiasi Pendidikan Tinggi Informatika dan Ilmu Komputer Provinsi Sumatera Utara.
+            Berdedikasi memajukan kualitas pendidikan teknologi informasi di Sumut.
+          </p>
+          <!-- Sosmed pakai Font Awesome, konsisten dengan index.html -->
+          <div class="footer-social">
+            <a href="#" class="social-link facebook" title="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link twitter" title="Twitter/X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/aptikom.sumut/"
+               class="social-link instagram" title="Instagram" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@aptikomtv5281"
+               class="social-link youtube" title="YouTube" target="_blank">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" class="social-link linkedin" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu Utama -->
+        <div>
+          <div class="footer-col-title">Menu Utama</div>
+          <div class="footer-links">
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang APTIKOM</a>
+            <a href="berita.html">Berita &amp; Pengumuman</a>
+            <a href="event.html">Event &amp; Seminar</a>
+            <a href="galeri.html">Galeri Kegiatan</a>
+          </div>
+        </div>
+
+        <!-- Layanan -->
+        <div>
+          <div class="footer-col-title">Layanan</div>
+          <div class="footer-links">
+            <a href="keanggotaan.html">Keanggotaan</a>
+            <a href="elearning.html">E-Learning</a>
+            <a href="lowongan.html">Lowongan Kerja</a>
+            <a href="#">Cek Sertifikat</a>
+            <a href="#">E-Jurnal</a>
+          </div>
+        </div>
+
+        <!-- Kontak — data konsisten dengan index.html -->
+        <div>
+          <div class="footer-col-title">Kontak</div>
+          <div class="footer-contact-item">
+            <span class="icon">📍</span>
+            <span>Jl. Kapten Mukhtar Basri No. 3, Glugur Darat II,
+                  Kec. Medan Timur, Kota Medan, Sumatera Utara 20238</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📧</span>
+            <span>admin@aptikom-journal.id</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📞</span>
+            <span>0821-1847-6100</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <span>© 2025 APTIKOM Sumatera Utara. Hak Cipta Dilindungi.</span>
+        <span>Dibuat dengan ❤️ untuk kemajuan Informatika Sumut</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script>
+    // ── Navbar shadow saat scroll (sama persis dengan index.html) ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ── Dropdown dengan delay (sama persis dengan index.html) ──
+    const HIDE_DELAY = 300;
+    document.querySelectorAll('.nav-item').forEach(item => {
+      const menu = item.querySelector('.dropdown-menu');
+      if (!menu) return;
+      let hideTimer = null;
+      const showMenu    = () => { clearTimeout(hideTimer); menu.classList.add('is-open'); };
+      const scheduleHide = () => {
+        hideTimer = setTimeout(() => menu.classList.remove('is-open'), HIDE_DELAY);
+      };
+      item.addEventListener('mouseenter', showMenu);
+      item.addEventListener('mouseleave', scheduleHide);
+      menu.addEventListener('mouseenter', showMenu);
+      menu.addEventListener('mouseleave', scheduleHide);
+    });
+
+    // ── Mobile toggle (sama persis dengan index.html) ──
+    const navToggle = document.getElementById('navToggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navbarNav.classList.contains('mobile-open');
+      if (isOpen) {
+        navbarNav.classList.remove('mobile-open');
+        navbarNav.removeAttribute('style');
+      } else {
+        navbarNav.classList.add('mobile-open');
+        Object.assign(navbarNav.style, {
+          display: 'flex', flexDirection: 'column', position: 'absolute',
+          top: '70px', left: '0', right: '0', background: '#fff',
+          padding: '16px 24px', borderBottom: '1px solid #e2e8f0',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.08)', gap: '4px'
+        });
+      }
+    });
+
+    // ── Filter chip ──
+    let activeKategori = 'semua';
+
+    function setFilter(kategori, btn) {
+      activeKategori = kategori;
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilter();
+    }
+
+    // ── Pencarian teks ──
+    function filterLowongan() { applyFilter(); }
+
+    function applyFilter() {
+      const keyword = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cards   = document.querySelectorAll('.lowongan-card-full');
+      let visible   = 0;
+
+      cards.forEach(card => {
+        const matchKategori = activeKategori === 'semua' || card.dataset.kategori === activeKategori;
+        const matchSearch   = !keyword || card.dataset.search.includes(keyword)
+                              || card.innerText.toLowerCase().includes(keyword);
+        const show = matchKategori && matchSearch;
+        card.style.display = show ? 'flex' : 'none';
+        if (show) visible++;
+      });
+
+      document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+      document.getElementById('filterCount').textContent  = `Menampilkan ${visible} lowongan`;
+    }
+
+    // ── Scroll Reveal (sama pola dengan index.html) ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,881 @@
+/* ============================================================
+   APTIKOM SUMUT — style_keanggotaan.css
+   Hanya berisi style KHUSUS halaman keanggotaan.html.
+
+   Semua yang ada di style_global.css (variabel, reset, utility,
+   tombol, navbar, footer) TIDAK diulang di sini.
+
+   Urutan <link> di keanggotaan.html:
+     <link rel="stylesheet" href="css/style_global.css">
+     <link rel="stylesheet" href="css/style_keanggotaan.css">
+   ============================================================ */
+
+
+/* ══════════════════════════════════════════════════════════
+   1. PAGE HERO
+   ══════════════════════════════════════════════════════════ */
+
+.page-hero {
+  padding-top: 70px; /* kompensasi navbar fixed */
+  background: var(--blue-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient + lingkaran dekoratif — serupa dengan hero index */
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 80% at 80% 50%, rgba(37,99,176,0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(14,165,233,0.15) 0%, transparent 60%),
+    var(--blue-dark);
+}
+.page-hero-bg::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -80px;
+  width: 420px; height: 420px;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+.page-hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 30%;
+  width: 280px; height: 280px;
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 64px 24px 72px;
+  max-width: 760px;
+}
+
+/* Breadcrumb */
+.page-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 20px;
+}
+.page-hero-breadcrumb a {
+  color: rgba(255,255,255,0.55);
+  transition: color var(--transition);
+}
+.page-hero-breadcrumb a:hover { color: var(--white); }
+.page-hero-breadcrumb span:last-child { color: rgba(255,255,255,0.85); }
+
+/* Judul hero */
+.page-hero-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+.page-hero-title em {
+  font-style: normal;
+  color: var(--blue-accent);
+}
+
+.page-hero-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.75;
+  max-width: 580px;
+  margin-bottom: 40px;
+}
+
+/* Mini stats row di bawah deskripsi */
+.page-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.phs-item {
+  padding: 0 28px;
+}
+.phs-item:first-child { padding-left: 0; }
+
+.phs-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.phs-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  margin-top: 4px;
+}
+.phs-divider {
+  width: 1px;
+  height: 38px;
+  background: rgba(255,255,255,0.15);
+  flex-shrink: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   2. JENIS KEANGGOTAAN
+   ══════════════════════════════════════════════════════════ */
+
+.section-jenis {
+  padding: 88px 0;
+  background: var(--white);
+}
+
+.section-header-center {
+  text-align: center;
+  margin-bottom: 52px;
+}
+.section-header-center .section-subtitle {
+  margin: 0 auto;
+}
+
+/* Grid dua kartu */
+.jenis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.jenis-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  position: relative;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.jenis-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--blue-light);
+  transform: translateY(-4px);
+}
+
+/* Versi biru gelap (featured) */
+.jenis-card--featured {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+  color: var(--white);
+}
+.jenis-card--featured:hover {
+  border-color: var(--blue-mid);
+}
+
+.jenis-featured-badge {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: var(--gold);
+  color: var(--blue-dark);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.jenis-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.jenis-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.jenis-card--featured .jenis-title { color: var(--white); }
+
+.jenis-desc {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.jenis-card--featured .jenis-desc { color: rgba(255,255,255,0.65); }
+
+/* List manfaat */
+.jenis-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.jenis-benefits li {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--gray-600);
+}
+.jenis-card--featured .jenis-benefits li { color: rgba(255,255,255,0.75); }
+
+/* Pasangan harga baru vs perpanjangan */
+.jenis-price-group {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.jenis-price {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.jenis-card--featured .jenis-price {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.12);
+}
+.jenis-price.secondary {
+  opacity: 0.85;
+}
+.price-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-400);
+  flex-shrink: 0;
+  white-space: nowrap;
+  align-self: flex-start;
+  padding-top: 2px;
+}
+.jenis-card--featured .price-label { color: rgba(255,255,255,0.45); }
+
+.price-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: nowrap;
+
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  line-height: 1.1;
+}
+.jenis-card--featured .price-value { color: var(--white); }
+
+.price-period {
+  font-size: 0.7rem;
+  color: var(--gray-400);
+
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.jenis-card--featured .price-period { color: rgba(255,255,255,0.4); }
+
+.jenis-btn {
+  margin-top: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   3. PROSEDUR PENDAFTARAN & PERPANJANGAN
+   ══════════════════════════════════════════════════════════ */
+
+.section-prosedur {
+  padding: 88px 0;
+  background: var(--gray-50);
+}
+
+/* Tab switcher */
+.prosedur-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ptab {
+  padding: 10px 22px;
+  border: 1.5px solid var(--gray-200);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.ptab:hover {
+  border-color: var(--blue-light);
+  color: var(--blue-mid);
+}
+.ptab.active {
+  background: var(--blue-mid);
+  border-color: var(--blue-mid);
+  color: var(--white);
+}
+
+/* Panel — hanya yang .active yang terlihat */
+.prosedur-panel { display: none; }
+.prosedur-panel.active { display: block; }
+
+/* Container langkah-langkah */
+.prosedur-steps {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+/* Garis vertikal penghubung antar langkah */
+.prosedur-steps::before {
+  content: '';
+  position: absolute;
+  left: 23px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: var(--gray-200);
+}
+
+/* Satu langkah */
+.pstep {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 24px 0;
+}
+.pstep:last-child { padding-bottom: 0; }
+
+/* Nomor bulat */
+.pstep-num {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--blue-mid);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--gray-50);
+}
+
+.pstep-body {
+  flex: 1;
+  padding-top: 10px;
+}
+.pstep-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 6px;
+}
+.pstep-desc {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.pstep-link {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+  word-break: break-all;
+}
+.pstep-link:hover { color: var(--blue-dark); }
+
+
+/* ══════════════════════════════════════════════════════════
+   4. BIAYA IURAN
+   ══════════════════════════════════════════════════════════ */
+
+.section-biaya {
+  padding: 88px 0;
+  background: var(--white);
+}
+
+/* Grid 4 kartu biaya */
+.biaya-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.biaya-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-align: center;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.biaya-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--blue-light);
+}
+.biaya-card.featured {
+  background: var(--blue-pale);
+  border-color: var(--blue-light);
+}
+
+.biaya-icon {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+.biaya-kategori {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.biaya-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 99px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.biaya-tag.new {
+  background: rgba(14,165,233,0.12);
+  color: var(--blue-mid);
+}
+.biaya-tag.renew {
+  background: rgba(240,165,0,0.12);
+  color: #c68a00;
+}
+
+.biaya-nominal {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin-top: 4px;
+  line-height: 1;
+}
+.biaya-keterangan {
+  font-size: 0.72rem;
+  color: var(--gray-400);
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Kotak rekening bank */
+.rekening-box {
+  background: var(--blue-dark);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.rekening-box::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -40px;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.rekening-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.rekening-icon { font-size: 1.3rem; }
+.rekening-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rekening-detail { flex: 1; }
+.rekening-bank {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.rekening-cabang {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 6px;
+}
+.rekening-nomor {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.rekening-atas-nama {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+}
+
+.rekening-copy {
+  position: relative;
+  color: rgba(255,255,255,0.85) !important;
+  border-color: rgba(255,255,255,0.25) !important;
+  flex-shrink: 0;
+}
+.rekening-copy:hover {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.5) !important;
+}
+
+.rekening-copied {
+  position: absolute;
+  bottom: 36px;
+  right: 40px;
+  background: #22c55e;
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 99px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+.rekening-copied.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   5. CTA DAFTAR SEKARANG
+   ══════════════════════════════════════════════════════════ */
+
+.section-cta-keang {
+  padding: 80px 0;
+  background: var(--gray-50);
+}
+
+.cta-keang-box {
+  background: var(--blue-mid);
+  border-radius: var(--radius-xl);
+  padding: 56px 60px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-keang-deco {
+  position: absolute;
+  top: -70px; right: -60px;
+  width: 280px; height: 280px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.cta-keang-deco::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: 80px;
+  width: 180px; height: 180px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+
+/* Teks CTA — pakai class global dari style_global.css */
+.cta-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(240,165,0,0.15);
+  padding: 4px 14px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+}
+.cta-title {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.cta-desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+}
+
+.cta-keang-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   6. CEK DATA ANGGOTA
+   ══════════════════════════════════════════════════════════ */
+
+.section-anggota {
+  padding: 88px 0;
+  background: var(--white);
+}
+
+.anggota-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 0;
+}
+
+.anggota-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition);
+}
+.anggota-card:hover {
+  border-color: var(--blue-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.anggota-card-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+.anggota-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 10px;
+}
+.anggota-card-desc {
+  font-size: 0.86rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 18px;
+}
+.anggota-card-link {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--blue-mid);
+  transition: gap var(--transition);
+}
+.anggota-card:hover .anggota-card-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   7. KONTAK ADMIN
+   ══════════════════════════════════════════════════════════ */
+
+.section-kontak-keang {
+  padding: 64px 0;
+  background: var(--gray-50);
+}
+
+.kontak-keang-box {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 44px 52px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.kontak-keang-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin: 10px 0 10px;
+}
+.kontak-keang-desc {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.kontak-keang-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.kontak-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.kontak-person-icon {
+  width: 48px; height: 48px;
+  background: var(--blue-pale);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.kontak-person-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+.kontak-person-num {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--blue-mid);
+  transition: color var(--transition);
+}
+.kontak-person-num:hover { color: var(--blue-dark); }
+.kontak-person-platform {
+  font-size: 0.72rem;
+  color: var(--gray-400);
+  margin-top: 2px;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   8. SCROLL REVEAL UTILITY
+   ══════════════════════════════════════════════════════════ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition-delay: var(--delay, 0s);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   9. RESPONSIVE
+   ══════════════════════════════════════════════════════════ */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .biaya-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .anggota-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  /* Page hero */
+  .page-hero-inner { padding: 48px 24px 56px; }
+  .page-hero-stats { gap: 0; flex-wrap: wrap; }
+  .phs-item { padding: 8px 20px 8px 0; }
+  .phs-divider { display: none; }
+
+  /* Jenis keanggotaan */
+  .jenis-grid { grid-template-columns: 1fr; }
+
+  /* Prosedur tabs */
+  .prosedur-tabs { gap: 6px; }
+  .ptab { padding: 8px 14px; font-size: 0.8rem; }
+
+  /* Biaya */
+  .biaya-grid { grid-template-columns: 1fr 1fr; }
+  .rekening-box { flex-direction: column; padding: 28px; align-items: flex-start; }
+
+  /* CTA */
+  .cta-keang-box {
+    grid-template-columns: 1fr;
+    padding: 36px 28px;
+  }
+  .cta-keang-actions { flex-direction: row; flex-wrap: wrap; }
+
+  /* Data anggota */
+  .anggota-cards { grid-template-columns: 1fr; }
+
+  /* Kontak */
+  .kontak-keang-box {
+    grid-template-columns: 1fr;
+    padding: 32px 28px;
+  }
+  .kontak-keang-right { align-items: flex-start; }
+}
+
+/* Mobile kecil (≤480px) */
+@media (max-width: 480px) {
+  .biaya-grid { grid-template-columns: 1fr; }
+  .jenis-price-group { flex-direction: column; }
+}
+.section-kontak-keang {
+  display: none;
+}

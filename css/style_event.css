@@ -1,0 +1,486 @@
+/* ============================================================
+   APTIKOM SUMUT — style_event.css
+   Khusus untuk event.html
+   Memerlukan css/style_global.css di-load lebih dulu.
+   ============================================================ */
+
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.ev-hero {
+  padding: 130px 0 60px;
+  background: var(--blue-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.ev-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 70% at 85% 30%, rgba(37,99,176,0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 35% 55% at 5% 85%,  rgba(14,165,233,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.ev-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  padding-left: 11px;
+}
+
+.ev-hero-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 10px 0 16px;
+  letter-spacing: -0.03em;
+}
+
+.ev-hero-title span {
+  color: var(--blue-accent);
+}
+
+.ev-hero-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+/* Stats */
+.ev-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ev-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ev-stat-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+
+.ev-stat-label {
+  font-size: 0.74rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ev-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.15);
+}
+
+
+/* ── Filter Bar ──────────────────────────────────────────── */
+.ev-filter-wrap {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 14px 0;
+  position: sticky;
+  top: 70px;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+}
+
+.ev-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ev-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 99px;
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.ev-filter-btn:hover {
+  border-color: var(--blue-mid);
+  color: var(--blue-mid);
+  background: var(--blue-pale);
+}
+
+.ev-filter-btn.active {
+  background: var(--blue-mid);
+  border-color: var(--blue-mid);
+  color: var(--white);
+}
+
+
+/* ── Main Section ─────────────────────────────────────────── */
+.ev-main {
+  padding: 56px 0 72px;
+  background: var(--gray-50);
+}
+
+.ev-section-header {
+  margin-bottom: 40px;
+}
+
+
+/* ── Tahun Anchor ─────────────────────────────────────────── */
+.ev-year-anchor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0 16px;
+}
+
+.ev-year-anchor:first-child {
+  margin-top: 0;
+}
+
+.ev-year-anchor::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gray-200);
+}
+
+.ev-year-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--blue-mid);
+  background: var(--blue-pale);
+  border: 1.5px solid #c3d9f5;
+  padding: 3px 14px;
+  border-radius: 99px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+
+/* ── Kartu Event ──────────────────────────────────────────── */
+.ev-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 16px;
+  transition: all var(--transition);
+  position: relative;
+  animation: fadeUp 0.4s ease both;
+}
+
+.ev-card:hover {
+  border-color: var(--blue-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* Strip warna kiri — class dipakai di HTML: .ev-card-left-bar */
+.ev-card-left-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.ev-card-left-bar.seminar    { background: #15803d; }
+.ev-card-left-bar.konferensi { background: var(--blue-mid); }
+.ev-card-left-bar.webinar    { background: #7c3aed; }
+.ev-card-left-bar.raker      { background: #b45309; }
+
+/* Body kartu */
+.ev-card-body {
+  padding: 24px 24px 24px 28px;
+}
+
+/* Header baris atas: badge + tanggal */
+.ev-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.ev-card-date {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+/* Badge jenis event — class dipakai di HTML: .ev-badge */
+.ev-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.ev-badge.seminar    { background: #dcfce7; color: #15803d; }
+.ev-badge.konferensi { background: var(--blue-pale); color: var(--blue-mid); }
+.ev-badge.webinar    { background: #f3e8ff; color: #7c3aed; }
+.ev-badge.raker      { background: #fef3c7; color: #b45309; }
+
+.ev-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.ev-card-desc {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.ev-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+.ev-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Tombol link di bawah kartu */
+.ev-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.ev-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 99px;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.ev-link-btn.primary {
+  background: var(--blue-mid);
+  color: var(--white);
+}
+
+.ev-link-btn.primary:hover {
+  background: var(--blue-dark);
+}
+
+.ev-link-btn.secondary {
+  background: var(--gray-100, #f1f5f9);
+  color: var(--blue-mid);
+  border: 1.5px solid var(--gray-200);
+}
+
+.ev-link-btn.secondary:hover {
+  border-color: var(--blue-mid);
+  background: var(--blue-pale);
+}
+
+/* Animasi kartu */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ── Empty State ──────────────────────────────────────────── */
+.ev-empty {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.ev-empty-icon {
+  font-size: 2.8rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.ev-empty p {
+  font-size: 0.95rem;
+  color: var(--gray-400);
+}
+
+
+/* ── CTA Sertifikat ───────────────────────────────────────── */
+.ev-cta-box {
+  background: var(--blue-dark);
+  border-radius: var(--radius-lg);
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.ev-cta-text h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.ev-cta-text p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+
+/* ── Galeri Section ───────────────────────────────────────── */
+.ev-gallery-section {
+  padding: 56px 0 72px;
+  background: var(--white);
+}
+
+.ev-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.ev-gallery-card {
+  text-decoration: none;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.ev-gallery-card:hover {
+  border-color: var(--blue-mid);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.ev-gallery-thumb {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+}
+
+.ev-gallery-info {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+}
+
+.ev-gallery-info strong {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* class dipakai di HTML: .ev-gallery-count */
+.ev-gallery-count,
+.ev-gallery-info span {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+.ev-gallery-icon {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  transition: color var(--transition);
+}
+
+.ev-gallery-card:hover .ev-gallery-icon {
+  color: var(--blue-mid);
+}
+
+
+/* ── Scroll Reveal ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition-delay: var(--delay, 0s);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .ev-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .ev-hero         { padding: 110px 0 44px; }
+  .ev-hero-title   { font-size: 1.9rem; }
+  .ev-hero-stats   { gap: 14px; }
+  .ev-stat-num     { font-size: 1.2rem; }
+
+  .ev-filter-wrap  { top: 0; }
+  .ev-filter-bar   { gap: 6px; }
+
+  .ev-card-inner   { flex-direction: column; gap: 14px; }
+  .ev-card-icon    { width: 48px; height: 48px; font-size: 1.6rem; }
+
+  .ev-cta-box      { flex-direction: column; align-items: flex-start; }
+  .ev-gallery-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .ev-gallery-grid { grid-template-columns: 1fr; }
+  .ev-card-meta    { gap: 8px; }
+}
+
+/* (display:none dihapus — CTA box seharusnya tampil) */
+
+.ev-cta-box {
+  display: none;
+}
