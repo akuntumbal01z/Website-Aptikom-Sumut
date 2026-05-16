@@ -707,6 +707,15 @@
    9. RESPONSIVE
    ══════════════════════════════════════════════════════════ */
 
+/* Cegah overflow horizontal global */
+.page-hero,
+.filter-bar,
+.section-lowongan-list,
+.section-pasang-lowongan {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
   .pasang-box {
@@ -716,13 +725,31 @@
 
 /* Mobile (≤768px) */
 @media (max-width: 768px) {
-  /* Hero */
+
+  /* ─ Hero ─ */
   .page-hero {
-    padding: 105px 0 52px;
+    padding: 105px 0 48px;
+  }
+  /* Padding eksplisit agar judul tidak rapat ke tepi */
+  .page-hero-content {
+    padding-left: 24px;
+    padding-right: 24px;
   }
   .page-hero-title {
-    font-size: 1.85rem;
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+    letter-spacing: -0.01em;
   }
+  .page-hero-desc {
+    font-size: 0.95rem;
+    max-width: 100%;
+    line-height: 1.7;
+  }
+  .page-breadcrumb {
+    font-size: 0.78rem;
+    margin-bottom: 14px;
+  }
+
+  /* ─ Hero Stats ─ */
   .hero-stats-row {
     gap: 0;
     margin-top: 28px;
@@ -738,7 +765,10 @@
     font-size: 1.5rem;
   }
 
-  /* Filter bar */
+  /* ─ Filter bar ─ */
+  .filter-bar {
+    top: 64px;
+  }
   .filter-bar-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -750,7 +780,12 @@
   .chip { font-size: 0.78rem; padding: 6px 13px; }
   .filter-count { margin-left: 0; }
 
-  /* Kartu lowongan: susun vertikal di mobile */
+  /* ─ Section list ─ */
+  .section-lowongan-list {
+    padding: 32px 0 52px;
+  }
+
+  /* ─ Kartu lowongan: susun vertikal ─ */
   .lowongan-card-full {
     flex-direction: column;
   }
@@ -778,9 +813,17 @@
     justify-content: center;
   }
 
-  /* CTA pasang */
+  /* ─ Section heading ─ */
+  .section-tag   { font-size: 0.68rem; }
+  .section-title { font-size: clamp(1.5rem, 5.5vw, 2rem); }
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  /* ─ CTA pasang ─ */
   .pasang-box {
-    padding: 32px 26px;
+    padding: 32px 24px;
     flex-direction: column;
     align-items: flex-start;
     border-radius: var(--radius-lg);
@@ -793,6 +836,24 @@
 
 /* Mobile kecil (≤480px) */
 @media (max-width: 480px) {
+
+  /* ─ Hero ─ */
+  .page-hero {
+    padding: 95px 0 40px;
+  }
+  .page-hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .page-hero-title {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+  }
+  .page-hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* ─ Stats: stack vertikal ─ */
   .hero-stats-row {
     flex-direction: column;
     gap: 16px;
@@ -800,6 +861,65 @@
   }
   .hero-stat-divider { display: none; }
   .hero-stat-item { padding-right: 0; }
+
+  /* ─ Section list ─ */
+  .section-lowongan-list {
+    padding: 24px 0 44px;
+  }
+
+  /* ─ Kartu: padding lebih kecil ─ */
+  .card-left {
+    padding: 16px 16px 0 16px;
+  }
+  .card-body {
+    padding: 14px 16px 18px 16px;
+  }
+  .company-logo-box {
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
+  }
+  .card-title { font-size: 0.98rem; }
+  .card-desc  { font-size: 0.84rem; }
+
+  /* ─ Tags & info ─ */
+  .tag { font-size: 0.72rem; padding: 3px 8px; }
+  .card-info-item { font-size: 0.74rem; }
+
+  /* ─ Jurusan box ─ */
+  .jurusan-box { padding: 10px 12px; }
+
+  /* ─ Filter ─ */
+  .chip { font-size: 0.74rem; padding: 5px 10px; }
+}
+
+/* Layar sangat kecil (≤380px) */
+@media (max-width: 380px) {
+
+  /* ─ Hero ─ */
+  .page-hero-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .page-hero-title {
+    font-size: clamp(1.4rem, 8vw, 1.8rem);
+  }
+
+  /* ─ Kartu ─ */
+  .card-left {
+    padding: 14px 14px 0 14px;
+  }
+  .card-body {
+    padding: 12px 14px 16px 14px;
+  }
+  .company-logo-box {
+    width: 46px;
+    height: 46px;
+    font-size: 1.4rem;
+  }
+  .card-title    { font-size: 0.94rem; }
+  .card-requirements { font-size: 0.78rem; }
+  .btn-detail    { font-size: 0.8rem; padding: 8px 14px; }
 }
 
 .pasang-box {
