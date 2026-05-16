@@ -497,6 +497,12 @@ ul  { list-style: none; }
 
 @media (max-width: 768px) {
 
+  /* ── Pastikan tidak ada scroll horizontal (global guard) ── */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   /* ── Menu utama saat mobile-open (class ditambah JS) ── */
   .navbar-nav.mobile-open {
     display: flex !important;
@@ -597,6 +603,10 @@ ul  { list-style: none; }
   /* ── Perbaikan footer mobile ── */
   .footer {
     padding-top: 44px;
+    overflow-x: hidden;
+  }
+  .footer-grid {
+    width: 100%;
   }
   .footer-logo-main {
     font-size: 1.6rem;

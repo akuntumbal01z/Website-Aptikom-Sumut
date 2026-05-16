@@ -1096,6 +1096,56 @@
 /* ── Mobile (≤768px) ── */
 @media (max-width: 768px) {
 
+  /* ─ Cegah horizontal scroll (akar masalah strip putih di kanan) ─ */
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* ─ Semua section tidak boleh melebihi lebar viewport ─ */
+  .hero,
+  .section-mitra,
+  .quick-links,
+  .section-berita,
+  .section-event,
+  .section-keunggulan,
+  .section-cta,
+  .section-lowongan,
+  .footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* ─ Lingkaran dekoratif hero: perkecil agar tidak bocor ─ */
+  .hero-bg::before {
+    width: 260px;
+    height: 260px;
+    top: -40px;
+    right: -40px;
+  }
+  .hero-bg::after {
+    width: 180px;
+    height: 180px;
+    bottom: -60px;
+    right: 40px;
+  }
+
+  /* ─ Lingkaran dekoratif event: perkecil ─ */
+  .section-event::before {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+  }
+
+  /* ─ Marquee: isolasi agar transform tidak bocor ─ */
+  .section-mitra {
+    contain: layout paint;
+  }
+
   /* ─ Announcement Bar ─ */
   .announcement-inner {
     flex-wrap: wrap;
@@ -1112,12 +1162,13 @@
   /* ─ Hero ─ */
   .hero {
     min-height: auto;
+    padding-top: 0;    /* announcement bar sudah di bawah navbar, tidak perlu kompensasi */
     padding-bottom: 0;
   }
   .hero-content {
     grid-template-columns: 1fr;
     gap: 0;                       /* visual tersembunyi, tak perlu gap */
-    padding: 44px 0 40px;
+    padding: 40px 0 40px;
   }
   .hero-visual       { display: none; }
   .hero-scroll-hint  { display: none; }
