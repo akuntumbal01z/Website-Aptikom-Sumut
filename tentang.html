@@ -66,6 +66,12 @@
         <li class="nav-item">
           <a href="lowongan.html" class="nav-link">Lowongan</a>
         </li>
+
+        <!-- Tombol CTA khusus mobile — tersembunyi di desktop via CSS -->
+        <div class="navbar-mobile-cta">
+          <a href="elearning.html" class="btn btn-outline">E-Learning</a>
+          <a href="kontak.html" class="btn btn-primary">Kontak Kami</a>
+        </div>
       </ul>
 
       <!-- CTA Buttons -->
@@ -624,18 +630,62 @@
       navbar.classList.toggle('scrolled', window.scrollY > 20);
     });
 
-    // ── Dropdown dengan hover + delay ──
+    // ── Deteksi mobile ──
+    const isMobile = () => window.innerWidth <= 768;
+
+    // ── Dropdown: hover (desktop) + klik (mobile) ──
     const HIDE_DELAY = 300;
     document.querySelectorAll('.nav-item').forEach(item => {
       const menu = item.querySelector('.dropdown-menu');
       if (!menu) return;
       let hideTimer = null;
-      const showMenu    = () => { clearTimeout(hideTimer); menu.classList.add('is-open'); };
-      const scheduleHide = () => { hideTimer = setTimeout(() => menu.classList.remove('is-open'), HIDE_DELAY); };
-      item.addEventListener('mouseenter', showMenu);
-      item.addEventListener('mouseleave', scheduleHide);
-      menu.addEventListener('mouseenter', showMenu);
-      menu.addEventListener('mouseleave', scheduleHide);
+      const showMenu  = () => { clearTimeout(hideTimer); menu.classList.add('is-open'); };
+      const hideMenu  = () => { menu.classList.remove('is-open'); };
+      const schedHide = () => { hideTimer = setTimeout(hideMenu, HIDE_DELAY); };
+
+      item.addEventListener('mouseenter', () => { if (!isMobile()) showMenu(); });
+      item.addEventListener('mouseleave', () => { if (!isMobile()) schedHide(); });
+      menu.addEventListener('mouseenter', () => { if (!isMobile()) showMenu(); });
+      menu.addEventListener('mouseleave', () => { if (!isMobile()) schedHide(); });
+
+      const navLink = item.querySelector('.nav-link');
+      if (navLink) {
+        navLink.addEventListener('click', (e) => {
+          if (!isMobile()) return;
+          e.preventDefault();
+          const wasOpen = menu.classList.contains('is-open');
+          document.querySelectorAll('.dropdown-menu.is-open')
+                  .forEach(m => m.classList.remove('is-open'));
+          if (!wasOpen) menu.classList.add('is-open');
+        });
+      }
+    });
+
+    // ── Mobile toggle (hamburger) ──
+    const navToggle = document.getElementById('navToggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+
+    function openMobileMenu() {
+      navbarNav.classList.add('mobile-open');
+      navToggle.classList.add('is-active');
+      navToggle.setAttribute('aria-label', 'Tutup menu');
+    }
+    function closeMobileMenu() {
+      navbarNav.classList.remove('mobile-open');
+      navToggle.classList.remove('is-active');
+      navToggle.setAttribute('aria-label', 'Buka menu');
+      document.querySelectorAll('.dropdown-menu.is-open')
+              .forEach(m => m.classList.remove('is-open'));
+    }
+
+    navToggle.addEventListener('click', () => {
+      navbarNav.classList.contains('mobile-open') ? closeMobileMenu() : openMobileMenu();
+    });
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target)) closeMobileMenu();
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMobileMenu();
     });
 
     // ── Tab aktif otomatis saat scroll ──
@@ -654,40 +704,6 @@
     }, { rootMargin: '-140px 0px -50% 0px', threshold: 0 });
 
     sections.forEach(sec => { if (sec) tabObserver.observe(sec); });
-
-    // ── Mobile hamburger toggle ──
-    const navToggle = document.getElementById('navToggle');
-    const navbarNav = document.querySelector('.navbar-nav');
-    const navbarCta = document.querySelector('.navbar-cta');
-
-    navToggle.addEventListener('click', () => {
-      const isOpen = navbarNav.classList.contains('mobile-open');
-      if (isOpen) {
-        navbarNav.classList.remove('mobile-open');
-        navbarCta.classList.remove('mobile-open');
-        navbarNav.removeAttribute('style');
-        navbarCta.removeAttribute('style');
-      } else {
-        navbarNav.classList.add('mobile-open');
-        navbarCta.classList.add('mobile-open');
-        Object.assign(navbarNav.style, {
-          display: 'flex', flexDirection: 'column',
-          position: 'absolute', top: '70px', left: '0', right: '0',
-          background: '#fff', padding: '16px 24px',
-          borderBottom: '1px solid #e2e8f0',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.08)', gap: '4px',
-          zIndex: '999'
-        });
-        Object.assign(navbarCta.style, {
-          display: 'flex', flexDirection: 'column',
-          position: 'absolute', top: navbarNav.offsetHeight + 70 + 'px',
-          left: '0', right: '0',
-          background: '#fff', padding: '0 24px 16px',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
-          zIndex: '999'
-        });
-      }
-    });
   </script>
 
 </body>

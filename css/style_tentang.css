@@ -644,20 +644,56 @@
    (Navbar & footer sudah dihandle di style_global.css)
    ═══════════════════════════════════════════════════════════ */
 
-/* Tablet (≤900px) */
+/* ── Overflow Fix (sama seperti style_index.css) ── */
+html { overflow-x: clip; }
+body { overflow-x: clip; }
+
+/* ── 1100px: desktop mode on mobile ── */
+@media (max-width: 1100px) {
+  .visi-misi-grid { gap: 24px; }
+  .struktur-intro  { gap: 32px; }
+}
+
+/* ── Tablet ≤900px ── */
 @media (max-width: 900px) {
   .visi-misi-grid { grid-template-columns: 1fr; }
-  .struktur-intro  { grid-template-columns: 1fr; }
+  .struktur-intro  { grid-template-columns: 1fr; gap: 28px; }
   .adart-grid      { grid-template-columns: 1fr; }
 }
 
-/* Mobile (≤768px) */
+/* ── Mobile ≤768px ── */
 @media (max-width: 768px) {
-  /* Hero */
-  .page-hero-content { padding: 56px 0 48px; }
-  .page-hero-title   { font-size: clamp(1.8rem, 6vw, 2.4rem); }
 
-  /* Timeline: garis pindah ke kiri */
+  html, body { overflow-x: clip; }
+
+  /* ─ Page Hero ─ */
+  .page-hero-content {
+    padding: 48px 0 40px;
+  }
+  .page-hero-title {
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+  }
+  .page-hero-desc {
+    font-size: 0.92rem;
+    max-width: 100%;
+  }
+
+  /* ─ Page Tabs ─ */
+  .tab-link {
+    padding: 7px 12px;
+    font-size: 0.78rem;
+    gap: 4px;
+  }
+
+  /* ─ Section paddings ─ */
+  #sejarah, #visi-misi, #struktur, #ad-art {
+    padding: 56px 0;
+  }
+
+  /* ─ Timeline: garis pindah ke kiri ─ */
+  .timeline {
+    margin-top: 36px;
+  }
   .timeline::before {
     left: 22px;
     transform: none;
@@ -665,6 +701,7 @@
   .timeline-item {
     grid-template-columns: auto 1fr;
     gap: 16px;
+    margin-bottom: 28px;
   }
   .timeline-item:nth-child(odd)  .timeline-content,
   .timeline-item:nth-child(even) .timeline-content {
@@ -672,23 +709,158 @@
     text-align: left;
   }
   .timeline-item:nth-child(odd)  .timeline-empty,
-  .timeline-item:nth-child(even) .timeline-empty { display: none; }
-  .timeline-dot { grid-column: 1; }
+  .timeline-item:nth-child(even) .timeline-empty {
+    display: none;
+  }
+  .timeline-dot {
+    grid-column: 1;
+    width: 40px; height: 40px;
+    font-size: 0.95rem;
+  }
+  .timeline-content {
+    padding: 18px 20px;
+  }
+  .timeline-event-title { font-size: 0.92rem; }
+  .timeline-event-desc  { font-size: 0.82rem; }
 
-  /* Org chart: biarkan wrap alami */
-  .org-row-mid { gap: 16px; flex-wrap: wrap; }
-  .org-card    { min-width: 140px; max-width: 160px; padding: 16px; }
+  /* ─ Visi & Misi ─ */
+  .visi-misi-grid {
+    margin-top: 32px;
+    gap: 20px;
+  }
+  .visi-box { padding: 32px 26px; }
+  .misi-box { padding: 28px 24px; }
+  .visi-text { font-size: 1rem; }
+  .misi-item { padding: 12px 14px; gap: 12px; }
+  .misi-text { font-size: 0.86rem; }
+
+  /* ─ Struktur Intro ─ */
+  .struktur-intro {
+    margin-top: 32px;
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+  .struktur-stats {
+    padding: 24px;
+    gap: 16px;
+  }
+  .struktur-stat-value { font-size: 1.8rem; }
+
+  /* ─ Org Chart ─ */
+  /* Kurangi ukuran kartu agar muat di layar sempit */
+  .org-card {
+    min-width: 130px;
+    max-width: 150px;
+    padding: 14px 12px;
+  }
+  .org-card.ketua {
+    min-width: 160px;
+    max-width: 180px;
+  }
+  .org-card.wakil {
+    min-width: 150px;
+    max-width: 170px;
+  }
+  .org-avatar {
+    width: 46px; height: 46px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .org-name    { font-size: 0.8rem; }
+  .org-jabatan { font-size: 0.65rem; }
+
+  .org-connector-down { height: 28px; }
+  .org-branch-line    { height: 28px; }
+
+  /* Sekretaris & Bendahara: biarkan wrap jika layar sempit */
+  .org-row-mid {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  /* Bidang fungsional: 2x2 grid secara natural via flex-wrap */
+  .org-row-bottom {
+    gap: 10px;
+  }
+
+  /* ─ AD & ART ─ */
+  .adart-grid {
+    margin-top: 32px;
+    gap: 20px;
+  }
+  .adart-card-header {
+    padding: 22px 24px;
+    gap: 14px;
+  }
+  .adart-card-body { padding: 22px 24px; }
+  .adart-icon {
+    width: 44px; height: 44px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+  }
 }
 
-/* Layar kecil (≤480px) */
+/* ── Layar kecil ≤480px ── */
 @media (max-width: 480px) {
-  #sejarah, #visi-misi, #struktur, #ad-art { padding: 60px 0; }
 
+  .page-hero-content { padding: 40px 0 32px; }
+
+  #sejarah, #visi-misi, #struktur, #ad-art { padding: 48px 0; }
+
+  .visi-box { padding: 24px 20px; }
+  .misi-box { padding: 22px 18px; }
+  .misi-item { padding: 10px 12px; }
+
+  .struktur-stats { padding: 20px; gap: 12px; }
+  .struktur-stat-value { font-size: 1.6rem; }
+
+  /* Org chart lebih kompak */
+  .org-card {
+    min-width: 110px;
+    max-width: 130px;
+    padding: 12px 10px;
+  }
+  .org-card.ketua { min-width: 140px; max-width: 160px; }
+  .org-card.wakil { min-width: 130px; max-width: 150px; }
+  .org-avatar {
+    width: 40px; height: 40px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  .org-name    { font-size: 0.74rem; }
+  .org-jabatan { font-size: 0.6rem; }
+  .org-row-mid  { gap: 8px; }
+  .org-row-bottom { gap: 8px; }
+
+  /* AD & ART: padding lebih kecil */
   .adart-card-header,
-  .adart-card-body { padding: 20px; }
+  .adart-card-body { padding: 18px 20px; }
 
-  .visi-box,
-  .misi-box { padding: 28px 24px; }
+  /* Bab item: susun vertikal di layar sempit */
+  .adart-bab-item {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .adart-bab-count { flex-shrink: 0; }
+}
 
-  .struktur-stats { padding: 24px; gap: 16px; }
+/* ── Layar sangat kecil ≤380px ── */
+@media (max-width: 380px) {
+
+  .tab-link {
+    padding: 6px 10px;
+    font-size: 0.73rem;
+  }
+
+  .org-card {
+    min-width: 100px;
+    max-width: 115px;
+    padding: 10px 8px;
+  }
+  .org-card.ketua { min-width: 130px; }
+  .org-card.wakil { min-width: 120px; }
+  .org-name    { font-size: 0.7rem; }
+  .org-jabatan { font-size: 0.58rem; }
+
+  .org-row-mid    { gap: 6px; }
+  .org-row-bottom { gap: 6px; }
 }
