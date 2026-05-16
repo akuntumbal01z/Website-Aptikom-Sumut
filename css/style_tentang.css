@@ -663,15 +663,16 @@ body { overflow-x: clip; }
 }
 
 /* ── Mobile ≤768px ── */
-@media (max-width: 768px) {
+@@media (max-width: 768px) {
 
   html, body { overflow-x: clip; }
 
-  .page-hero-inner {
-    padding-left: 20px;
+  .page-hero-content {
+    padding-left: 24px;
     padding-right: 20px;
+  }
 
-  /* ─ Section-section selain page-hero: cegah overflow ─
+  /* ─ Section-section selain page-hero: cegah overflow ─ */
      page-hero TIDAK dimasukkan karena sudah punya overflow:hidden
      di base CSS-nya sendiri. Menambahkannya justru merusak
      container padding sehingga teks menjadi mepet ke kiri.   */
