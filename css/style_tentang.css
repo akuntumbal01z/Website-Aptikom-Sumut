@@ -239,6 +239,9 @@
   color: var(--gray-600);
   line-height: 1.7;
 }
+.page-hero-inner {
+  padding-left: 30px;
+}
 
 
 /* ═══════════════════════════════════════════════════════════
