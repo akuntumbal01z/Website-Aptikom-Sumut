@@ -1146,3 +1146,25 @@
     width: 100%;
   }
 }
+
+/* ═══════════════════════════════════════
+   MOBILE HERO FIX
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  .page-hero {
+    padding-top: 110px !important;
+    padding-bottom: 40px !important;
+    min-height: unset !important;
+    height: auto !important;
+  }
+
+  .page-hero-content {
+    padding: 0 !important;
+  }
+
+  .hero-stats-row {
+    margin-top: 28px !important;
+  }
+
+}
