@@ -80,7 +80,6 @@
   line-height: 1.15;
   letter-spacing: -0.02em;
 
-  margin-left: 20px;
 }
 
 .page-hero-desc {
@@ -92,7 +91,7 @@
 
 /* Geser isi hero ke kanan */
 .page-hero-inner {
-  padding-left: 0px;
+  padding-left: 30px;
 }
 
 
