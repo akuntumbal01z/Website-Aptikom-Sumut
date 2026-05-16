@@ -91,8 +91,8 @@
 }
 
 /* Geser isi hero ke kanan */
-.page-hero-content {
-  padding-left: 30px;
+.page-hero-inner {
+  padding-left: 50px;
 }
 
 
