@@ -95,17 +95,6 @@
   border-radius: 50%;
 }
 
-/* Pola titik-titik di atas gradient */
-.hero-dot-grid {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.06) 1.5px, transparent 1.5px);
-  background-size: 30px 30px;
-  -webkit-mask-image: radial-gradient(ellipse 75% 85% at 65% 50%, black 20%, transparent 90%);
-          mask-image: radial-gradient(ellipse 75% 85% at 65% 50%, black 20%, transparent 90%);
-  pointer-events: none;
-}
-
 /* ── Layout konten hero (2 kolom) ── */
 .hero-content {
   position: relative;
@@ -118,6 +107,11 @@
 }
 
 /* ── Kolom Kiri ── */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -162,29 +156,6 @@
   flex-wrap: wrap;
 }
 
-/* Tombol transparan khusus hero */
-.btn-ghost-hero {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 26px;
-  border-radius: var(--radius-md);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: 2px solid rgba(255,255,255,0.28);
-  color: rgba(255,255,255,0.85);
-  background: transparent;
-  transition: all var(--transition);
-  text-decoration: none;
-}
-.btn-ghost-hero:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.5);
-  transform: translateY(-2px);
-}
-
 /* ── Stats row (di bawah tombol hero) ── */
 .hero-stats {
   display: flex;
@@ -194,21 +165,14 @@
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-.stat-row {
+/* Setiap item stat: nilai + label */
+.stat-item {
   display: flex;
-  align-items: baseline;
-  gap: 1px;
+  flex-direction: column;
 }
 
 .stat-value {
   font-size: 1.9rem;
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1;
-}
-
-.stat-plus {
-  font-size: 1.5rem;
   font-weight: 800;
   color: var(--white);
   line-height: 1;
@@ -219,15 +183,6 @@
   color: rgba(255,255,255,0.55);
   margin-top: 4px;
   font-weight: 500;
-}
-
-/* Garis vertikal pemisah antar stat */
-.stat-divider {
-  width: 1px;
-  height: 44px;
-  background: rgba(255,255,255,0.15);
-  align-self: center;
-  flex-shrink: 0;
 }
 
 /* ── Kolom Kanan: Kartu Visual ── */
@@ -290,22 +245,6 @@
   line-height: 1.5;
 }
 
-/* Garis pemisah di dalam kartu hero */
-.hero-card-sep {
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin: 16px 0;
-}
-
-/* Info tanggal & lokasi di bawah kartu */
-.hero-card-bottom {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.74rem;
-  color: rgba(255,255,255,0.5);
-  gap: 8px;
-}
-
 /* Kartu melayang kanan-bawah (anggota aktif) */
 .hero-card-float {
   position: absolute;
@@ -341,165 +280,13 @@
   line-height: 1;
 }
 
-/* Kartu melayang kiri-atas (akreditasi) */
-.hero-card-float-2 {
-  position: absolute;
-  top: -18px; left: -24px;
-  background: rgba(10,35,66,0.92);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-md);
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-md);
-}
-.float2-icon { font-size: 1rem; }
-.float2-text {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.88);
-  white-space: nowrap;
-}
-
-/* ── Panah scroll hint di bawah hero ── */
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,0.35);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: color var(--transition);
-  z-index: 3;
-}
-.hero-scroll-hint:hover { color: rgba(255,255,255,0.65); }
-
-.scroll-arrow {
-  width: 18px; height: 18px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg);
-  animation: scrollBounce 1.8s ease-in-out infinite;
-}
-@keyframes scrollBounce {
-  0%, 100% { transform: rotate(45deg) translateY(0);    opacity: 0.35; }
-  50%       { transform: rotate(45deg) translateY(6px);  opacity: 0.8;  }
-}
-
-
 /* ══════════════════════════════════════════════════════════
-   3. MITRA PERGURUAN TINGGI — MARQUEE
-   ══════════════════════════════════════════════════════════ */
-
-.section-mitra {
-  padding: 20px 0;
-  background: var(--white);
-  border-top: 1px solid var(--gray-200);
-  border-bottom: 1px solid var(--gray-200);
-  overflow: hidden;
-  /* Mencegah marquee-track (width:max-content) bocor ke luar di semua viewport */
-  contain: layout paint;
-}
-
-.mitra-header {
-  text-align: center;
-  margin-bottom: 14px;
-}
-.mitra-label-text {
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--gray-400);
-}
-
-/* Wrapper: klip overflow + fade di tepi kiri-kanan */
-.marquee-wrapper {
-  overflow: hidden;
-  position: relative;
-}
-.marquee-wrapper::before,
-.marquee-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 90px;
-  z-index: 2;
-  pointer-events: none;
-}
-.marquee-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, var(--white) 30%, transparent);
-}
-.marquee-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, var(--white) 30%, transparent);
-}
-
-/* Trek yang bergerak — duplikat konten di HTML untuk loop tanpa jeda */
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 38s linear infinite;
-}
-.marquee-track:hover { animation-play-state: paused; }
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }   /* -50% karena konten diduplikat */
-}
-
-.mitra-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 30px;
-  font-size: 0.86rem;
-  font-weight: 600;
-  color: var(--gray-600);
-  white-space: nowrap;
-  border-right: 1px solid var(--gray-200);
-  transition: color var(--transition);
-  cursor: default;
-}
-.mitra-item:last-child { border-right: none; }
-.mitra-item:hover { color: var(--blue-mid); }
-
-.mitra-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--blue-mid);
-  flex-shrink: 0;
-  opacity: 0.6;
-}
-
-
-/* ══════════════════════════════════════════════════════════
-   4. QUICK LINKS
+   3. QUICK LINKS
    ══════════════════════════════════════════════════════════ */
 
 .quick-links {
   padding: 72px 0;
   background: var(--gray-50);
-}
-
-/* Judul + subjudul rata tengah */
-.section-center {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.section-center .section-subtitle {
-  margin: 0 auto;
 }
 
 .quick-links-grid {
@@ -716,6 +503,12 @@
 }
 .news-list-img img { width: 100%; height: 100%; object-fit: cover; }
 
+/* Wrapper teks samping berita */
+.news-list-body {
+  flex: 1;
+  min-width: 0;
+}
+
 .news-list-category {
   font-size: 0.68rem;
   font-weight: 700;
@@ -864,59 +657,7 @@
 
 
 /* ══════════════════════════════════════════════════════════
-   7. KEUNGGULAN / MENGAPA BERGABUNG
-   ══════════════════════════════════════════════════════════ */
-
-.section-keunggulan {
-  padding: 80px 0;
-  background: var(--gray-50);
-}
-
-.keunggulan-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 48px;
-}
-
-.keunggulan-card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-lg);
-  padding: 32px 24px;
-  transition: all var(--transition);
-}
-.keunggulan-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-5px);
-  border-color: var(--blue-light);
-}
-
-/* Icon wrapper dengan warna latar yang bisa dikustom via --icon-color */
-.keunggulan-icon-wrap {
-  width: 56px; height: 56px;
-  border-radius: 14px;
-  background: var(--icon-color, var(--blue-pale));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.8rem;
-  margin-bottom: 18px;
-}
-
-.keunggulan-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--blue-dark);
-  margin-bottom: 10px;
-}
-.keunggulan-desc {
-  font-size: 0.85rem;
-  color: var(--gray-600);
-  line-height: 1.72;
-}
-
-
-/* ══════════════════════════════════════════════════════════
-   8. CTA KEANGGOTAAN
+   7. CTA KEANGGOTAAN
    ══════════════════════════════════════════════════════════ */
 
 .section-cta {
@@ -1062,33 +803,7 @@
 
 
 /* ══════════════════════════════════════════════════════════
-   10. ANIMASI SCROLL REVEAL
-   ══════════════════════════════════════════════════════════ */
-
-/*
-  Cara pakai di HTML:
-    <div class="reveal">...</div>
-    <div class="reveal" style="--delay:0.1s">...</div>
-
-  JS di index.html akan menambahkan class .visible
-  lewat IntersectionObserver saat elemen masuk viewport.
-*/
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity   0.55s ease,
-    transform 0.55s ease;
-  transition-delay: var(--delay, 0s);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* ══════════════════════════════════════════════════════════
-   11. RESPONSIVE — khusus komponen index.html
+   9. RESPONSIVE — khusus komponen index.html
        (navbar & footer responsive sudah ada di style_global.css)
    ══════════════════════════════════════════════════════════ */
 
@@ -1122,29 +837,24 @@
 
 /* ── Tablet (≤1024px) ── */
 @media (max-width: 1024px) {
-  .quick-links-grid  { grid-template-columns: repeat(2, 1fr); }
-  .keunggulan-grid   { grid-template-columns: repeat(2, 1fr); }
-  .event-grid        { grid-template-columns: repeat(2, 1fr); }
+  .quick-links-grid { grid-template-columns: repeat(2, 1fr); }
+  .event-grid       { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Mobile (≤768px) ── */
 @media (max-width: 768px) {
 
-  /* ─ Cegah horizontal scroll (akar masalah strip putih di kanan) ─ */
-  html {
+  /* ─ Cegah horizontal scroll ─ */
+  html, body {
     overflow-x: clip;
-  }
-  body {
-    overflow-x: clip;
+    max-width: 100%;
   }
 
   /* ─ Semua section tidak boleh melebihi lebar viewport ─ */
   .hero,
-  .section-mitra,
   .quick-links,
   .section-berita,
   .section-event,
-  .section-keunggulan,
   .section-cta,
   .section-lowongan,
   .footer {
@@ -1190,16 +900,16 @@
   /* ─ Hero ─ */
   .hero {
     min-height: auto;
-    padding-top: 0;    /* announcement bar sudah di bawah navbar, tidak perlu kompensasi */
+    padding-top: 0;
     padding-bottom: 0;
   }
   .hero-content {
     grid-template-columns: 1fr;
-    gap: 0;                       /* visual tersembunyi, tak perlu gap */
-    padding: 40px 0 40px;
+    gap: 0;
+    padding: 40px 0;
   }
-  .hero-visual       { display: none; }
-  .hero-scroll-hint  { display: none; }
+  .hero-left  { width: 100%; }
+  .hero-visual { display: none; }
 
   .hero-badge {
     font-size: 0.7rem;
@@ -1225,17 +935,14 @@
     padding-top: 24px;
     flex-wrap: wrap;
   }
-  .stat-value  { font-size: 1.6rem; }
-  .stat-divider { height: 28px; }
+  .stat-value { font-size: 1.6rem; }
 
   /* ─ Section paddings ─ */
-  .quick-links       { padding: 48px 0; }
-  .section-berita    { padding: 48px 0; }
-  .section-event     { padding: 48px 0; }
-  .section-keunggulan { padding: 48px 0; }
-  .section-cta       { padding: 48px 0; }
-  .section-lowongan  { padding: 48px 0; }
-  .section-mitra     { padding: 14px 0; }
+  .quick-links      { padding: 48px 0; }
+  .section-berita   { padding: 48px 0; }
+  .section-event    { padding: 48px 0; }
+  .section-cta      { padding: 48px 0; }
+  .section-lowongan { padding: 48px 0; }
 
   /* ─ Section header stack ─ */
   .section-header {
@@ -1244,7 +951,6 @@
     gap: 14px;
     margin-bottom: 28px;
   }
-  .section-center { margin-bottom: 32px; }
 
   /* ─ Quick Links ─ */
   .quick-links-grid {
@@ -1266,9 +972,10 @@
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .news-side { gap: 12px; }
+  .news-side      { gap: 12px; }
   .news-list-item { padding: 12px; gap: 12px; }
   .news-list-img  { width: 72px; height: 64px; }
+  .news-list-body { flex: 1; min-width: 0; }
   .news-list-title { font-size: 0.82rem; }
 
   /* ─ Event ─ */
@@ -1278,14 +985,6 @@
     margin-top: 24px;
   }
   .event-card { padding: 22px; }
-
-  /* ─ Keunggulan ─ */
-  .keunggulan-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 28px;
-  }
-  .keunggulan-card { padding: 24px 20px; }
 
   /* ─ CTA Box ─ */
   .cta-box {
@@ -1315,6 +1014,17 @@
     font-size: 1.3rem;
   }
   .lowongan-title { font-size: 0.88rem; }
+
+  /* ─ Footer (diselaraskan dengan style_tentang.css) ─ */
+  .footer {
+    padding-top: 44px;
+    overflow-x: hidden;
+  }
+  .footer-grid    { width: 100%; }
+  .footer-logo-main { font-size: 1.6rem; }
+  .footer-desc    { font-size: 0.88rem; }
+  .footer-col-title { margin-bottom: 12px; }
+  .footer-contact-item { font-size: 0.82rem; }
 }
 
 /* ── Mobile kecil (≤480px) ── */
@@ -1330,8 +1040,8 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
-  .stat-value  { font-size: 1.45rem; }
-  .stat-label  { font-size: 0.72rem; }
+  .stat-value { font-size: 1.45rem; }
+  .stat-label { font-size: 0.72rem; }
 
   /* Padding container dikurangi */
   .container { padding: 0 16px; }
@@ -1349,26 +1059,21 @@
 
 /* ── Layar sangat kecil (≤380px) ── */
 @media (max-width: 380px) {
-  /* Hero stats menjadi 2-2-... baris */
+  /* Hero stats menjadi baris wrap */
   .hero-stats {
     flex-wrap: wrap;
     gap: 16px 24px;
   }
-  .stat-divider { display: none; }
 
   /* Tombol hero full-width */
-  .hero-actions {
-    flex-direction: column;
-  }
+  .hero-actions { flex-direction: column; }
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
   }
 
   /* CTA actions column */
-  .cta-actions {
-    flex-direction: column;
-  }
+  .cta-actions { flex-direction: column; }
   .cta-actions .btn {
     width: 100%;
     justify-content: center;
