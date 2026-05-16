@@ -64,6 +64,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* clip mencegah layout overflow tanpa membuat scroll container baru
+     (berbeda dengan hidden yang bisa konflik dengan position:fixed navbar) */
+  overflow-x: clip;
 }
 
 body {
@@ -448,6 +451,8 @@ ul  { list-style: none; }
   color: rgba(255,255,255,0.6);
   margin-bottom: 12px;
   align-items: flex-start;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .footer-contact-item .icon {
   flex-shrink: 0;
@@ -464,6 +469,18 @@ ul  { list-style: none; }
 }
 
 /* ─── Responsive Global ──────────────────────────────────── */
+
+/* Intermediate (≤1100px) — mencegah navbar cramped di "desktop mode" mobile */
+@media (max-width: 1100px) {
+  .navbar-nav .nav-link {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+  }
+  .navbar-cta .btn {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+}
 
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
@@ -499,7 +516,7 @@ ul  { list-style: none; }
 
   /* ── Pastikan tidak ada scroll horizontal (global guard) ── */
   html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100%;
   }
 
