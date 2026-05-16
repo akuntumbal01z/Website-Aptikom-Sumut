@@ -239,8 +239,8 @@
   color: var(--gray-600);
   line-height: 1.7;
 }
-.page-hero-inner {
-  padding-left: 40px;
+.page-hero-content {
+  padding-left: 30px;
 }
 
 
