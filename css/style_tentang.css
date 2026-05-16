@@ -97,7 +97,7 @@
 .page-tabs {
   position: sticky;
   top: 70px; /* tepat di bawah navbar */
-  z-index: 900;
+  z-index: 1200;
   background: var(--white);
   border-bottom: 1px solid var(--gray-200);
   box-shadow: var(--shadow-sm);
