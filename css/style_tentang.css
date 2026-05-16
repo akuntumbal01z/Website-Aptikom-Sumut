@@ -92,7 +92,7 @@
 
 /* Geser isi hero ke kanan */
 .page-hero-inner {
-  padding-left: 50px;
+  padding-left: 0px;
 }
 
 
@@ -669,19 +669,22 @@ body { overflow-x: clip; }
 }
 
 /* ── Mobile ≤768px ── */
-@@media (max-width: 768px) {
+@media (max-width: 768px) {
 
-  html, body { overflow-x: clip; }
+  html, body {
+    overflow-x: clip;
+  }
 
   .page-hero-content {
     padding-left: 24px;
     padding-right: 20px;
   }
 
-  /* ─ Section-section selain page-hero: cegah overflow ─ */
+  /* ─ Section-section selain page-hero: cegah overflow ─
      page-hero TIDAK dimasukkan karena sudah punya overflow:hidden
      di base CSS-nya sendiri. Menambahkannya justru merusak
-     container padding sehingga teks menjadi mepet ke kiri.   */
+     container padding sehingga teks menjadi mepet ke kiri.
+  */
   .page-tabs,
   #sejarah,
   #visi-misi,
@@ -690,6 +693,8 @@ body { overflow-x: clip; }
     max-width: 100vw;
     overflow-x: hidden;
   }
+
+}
 
   /* ─ Lingkaran dekoratif page-hero: perkecil agar tidak bocor ─ */
   .page-hero::after {
@@ -864,7 +869,7 @@ body { overflow-x: clip; }
     font-size: 1.3rem;
     border-radius: 10px;
   }
-}
+
 
 /* ── Layar kecil ≤480px ── */
 @media (max-width: 480px) {
