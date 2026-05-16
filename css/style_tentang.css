@@ -87,10 +87,6 @@
   max-width: 580px;
   line-height: 1.75;
 }
-.page-hero-inner {
-  padding-left: 30px;
-  padding-right: 30px;
-}
 
 
 /* ═══════════════════════════════════════════════════════════
@@ -672,7 +668,7 @@ body { overflow-x: clip; }
   html, body { overflow-x: clip; }
 
   .page-hero-inner {
-    padding-left: 80px;
+    padding-left: 20px;
     padding-right: 20px;
 
   /* ─ Section-section selain page-hero: cegah overflow ─
