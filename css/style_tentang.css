@@ -116,7 +116,7 @@
 .tab-link {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 6px;
   padding: 8px 18px;
   font-size: 0.86rem;
   font-weight: 600;
@@ -667,9 +667,10 @@ body { overflow-x: clip; }
 
   html, body { overflow-x: clip; }
 
-  /* ─ Semua section tidak boleh melebihi lebar viewport ─
-     (Sama persis dengan pola di style_index.css)         */
-  .page-hero,
+  /* ─ Section-section selain page-hero: cegah overflow ─
+     page-hero TIDAK dimasukkan karena sudah punya overflow:hidden
+     di base CSS-nya sendiri. Menambahkannya justru merusak
+     container padding sehingga teks menjadi mepet ke kiri.   */
   .page-tabs,
   #sejarah,
   #visi-misi,
@@ -711,40 +712,53 @@ body { overflow-x: clip; }
     padding: 56px 0;
   }
 
-  /* ─ Timeline: garis pindah ke kiri ─ */
+  /* ─ Timeline: ganti ke FLEXBOX agar urutan dot selalu benar ─
+     Masalah sebelumnya: grid-column pada item ganjil (DOM order:
+     content → dot → empty) bertabrakan sehingga dot muncul dua
+     kali atau di posisi salah.
+     Solusi: display:flex + order:-1 pada dot → dot SELALU di kiri
+     terlepas dari urutan DOM.                                    */
   .timeline {
     margin-top: 36px;
   }
   .timeline::before {
-    /* Disesuaikan agar center dengan dot (lebar 40px → center = 20px) */
-    left: 20px;
+    left: 20px;  /* center garis pada dot 40px: lebar/2 = 20px */
     transform: none;
   }
   .timeline-item {
-    grid-template-columns: 40px 1fr; /* kolom dot fixed 40px, konten fleksibel */
+    display: flex;          /* ganti grid → flex */
+    flex-direction: row;
+    align-items: flex-start;
     gap: 16px;
     margin-bottom: 28px;
   }
+
+  /* Dot: paksa selalu muncul PERTAMA (paling kiri) */
+  .timeline-dot {
+    order: -1;              /* override apapun urutan di DOM */
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    font-size: 0.95rem;
+  }
+
+  /* Konten: isi sisa ruang, selalu di kanan dot */
   .timeline-item:nth-child(odd)  .timeline-content,
   .timeline-item:nth-child(even) .timeline-content {
-    grid-column: 2;
+    flex: 1;
     text-align: left;
+    min-width: 0;           /* cegah overflow teks panjang */
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
+
+  /* Elemen kosong: sembunyikan sepenuhnya */
   .timeline-item:nth-child(odd)  .timeline-empty,
   .timeline-item:nth-child(even) .timeline-empty {
     display: none;
   }
-  .timeline-dot {
-    grid-column: 1;
-    width: 40px; height: 40px;
-    font-size: 0.95rem;
-  }
+
   .timeline-content {
     padding: 18px 20px;
-    /* Cegah kartu overflow melewati container */
-    min-width: 0;
-    word-break: break-word;
-    overflow-wrap: break-word;
   }
   .timeline-event-title { font-size: 0.92rem; }
   .timeline-event-desc  { font-size: 0.82rem; }
