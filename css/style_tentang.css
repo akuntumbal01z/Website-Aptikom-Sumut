@@ -97,7 +97,7 @@
 .page-tabs {
   position: sticky;
   top: 70px; /* tepat di bawah navbar */
-  z-index: 1200;
+  z-index: 900;
   background: var(--white);
   border-bottom: 1px solid var(--gray-200);
   box-shadow: var(--shadow-sm);
@@ -116,7 +116,7 @@
 .tab-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 20px;
   padding: 8px 18px;
   font-size: 0.86rem;
   font-weight: 600;
