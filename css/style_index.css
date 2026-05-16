@@ -1086,43 +1086,220 @@
        (navbar & footer responsive sudah ada di style_global.css)
    ══════════════════════════════════════════════════════════ */
 
-/* Tablet (≤1024px) */
+/* ── Tablet (≤1024px) ── */
 @media (max-width: 1024px) {
   .quick-links-grid  { grid-template-columns: repeat(2, 1fr); }
   .keunggulan-grid   { grid-template-columns: repeat(2, 1fr); }
+  .event-grid        { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Mobile (≤768px) */
+/* ── Mobile (≤768px) ── */
 @media (max-width: 768px) {
-  /* Hero */
-  .hero-content      { grid-template-columns: 1fr; gap: 40px; }
+
+  /* ─ Announcement Bar ─ */
+  .announcement-inner {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+  .announcement-text {
+    width: 100%;
+    font-size: 0.82rem;
+    order: 2;
+  }
+  .announcement-label { order: 1; }
+  .announcement-link  { order: 3; font-size: 0.82rem; }
+
+  /* ─ Hero ─ */
+  .hero {
+    min-height: auto;
+    padding-bottom: 0;
+  }
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 0;                       /* visual tersembunyi, tak perlu gap */
+    padding: 44px 0 40px;
+  }
   .hero-visual       { display: none; }
-  .hero-stats        { gap: 20px; }
   .hero-scroll-hint  { display: none; }
-  .stat-divider      { height: 28px; }
 
-  /* Section header jadi kolom */
-  .section-header    { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    margin-bottom: 18px;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+    max-width: 100%;
+  }
+  .hero-actions {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .hero-actions .btn {
+    flex: 1 1 140px;
+    justify-content: center;
+  }
+  .hero-stats {
+    gap: 20px;
+    margin-top: 36px;
+    padding-top: 24px;
+    flex-wrap: wrap;
+  }
+  .stat-value  { font-size: 1.6rem; }
+  .stat-divider { height: 28px; }
 
-  /* Grid-grid 1 kolom */
-  .news-grid         { grid-template-columns: 1fr; }
-  .event-grid        { grid-template-columns: 1fr; }
-  .keunggulan-grid   { grid-template-columns: 1fr; }
-  .lowongan-grid     { grid-template-columns: 1fr; }
+  /* ─ Section paddings ─ */
+  .quick-links       { padding: 48px 0; }
+  .section-berita    { padding: 48px 0; }
+  .section-event     { padding: 48px 0; }
+  .section-keunggulan { padding: 48px 0; }
+  .section-cta       { padding: 48px 0; }
+  .section-lowongan  { padding: 48px 0; }
+  .section-mitra     { padding: 14px 0; }
+
+  /* ─ Section header stack ─ */
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .section-center { margin-bottom: 32px; }
+
+  /* ─ Quick Links ─ */
+  .quick-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .quick-card { padding: 22px 18px; }
+  .quick-card-icon {
+    width: 44px; height: 44px;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .quick-card-title { font-size: 0.92rem; }
+  .quick-card-desc  { font-size: 0.78rem; }
+
+  /* ─ Berita ─ */
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .news-side { gap: 12px; }
+  .news-list-item { padding: 12px; gap: 12px; }
+  .news-list-img  { width: 72px; height: 64px; }
+  .news-list-title { font-size: 0.82rem; }
+
+  /* ─ Event ─ */
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .event-card { padding: 22px; }
+
+  /* ─ Keunggulan ─ */
+  .keunggulan-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .keunggulan-card { padding: 24px 20px; }
+
+  /* ─ CTA Box ─ */
+  .cta-box {
+    grid-template-columns: 1fr;
+    padding: 36px 28px;
+    gap: 24px;
+  }
+  .cta-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .cta-actions .btn {
+    flex: 1 1 140px;
+    justify-content: center;
+  }
+
+  /* ─ Lowongan ─ */
+  .lowongan-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .lowongan-card { padding: 16px; gap: 12px; }
+  .lowongan-logo {
+    width: 46px; height: 46px;
+    font-size: 1.3rem;
+  }
+  .lowongan-title { font-size: 0.88rem; }
+}
+
+/* ── Mobile kecil (≤480px) ── */
+@media (max-width: 480px) {
+  .hero-content { padding: 36px 0 32px; }
+
+  /* Quick links 1 kolom di layar kecil */
+  .quick-links-grid { grid-template-columns: 1fr; }
+
+  /* Stats tetap horizontal tapi dikecilkan */
+  .hero-stats {
+    gap: 16px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .stat-value  { font-size: 1.45rem; }
+  .stat-label  { font-size: 0.72rem; }
+
+  /* Padding container dikurangi */
+  .container { padding: 0 16px; }
 
   /* CTA box */
-  .cta-box           { grid-template-columns: 1fr; padding: 36px 28px; }
-  .cta-actions       { flex-direction: row; flex-wrap: wrap; }
+  .cta-box { padding: 28px 20px; }
+
+  /* Announcement sembunyikan link di layar ≤480px */
+  .announcement-link { display: none; }
+  .announcement-text { font-size: 0.8rem; }
+
+  /* Section title sedikit lebih kecil */
+  .section-title { font-size: clamp(1.45rem, 5vw, 1.8rem); }
 }
 
-/* Mobile kecil (≤480px) */
-@media (max-width: 480px) {
-  .quick-links-grid  { grid-template-columns: 1fr; }
-  .hero-stats        { flex-direction: column; gap: 12px; }
-  .stat-row          { justify-content: center; }
+/* ── Layar sangat kecil (≤380px) ── */
+@media (max-width: 380px) {
+  /* Hero stats menjadi 2-2-... baris */
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 16px 24px;
+  }
+  .stat-divider { display: none; }
+
+  /* Tombol hero full-width */
+  .hero-actions {
+    flex-direction: column;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* CTA actions column */
+  .cta-actions {
+    flex-direction: column;
+  }
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Lowongan tag disembunyikan agar tidak overflow */
+  .lowongan-tag { display: none; }
 }
 
-/* Hide CTA Section */
+/* ── Hide CTA Section (belum aktif) ── */
 .section-cta {
   display: none;
 }
