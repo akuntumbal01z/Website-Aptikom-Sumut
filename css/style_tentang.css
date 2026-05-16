@@ -87,6 +87,9 @@
   max-width: 580px;
   line-height: 1.75;
 }
+.page-hero-content { 
+  padding-left: 30px; 
+}
 
 
 /* ═══════════════════════════════════════════════════════════
@@ -239,10 +242,6 @@
   color: var(--gray-600);
   line-height: 1.7;
 }
-.page-hero-content {
-  padding-left: 30px;
-}
-
 
 /* ═══════════════════════════════════════════════════════════
    SECTION: VISI & MISI  (#visi-misi)
