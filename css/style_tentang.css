@@ -109,6 +109,7 @@
   overflow-x: auto;
   padding: 8px 0;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; /* scroll mulus di iOS */
 }
 .page-tabs-inner::-webkit-scrollbar { display: none; }
 
@@ -695,11 +696,12 @@ body { overflow-x: clip; }
     margin-top: 36px;
   }
   .timeline::before {
-    left: 22px;
+    /* Disesuaikan agar center dengan dot (lebar 40px → center = 20px) */
+    left: 20px;
     transform: none;
   }
   .timeline-item {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 40px 1fr; /* kolom dot fixed 40px, konten fleksibel */
     gap: 16px;
     margin-bottom: 28px;
   }
@@ -719,6 +721,10 @@ body { overflow-x: clip; }
   }
   .timeline-content {
     padding: 18px 20px;
+    /* Cegah kartu overflow melewati container */
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   .timeline-event-title { font-size: 0.92rem; }
   .timeline-event-desc  { font-size: 0.82rem; }
@@ -747,6 +753,12 @@ body { overflow-x: clip; }
   .struktur-stat-value { font-size: 1.8rem; }
 
   /* ─ Org Chart ─ */
+  /* Safety net: jika konten masih melampaui layar, izinkan scroll horizontal */
+  .org-chart {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   /* Kurangi ukuran kartu agar muat di layar sempit */
   .org-card {
     min-width: 130px;
@@ -777,9 +789,19 @@ body { overflow-x: clip; }
     gap: 12px;
     flex-wrap: wrap;
   }
-  /* Bidang fungsional: 2x2 grid secara natural via flex-wrap */
+  /* Bidang fungsional: eksplisit 2×2 grid di mobile */
   .org-row-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+  }
+  .org-row-bottom .org-branch {
+    width: 100%;
+    align-items: center;
   }
 
   /* ─ AD & ART ─ */
@@ -829,7 +851,12 @@ body { overflow-x: clip; }
   .org-name    { font-size: 0.74rem; }
   .org-jabatan { font-size: 0.6rem; }
   .org-row-mid  { gap: 8px; }
-  .org-row-bottom { gap: 8px; }
+  /* Pertahankan grid 2×2 dengan card lebih kecil */
+  .org-row-bottom {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    max-width: 300px;
+  }
 
   /* AD & ART: padding lebih kecil */
   .adart-card-header,
@@ -845,6 +872,11 @@ body { overflow-x: clip; }
 
 /* ── Layar sangat kecil ≤380px ── */
 @media (max-width: 380px) {
+
+  /* Kurangi padding container agar konten lebih lega */
+  .container {
+    padding: 0 16px;
+  }
 
   .tab-link {
     padding: 6px 10px;
@@ -862,5 +894,10 @@ body { overflow-x: clip; }
   .org-jabatan { font-size: 0.58rem; }
 
   .org-row-mid    { gap: 6px; }
-  .org-row-bottom { gap: 6px; }
+  /* Grid 2×2 tetap dipertahankan dengan ukuran lebih kecil */
+  .org-row-bottom {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    max-width: 260px;
+  }
 }
