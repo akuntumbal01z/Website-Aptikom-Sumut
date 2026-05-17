@@ -650,7 +650,7 @@
       }
     });
 
-    // ── Mobile toggle (hamburger) ──
+    // ── Mobile toggle (hamburger) - samakan pola dengan tentang.html ──
     const navToggle = document.getElementById('navToggle');
     const navbarNav = document.querySelector('.navbar-nav');
 
@@ -664,15 +664,13 @@
       navbarNav.classList.remove('mobile-open');
       navToggle.classList.remove('is-active');
       navToggle.setAttribute('aria-label', 'Buka menu');
-      // Tutup semua dropdown di dalam menu
+      // Tutup semua dropdown di dalam menu mobile
       document.querySelectorAll('.dropdown-menu.is-open')
               .forEach(m => m.classList.remove('is-open'));
     }
 
     navToggle.addEventListener('click', () => {
-      navbarNav.classList.contains('mobile-open')
-        ? closeMobileMenu()
-        : openMobileMenu();
+      navbarNav.classList.contains('mobile-open') ? closeMobileMenu() : openMobileMenu();
     });
 
     // Tutup menu saat klik di luar navbar
